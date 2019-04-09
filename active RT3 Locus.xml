@@ -190,13 +190,13 @@
 			<rule e="way" k="*" v="*" zoom-min="13">
 				<area fill="#D4DAA4" />
 				<rule e="any" k="wood|leaf_type" v="coniferous|needleleaved">
-					<area src="file:../active_res/patterns/wood_coniferous_transparent.svg" symbol-width="24dp" scale-icon-size="14,1.4" />
+					<area src="file:/patterns/wood_coniferous_transparent.svg" symbol-width="24dp" scale-icon-size="14,1.4" />
 				</rule>
 				<rule e="any" k="wood|leaf_type" v="deciduous|broadleaved">
-					<area src="file:../active_res/patterns/wood_deciduous_transparent.svg" symbol-width="24dp" scale-icon-size="14,1.4" />
+					<area src="file:/patterns/wood_deciduous_transparent.svg" symbol-width="24dp" scale-icon-size="14,1.4" />
 				</rule>
 				<rule e="any" k="wood|leaf_type" v="~|mixed|leafless">
-					<area src="file:../active_res/patterns/wood_mixed_transparent.svg" symbol-width="24dp" scale-icon-size="14,1.4" />
+					<area src="file:/patterns/wood_mixed_transparent.svg" symbol-width="24dp" scale-icon-size="14,1.4" />
 				</rule>
 			</rule>
 		</rule>
@@ -235,18 +235,18 @@
 			<rule e="way" k="landuse" v="vineyard" closed="yes">
 				<area fill="#c9d9a8" />
 				<rule e="way" k="*" v="*" zoom-min="14">
-					<area src="file:../active_res/patterns/vineyard.svg" symbol-width="16dp" scale-icon-size="15,1.3" />
+					<area src="file:/patterns/vineyard.svg" symbol-width="16dp" scale-icon-size="15,1.3" />
 				</rule>
 			</rule>
 		</rule>
 		<rule e="way" k="*" v="*" zoom-min="14" >
 			<rule e="way" k="landuse" v="meadow" closed="yes">
 				<area fill="#faf8e5" />
-				<area src="file:../active_res/patterns/medow.svg" scale="0.8" scale-icon-size="14,1.15" />
+				<area src="file:/patterns/medow.svg" scale="0.8" scale-icon-size="14,1.15" />
 			</rule>
 			<rule e="way" k="landuse" v="cemetery" closed="yes">
 				<area fill="#E6E6C5" stroke="#e4e4e4" stroke-width="0.2dp" />
-				<area src="file:../active_res/patterns/cemetery.svg" scale="0.4" scale-icon-size="15,1.3" />
+				<area src="file:/patterns/cemetery.svg" scale="0.4" scale-icon-size="15,1.3" />
 			</rule>
 		</rule>
 	</rule>
@@ -261,22 +261,22 @@
 		<rule e="way" k="natural" v="*" zoom-min="8">
 			<rule e="way" k="natural" v="glacier" closed="yes">
 				<area fill="#50D3E9FF" />
-				<area src="file:../active_res/patterns/glacier.svg" scale="0.8" scale-icon-size="13,1.2"/>
+				<area src="file:/patterns/glacier.svg" scale="0.8" scale-icon-size="13,1.2"/>
 			</rule>
 			<rule e="way" k="natural" v="grassland" closed="yes">
 				<area fill="#faf8e5" />
-				<area src="file:../active_res/patterns/medow.svg" scale="0.8" scale-icon-size="13,1.3"/>
+				<area src="file:/patterns/medow.svg" scale="0.8" scale-icon-size="13,1.3"/>
 			</rule>
 			<rule e="way" k="natural" v="fell" closed="yes">
 				<area fill="#dae2cb" />
 			</rule>
 			<rule e="way" k="natural" v="rock" closed="yes">
 				<area fill="#dddddd" />
-				<area src="file:../active_res/patterns/rock.svg" symbol-width="32dp" scale-icon-size="13,1.3"/>
+				<area src="file:/patterns/rock.svg" symbol-width="32dp" scale-icon-size="13,1.3"/>
 			</rule>
 			<rule e="way" k="natural" v="scree|shingle" closed="yes">
 				<area fill="#dddddd" />
-				<area src="file:../active_res/patterns/scree.svg" symbol-width="32dp" scale-icon-size="13,1.3"/>
+				<area src="file:/patterns/scree.svg" symbol-width="32dp" scale-icon-size="13,1.3"/>
 			</rule>
 		</rule>
 		
@@ -291,18 +291,18 @@
 
 		<rule e="way" k="natural" v="*" zoom-min="13">
 			<rule e="way" k="natural" v="marsh|wetland" closed="yes">
-				<area src="file:../active_res/patterns/marsh.svg" symbol-width="16dp" scale-icon-size="13,1.3"/>
+				<area src="file:/patterns/marsh.svg" symbol-width="16dp" scale-icon-size="13,1.3"/>
 			</rule>
 			<rule e="way" k="natural" v="beach" closed="yes">
 				<area fill="#f4e3be" />
 			</rule>
 			<rule e="way" k="natural" v="heath" closed="yes">
 				<area fill="#faf8e5" />
-				<area src="file:../active_res/patterns/heath.svg" scale="0.6" scale-icon-size="13,1.3"/>
+				<area src="file:/patterns/heath.svg" scale="0.6" scale-icon-size="13,1.3"/>
 			</rule>
 			<rule e="way" k="natural" v="scrub" closed="yes">
 				<area fill="#faf8e5" />
-				<area src="file:../active_res/patterns/scrub.svg" symbol-width="16dp" scale-icon-size="13,1.3"/>
+				<area src="file:/patterns/scrub.svg" symbol-width="16dp" scale-icon-size="13,1.3"/>
 			</rule>
 		</rule>
 
@@ -310,7 +310,7 @@
 			<rule e="way" k="natural" v="cliff" closed="no" cat="landscapefeat" >
 				<line stroke="#70606060" stroke-width="1.0dp" stroke-dasharray="0.8,0.8" stroke-linecap="butt"/>
 				<pathText k="name" dy="-1.0dp" font-style="bold" font-family="sans_serif" font-size="12dp" fill="#333333" stroke="#FFFFFF" stroke-width="1.5dp" />
-				<lineSymbol src="file:../active_res/symbols/cliff.svg" repeat="true" repeat-gap="0" symbol-width="8dp" symbol-height="12dp" scale-icon-size="15,1.15" />
+				<lineSymbol src="file:/symbols/cliff.svg" repeat="true" repeat-gap="0" symbol-width="8dp" symbol-height="12dp" scale-icon-size="15,1.15" />
 			</rule>
 			<rule e="way" k="natural" v="cliff" closed="yes" cat="landscapefeat">
 				<line stroke="#70606060" stroke-width="1.0dp" stroke-dasharray="0.8,0.8" stroke-linecap="butt" />
@@ -350,7 +350,7 @@
 		<rule e="any" k="amenity" v="*" zoom-min="14" >
 			<rule e="way" k="amenity" v="hospital">
 				<area fill="#F2D9D7" stroke="#DBBDBA" stroke-width="0.2dp" />
-				<symbol src="file:../active_res/symbols/hospital.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+				<symbol src="file:/symbols/hospital.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 				<rule e="way" k="amenity" v="hospital" zoom-min="15" >
 					<caption k="name" font-style="normal" font-family="sans_serif" font-size="8dp" scale-font-size="16,1.15" fill="#333333" stroke="#ffffff" stroke-width="1.5dp" />
 				</rule>
@@ -360,20 +360,20 @@
 			<rule e="way" k="amenity" v="place_of_worship" zoom-min="14">
 				<rule e="way" k="religion" v="christian">
 					<rule e="way" k="building" v="cathedral|church|yes">
-						<symbol src="file:../active_res/symbols/church.svg" symbol-width="14dp" scale-icon-size="15,1.15" />
+						<symbol src="file:/symbols/church.svg" symbol-width="14dp" scale-icon-size="15,1.15" />
 					</rule>
 					<rule e="way" k="building" v="chapel">
-						<symbol src="file:../active_res/symbols/chapel.svg" symbol-width="14dp" scale-icon-size="15,1.15" />
+						<symbol src="file:/symbols/chapel.svg" symbol-width="14dp" scale-icon-size="15,1.15" />
 					</rule>
 				</rule>
 				<rule e="way" k="religion" v="jewish">
-					<symbol src="file:../active_res/symbols/synagogue.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+					<symbol src="file:/symbols/synagogue.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 				</rule>
 				<rule e="way" k="religion" v="muslim|moslem">
-					<symbol src="file:../active_res/symbols/muslim.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+					<symbol src="file:/symbols/muslim.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 				</rule>
 				<rule e="way" k="religion" v="buddhist">
-					<symbol src="file:../active_res/symbols/buddhist.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+					<symbol src="file:/symbols/buddhist.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 				</rule>
 				<!-- captions place_of_worship -->
 				<rule e="way" k="amenity" v="place_of_worship" zoom-min="17">
@@ -384,24 +384,24 @@
 			<!-- amenity > 15 -->
 			<rule e="any" k="amenity" v="*" zoom-min="15">
 				<rule e="way" k="amenity" v="bus_station" cat="pub_transp">
-					<symbol src="file:../active_res/symbols/bus_station.svg" symbol-width="16dp" scale-icon-size="16,1.15" />
+					<symbol src="file:/symbols/bus_station.svg" symbol-width="16dp" scale-icon-size="16,1.15" />
 				</rule>
 				<rule e="any" k="amenity" v="parking">
 					<area fill="#E2E2E2" stroke="#707070" stroke-width="0.2dp" />
 					<rule e="any" k="access" v="private|acc_no|permit|permissive" cat="parking">
-						<area src="file:../active_res/patterns/access-private.svg" symbol-width="8dp" scale-icon-size="16,1.15" />
-						<symbol src="file:../active_res/symbols/parking_private.svg" symbol-width="10dp" scale-icon-size="16,1.15" />
+						<area src="file:/patterns/access-private.svg" symbol-width="8dp" scale-icon-size="16,1.15" />
+						<symbol src="file:/symbols/parking_private.svg" symbol-width="10dp" scale-icon-size="16,1.15" />
 					</rule>
 					<rule e="any" k="access" v="destination" cat="parking">
-						<area src="file:../active_res/patterns/access-destination.svg" symbol-width="8dp" scale-icon-size="16,1.15" />
-						<symbol src="file:../active_res/symbols/parking_private.svg" symbol-width="10dp" scale-icon-size="16,1.15" />
+						<area src="file:/patterns/access-destination.svg" symbol-width="8dp" scale-icon-size="16,1.15" />
+						<symbol src="file:/symbols/parking_private.svg" symbol-width="10dp" scale-icon-size="16,1.15" />
 					</rule>
 					<rule e="any" k="access" v="~|yes|public" cat="parking">
-						<symbol src="file:../active_res/symbols/parking.svg" symbol-width="10dp" scale-icon-size="16,1.15" />
+						<symbol src="file:/symbols/parking.svg" symbol-width="10dp" scale-icon-size="16,1.15" />
 					</rule>
 				</rule>
 				<rule e="way" k="amenity" v="shelter">
-					<symbol src="file:../active_res/symbols/shelter.svg" force-draw="1" symbol-width="12dp" scale-icon-size="16,1.15" />
+					<symbol src="file:/symbols/shelter.svg" force-draw="1" symbol-width="12dp" scale-icon-size="16,1.15" />
 				</rule>
 			</rule>
 			
@@ -409,10 +409,10 @@
 			<rule e="way" k="amenity" v="*" zoom-min="16">
 				<rule e="way" k="amenity" v="grave_yard">
 					<area fill="#AACAAE" stroke="#e4e4e4" stroke-width="0.2dp" />
-					<area src="file:../active_res/patterns/cemetery.svg" scale="0.3" scale-icon-size="17,1.3" />
+					<area src="file:/patterns/cemetery.svg" scale="0.3" scale-icon-size="17,1.3" />
 				</rule>
 				<rule e="way" k="amenity" v="hunting_stand">
-					<symbol src="file:../active_res/symbols/hunting_stand.svg" symbol-width="10dp" scale-icon-size="17,1.3" />
+					<symbol src="file:/symbols/hunting_stand.svg" symbol-width="10dp" scale-icon-size="17,1.3" />
 				</rule>
 
 				<!-- labels for amenities > 16 -->
@@ -427,7 +427,7 @@
 			<!-- amenity > 17 -->
 			<rule e="way" k="amenity" v="*" zoom-min="17">
 				<rule e="way" k="amenity" v="toilets">
-					<symbol src="file:../active_res/symbols/toilets.svg" symbol-width="12dp" scale-icon-size="18,1.15"/>
+					<symbol src="file:/symbols/toilets.svg" symbol-width="12dp" scale-icon-size="18,1.15"/>
 				</rule>
 			</rule>
 		</rule>
@@ -494,7 +494,7 @@
 		<rule e="way" k="tourism" v="*" zoom-min="14">
 			<!-- alpine hut -->
 			<rule e="way" k="tourism" v="alpine_hut">
-				<symbol src="file:../active_res/symbols/alpine_hut.svg" symbol-width="12dp" scale-icon-size="15,1.15" force-draw="1" />
+				<symbol src="file:/symbols/alpine_hut.svg" symbol-width="12dp" scale-icon-size="15,1.15" force-draw="1" />
 				<caption k="ele" dy="27dp" scale-dy-size="15,1.3" font-style="bold" font-size="6dp" scale-font-size="15,1.15" fill="#797979" stroke="#ffffff" stroke-width="2.0dp" />
 				<caption k="name" dy="18dp" scale-dy-size="15,1.3" font-style="bold" font-size="8dp" scale-font-size="15,1.15" fill="#797979" stroke="#ffffff" stroke-width="2.0dp" />
 			</rule>
@@ -502,7 +502,7 @@
 				<area fill="#c7f1a3" />
 			</rule>
 			<rule e="way" k="tourism" v="camp_site">
-				<symbol src="file:../active_res/symbols/campSite.svg" symbol-width="10dp" scale-icon-size="15,1.15" />
+				<symbol src="file:/symbols/campSite.svg" symbol-width="10dp" scale-icon-size="15,1.15" />
 			</rule>
 			<rule e="way" k="tourism" v="attraction" >
 				<area fill="#e0e0e0" stroke="#707070" stroke-width="0.15dp"/>
@@ -512,17 +512,17 @@
 		<!-- tourism zoom > 15 -->
 		<rule e="way" k="tourism" v="*" zoom-min="15">
 			<rule e="way" k="tourism" v="picnic_site" >
-				<symbol src="file:../active_res/symbols/picnic_site.svg" symbol-width="12dp" scale-icon-size="16,1.15" />
+				<symbol src="file:/symbols/picnic_site.svg" symbol-width="12dp" scale-icon-size="16,1.15" />
 			</rule>
 			<rule e="way" k="information" v="office">
-				<symbol src="file:../active_res/symbols/information_office.svg" force-draw="1" symbol-width="12dp" scale-icon-size="16,1.15" />
+				<symbol src="file:/symbols/information_office.svg" force-draw="1" symbol-width="12dp" scale-icon-size="16,1.15" />
 			</rule>
 		</rule>
 
 		<!-- tourism zoom > 16 -->
 		<rule e="way" k="tourism" v="*" zoom-min="16">
 			<rule e="way" k="information" v="map|board">
-				<symbol src="file:../active_res/symbols/information.svg" symbol-width="10dp" scale-icon-size="17,1.15"/>
+				<symbol src="file:/symbols/information.svg" symbol-width="10dp" scale-icon-size="17,1.15"/>
 			</rule>
 		</rule>
 
@@ -661,7 +661,7 @@
 	</rule>	
 	<!-- Wasserfall -->
 	<rule e="any" k="waterway|natural" v="waterfall" zoom-min="14">
-		<symbol src="file:../active_res/symbols/waterfall.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+		<symbol src="file:/symbols/waterfall.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 	</rule>
 	<!-- bodys of water-->
 	<rule e="way" k="landuse|natural" v="reservoir|basin|water">
@@ -719,7 +719,7 @@
 			<area fill="#D2BCB9" />
 		</rule>
 		<rule e="way" k="military" v="bunker|bunker_disused" >
-			<symbol src="file:../active_res/symbols/bunker.svg" symbol-width="11dp" scale-icon-size="14,1.15" />
+			<symbol src="file:/symbols/bunker.svg" symbol-width="11dp" scale-icon-size="14,1.15" />
 		</rule>
 		<rule e="way" k="*" v="*" zoom-min="16">
 			<caption k="name" font-style="normal" font-family="sans_serif" font-size="10dp" scale-font-size="17,1.15" fill="#E57A7A" stroke="#ffffff" stroke-width="2.0dp" />
@@ -1222,7 +1222,7 @@
 				</rule>
 				<!-- Klettersteige (via_ferrata) -->
 				<rule e="way" k="via_ferrata_flag|via_ferrata_scale" v="set|yes|*" zoom-min="14">
-					<symbol force-draw="1" src="file:../active_res/symbols/via_ferrata.svg" symbol-width="16dp"/>
+					<symbol force-draw="1" src="file:/symbols/via_ferrata.svg" symbol-width="16dp"/>
 					<line stroke="#FF0000" stroke-width="0.3dp" stroke-linecap="butt"/>
 					<line stroke="#000000" stroke-width="0.3dp" stroke-dasharray="4,1,0.5,1,0.5,1" stroke-linecap="butt"/>
 					<rule e="any" k="*" v="*" zoom-min="15">
@@ -1692,7 +1692,7 @@
 	<!-- man_made features -->
 	<rule e="way" k="man_made" v="*" zoom-min="14">
 		<rule e="way" k="man_made" v="mineshaft" zoom-min="14">
-			<symbol src="file:../active_res/symbols/mineshaft.svg" symbol-width="14dp" scale-icon-size="14,1.2" />
+			<symbol src="file:/symbols/mineshaft.svg" symbol-width="14dp" scale-icon-size="14,1.2" />
 		</rule>
 		<rule e="way" k="man_made" v="pier" zoom-min="15">
 			<rule e="way" k="*" v="*" closed="no">
@@ -1706,10 +1706,10 @@
 			<line stroke="#aaaaaa" stroke-width="0.6dp" stroke-linecap="butt" />
 		</rule>
 		<rule e="way" k="man_made" v="watermill" zoom-min="14">
-			<symbol src="file:../active_res/symbols/watermill.svg" symbol-width="18dp" scale-icon-size="15,1.2" />
+			<symbol src="file:/symbols/watermill.svg" symbol-width="18dp" scale-icon-size="15,1.2" />
 		</rule>
 		<rule e="way" k="man_made" v="windmill" zoom-min="14">
-			<symbol src="file:../active_res/symbols/windmill.svg" symbol-width="12dp" scale-icon-size="15,1.2" />
+			<symbol src="file:/symbols/windmill.svg" symbol-width="12dp" scale-icon-size="15,1.2" />
 		</rule>
 
 		<rule e="way" k="man_made" v="watermill|windmill" zoom-min="17">
@@ -1749,23 +1749,23 @@
 		<rule e="way" k="*" v="*" zoom-min="15" >
 			<rule e="way" k="aerialway" v="cable_car">
 				<line stroke="#202020" stroke-width="0.5dp" stroke-linecap="butt" />
-				<lineSymbol src="file:../active_res/symbols/cable_car.svg" symbol-width="18dp" scale-icon-size="16,1.2" repeat="true" repeat-gap="80" />
+				<lineSymbol src="file:/symbols/cable_car.svg" symbol-width="18dp" scale-icon-size="16,1.2" repeat="true" repeat-gap="80" />
 			</rule>
 			<rule e="way" k="aerialway" v="chair_lift">
 				<line stroke="#202020" stroke-width="0.4dp" stroke-linecap="butt" />
-				<lineSymbol src="file:../active_res/symbols/chair_lift.svg" symbol-width="20dp" scale-icon-size="16,1.2" repeat="true" repeat-gap="40" />
+				<lineSymbol src="file:/symbols/chair_lift.svg" symbol-width="20dp" scale-icon-size="16,1.2" repeat="true" repeat-gap="40" />
 			</rule>
 			<rule e="way" k="aerialway" v="goods">
 				<line stroke="#74746B" stroke-width="0.4dp" stroke-linecap="butt" />
-				<lineSymbol src="file:../active_res/symbols/goods.svg" symbol-width="18dp" scale-icon-size="16,1.2" repeat="true" repeat-gap="40" />
+				<lineSymbol src="file:/symbols/goods.svg" symbol-width="18dp" scale-icon-size="16,1.2" repeat="true" repeat-gap="40" />
 			</rule>
 			<rule e="way" k="aerialway" v="gondola">
 				<line stroke="#202020" stroke-width="0.5dp" stroke-linecap="butt" />
-				<lineSymbol src="file:../active_res/symbols/gondola.svg" symbol-width="14dp" scale-icon-size="16,1.3" repeat="true" repeat-gap="80" />
+				<lineSymbol src="file:/symbols/gondola.svg" symbol-width="14dp" scale-icon-size="16,1.3" repeat="true" repeat-gap="80" />
 			</rule>
 			<rule e="way" k="aerialway" v="drag_lift">
 				<line stroke="#202020" stroke-width="0.4dp" stroke-linecap="butt" />
-				<lineSymbol src="file:../active_res/symbols/drag_lift.svg" symbol-width="16dp" scale-icon-size="16,1.2" repeat="true" repeat-gap="20" />
+				<lineSymbol src="file:/symbols/drag_lift.svg" symbol-width="16dp" scale-icon-size="16,1.2" repeat="true" repeat-gap="20" />
 			</rule>
 			<rule e="way" k="aerialway" v="zip_line">
 				<line stroke="#202020" stroke-width="0.4dp" stroke-linecap="butt" />
@@ -1779,16 +1779,16 @@
 	<!-- historic -->
 	<rule e="way" k="historic" v="*" zoom-min="13">
 		<rule e="way" k="historic" v="castle" zoom-min="13" >
-			<symbol src="file:../active_res/symbols/castle.svg" symbol-width="12dp" scale-icon-size="14,1.15"/>
+			<symbol src="file:/symbols/castle.svg" symbol-width="12dp" scale-icon-size="14,1.15"/>
 		</rule>
 		<rule e="way" k="historic" v="ruins" zoom-min="13" >
-			<symbol src="file:../active_res/symbols/ruins.svg" symbol-width="12dp" scale-icon-size="14,1.15"/>
+			<symbol src="file:/symbols/ruins.svg" symbol-width="12dp" scale-icon-size="14,1.15"/>
 		</rule>
 		<rule e="way" k="historic" v="monument" zoom-min="14" >
-			<symbol src="file:../active_res/symbols/monument.svg" symbol-width="10dp" scale-icon-size="15,1.15"/>
+			<symbol src="file:/symbols/monument.svg" symbol-width="10dp" scale-icon-size="15,1.15"/>
 		</rule>
 		<rule e="way" k="historic" v="memorial" zoom-min="15" >
-			<symbol src="file:../active_res/symbols/memorial.svg" symbol-width="12dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/symbols/memorial.svg" symbol-width="12dp" scale-icon-size="16,1.15"/>
 		</rule>
 
 		<rule e="way" k="historic" v="castle|ruins|memorial" zoom-min="17">
@@ -1805,13 +1805,13 @@
 	<!-- safety_rope, ladder, rungs für OpenAndroMaps only-->
 	<rule e="any" k="safety_rope|ladder|rungs" v="*" zoom-min="15">
 		<rule e="any" k="safety_rope" v="sr_yes" >
-			<symbol src="file:../active_res/symbols/safety_rope.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/symbols/safety_rope.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="ladder" v="ld_yes" >
-			<symbol src="file:../active_res/symbols/ladder.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/symbols/ladder.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="rungs" v="rn_yes" >
-			<symbol src="file:../active_res/symbols/rungs.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/symbols/rungs.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="way" k="safety_rope|ladder|rungs" v="sr_yes|ld_yes|rn_yes" zoom-min="16">
 			<line stroke="#BFBFBF" stroke-width="0.8dp" stroke-dasharray="1,5" stroke-linecap="round" />
@@ -1933,16 +1933,16 @@
 
 			<rule e="way" k="hknetwork|network" v="*" zoom-min="16">
 				<rule e="way" k="hknetwork|network" v="iwn">
-					<line dy="-2.0dp" stroke="#b02c21" stroke-width="0.6dp" stroke-linecap="butt"/>
+					<line dy="2.0dp" stroke="#b02c21" stroke-width="0.6dp" stroke-linecap="butt"/>
 				</rule>
 				<rule e="way" k="hknetwork|network" v="nwn">
-					<line dy="-2.0dp" stroke="#3247d1" stroke-width="0.6dp" stroke-linecap="butt"/>
+					<line dy="2.0dp" stroke="#3247d1" stroke-width="0.6dp" stroke-linecap="butt"/>
 				</rule>
 				<rule e="way" k="hknetwork|network" v="rwn">
 					<line dy="2.0dp" stroke="#eda518" stroke-width="0.6dp" stroke-linecap="butt" />
 				</rule>
 				<rule e="way" k="hknetwork|network" v="lwn|uwn">
-					<line dy="2.0dp" stroke="#d01ab8" stroke-width="0.6dp" stroke-linecap="butt" />
+					<line dy="2.0dp" stroke="#eda518" stroke-width="0.6dp" stroke-linecap="butt" />
 				</rule>
 			</rule>
 		</rule>
@@ -2098,498 +2098,498 @@
 		<!-- ================= OSMC_FOREGROUND ======================== -->
 		<!-- =============== FRG BLUE ================ -->
 		<rule e="any" k="osmc_foreground" v="blue_L|wmfg_blue_l">
-			<symbol src="file:../active_res/osmc/frg_blue_L.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_blue_L.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="blue_arch|wmfg_blue_arch">
-			<symbol src="file:../active_res/osmc/frg_blue_arch.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_blue_arch.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="blue_bar|wmfg_blue_bar">
-			<symbol src="file:../active_res/osmc/frg_blue_bar.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_blue_bar.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="blue_bowl|wmfg_blue_bowl" >
-			<symbol src="file:../active_res/osmc/frg_blue_bowl.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_blue_bowl.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="blue_circle|wmfg_blue_circle" >
-			<symbol src="file:../active_res/osmc/frg_blue_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_blue_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="blue_corner|wmfg_blue_corner" >
-			<symbol src="file:../active_res/osmc/frg_blue_corner.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_blue_corner.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="blue_cross|wmfg_blue_cross" >
-			<symbol src="file:../active_res/osmc/frg_blue_cross.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_blue_cross.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="blue_diamond|wmfg_blue_diamond" >
-			<symbol src="file:../active_res/osmc/frg_blue_diamond.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_blue_diamond.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="blue_dot|wmfg_blue_dot" >
-			<symbol src="file:../active_res/osmc/frg_blue_dot.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_blue_dot.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="blue_fork|wmfg_blue_fork" >
-			<symbol src="file:../active_res/osmc/frg_blue_fork.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_blue_fork.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="blue_lower|wmfg_blue_lower" >
-			<symbol src="file:../active_res/osmc/frg_blue_lower.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_blue_lower.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="blue_pointer|wmfg_blue_pointer" >
-			<symbol src="file:../active_res/osmc/frg_blue_pointer.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_blue_pointer.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="blue_rectangle|wmfg_blue_rectangle" >
-			<symbol src="file:../active_res/osmc/frg_blue_rectangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_blue_rectangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="blue_right|wmfg_blue_right" >
-			<symbol src="file:../active_res/osmc/frg_blue_right.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_blue_right.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="blue_slash|wmfg_blue_slash" >
-			<symbol src="file:../active_res/osmc/frg_blue_slash.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_blue_slash.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="blue_stripe|wmfg_blue_stripe" >
-			<symbol src="file:../active_res/osmc/frg_blue_stripe.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_blue_stripe.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="blue_triangle|wmfg_blue_triangle" >
-			<symbol src="file:../active_res/osmc/frg_blue_triangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_blue_triangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="blue_triangle_turned|wmfg_blue_triangle_turned" >
-			<symbol src="file:../active_res/osmc/frg_blue_triangle_turned.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_blue_triangle_turned.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="blue_turned_T|wmfg_blue_turned_t" >
-			<symbol src="file:../active_res/osmc/frg_blue_turned_T.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_blue_turned_T.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="blue_x|wmfg_blue_x" >
-			<symbol src="file:../active_res/osmc/frg_blue_x.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_blue_x.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<!-- =============== FRG RED ================ -->
 		<rule e="any" k="osmc_foreground" v="red_L|wmfg_red_l" >
-			<symbol src="file:../active_res/osmc/frg_red_L.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_L.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_arch|wmfg_red_arch" >
-			<symbol src="file:../active_res/osmc/frg_red_arch.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_arch.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_backslash|wmfg_red_backslash" >
-			<symbol src="file:../active_res/osmc/frg_red_backslash.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_backslash.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_bar|wmfg_red_bar" >
-			<symbol src="file:../active_res/osmc/frg_red_bar.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_bar.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_circle|wmfg_red_circle" >
-			<symbol src="file:../active_res/osmc/frg_red_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_corner|wmfg_red_corner" >
-			<symbol src="file:../active_res/osmc/frg_red_corner.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_corner.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_crest|wmfg_red_crest" >
-			<symbol src="file:../active_res/osmc/frg_red_crest.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_crest.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_cross|wmfg_red_cross" >
-			<symbol src="file:../active_res/osmc/frg_red_cross.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_cross.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_diamond|wmfg_red_diamond" >
-			<symbol src="file:../active_res/osmc/frg_red_diamond.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_diamond.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_dot|wmfg_red_dot" >
-			<symbol src="file:../active_res/osmc/frg_red_dot.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_dot.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_drop|wmfg_red_drop" >
-			<symbol src="file:../active_res/osmc/frg_red_drop.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_drop.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_drop_line|wmfg_red_drop_line" >
-			<symbol src="file:../active_res/osmc/frg_red_drop_line.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_drop_line.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_hiker|wmfg_red_hiker" >
-			<symbol src="file:../active_res/osmc/frg_red_hiker.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_hiker.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_fork|wmfg_red_fork" >
-			<symbol src="file:../active_res/osmc/frg_red_fork.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_fork.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_lower|wmfg_red_lower" >
-			<symbol src="file:../active_res/osmc/frg_red_lower.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_lower.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_pointer|wmfg_red_pointer" >
-			<symbol src="file:../active_res/osmc/frg_red_pointer.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_pointer.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_rectangle|wmfg_red_rectangle" >
-			<symbol src="file:../active_res/osmc/frg_red_rectangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_rectangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_right|wmfg_red_right" >
-			<symbol src="file:../active_res/osmc/frg_red_right.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_right.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_slash|wmfg_red_slash" >
-			<symbol src="file:../active_res/osmc/frg_red_slash.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_slash.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_stripe|wmfg_red_stripe" >
-			<symbol src="file:../active_res/osmc/frg_red_stripe.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_stripe.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_triangle|wmfg_red_triangle" >
-			<symbol src="file:../active_res/osmc/frg_red_triangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_triangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_triangle_turned|wmfg_red_triangle_turned" >
-			<symbol src="file:../active_res/osmc/frg_red_triangle_turned.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_triangle_turned.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_turned_T|wmfg_red_turned_t" >
-			<symbol src="file:../active_res/osmc/frg_red_turned_T.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_turned_T.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="red_x|wmfg_red_x" >
-			<symbol src="file:../active_res/osmc/frg_red_x.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_red_x.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<!-- =============== FRG YELLOW ================ -->
 		<rule e="any" k="osmc_foreground" v="yellow_L|wmfg_yellow_l" >
-			<symbol src="file:../active_res/osmc/frg_yellow_L.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_L.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="yellow_arch|wmfg_yellow_arch" >
-			<symbol src="file:../active_res/osmc/frg_yellow_arch.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_arch.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="yellow_backslash|wmfg_yellow_backslash" >
-			<symbol src="file:../active_res/osmc/frg_yellow_backslash.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_backslash.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="yellow_bar|wmfg_yellow_bar" >
-			<symbol src="file:../active_res/osmc/frg_yellow_bar.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_bar.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="yellow_bowl|wmfg_yellow_bowl" >
-			<symbol src="file:../active_res/osmc/frg_yellow_bowl.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_bowl.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="yellow_circle|wmfg_yellow_circle" >
-			<symbol src="file:../active_res/osmc/frg_yellow_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="yellow_corner|wmfg_yellow_corner" >
-			<symbol src="file:../active_res/osmc/frg_yellow_corner.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_corner.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="yellow_cross|wmfg_yellow_cross" >
-			<symbol src="file:../active_res/osmc/frg_yellow_cross.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_cross.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="yellow_diamond|wmfg_yellow_diamond" >
-			<symbol src="file:../active_res/osmc/frg_yellow_diamond.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_diamond.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="yellow_dot|wmfg_yellow_dot" >
-			<symbol src="file:../active_res/osmc/frg_yellow_dot.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_dot.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="yellow_hiker|wmfg_yellow_hiker" >
-			<symbol src="file:../active_res/osmc/frg_yellow_hiker.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_hiker.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="yellow_fork|wmfg_yellow_fork" >
-			<symbol src="file:../active_res/osmc/frg_yellow_fork.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_fork.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="yellow_lower|wmfg_yellow_lower" >
-			<symbol src="file:../active_res/osmc/frg_yellow_lower.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_lower.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="yellow_pointer|wmfg_yellow_pointer" >
-			<symbol src="file:../active_res/osmc/frg_yellow_pointer.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_pointer.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="yellow_rectangle|wmfg_yellow_rectangle" >
-			<symbol src="file:../active_res/osmc/frg_yellow_rectangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_rectangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="yellow_rectangle_line|wmfg_yellow_rectangle_line" >
-			<symbol src="file:../active_res/osmc/frg_yellow_rectangle_line.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_rectangle_line.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="yellow_right|wmfg_yellow_right" >
-			<symbol src="file:../active_res/osmc/frg_yellow_right.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_right.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="yellow_slash|wmfg_yellow_slash" >
-			<symbol src="file:../active_res/osmc/frg_yellow_slash.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_slash.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="yellow_stripe|wmfg_yellow_stripe" >
-			<symbol src="file:../active_res/osmc/frg_yellow_stripe.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_stripe.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="yellow_triangle|wmfg_yellow_triangle" >
-			<symbol src="file:../active_res/osmc/frg_yellow_triangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_triangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="yellow_turned_T|wmfg_yellow_turned_t" >
-			<symbol src="file:../active_res/osmc/frg_yellow_turned_T.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_turned_T.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="yellow_x|wmfg_yellow_x" >
-			<symbol src="file:../active_res/osmc/frg_yellow_x.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_yellow_x.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<!-- =============== FRG BLACK	 ================ -->
 		<rule e="any" k="osmc_foreground" v="black_arch|wmfg_black_arch" >
-			<symbol src="file:../active_res/osmc/frg_black_arch.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_black_arch.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="black_bar|wmfg_black_bar" >
-			<symbol src="file:../active_res/osmc/frg_black_bar.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_black_bar.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="black_circle|wmfg_black_circle" >
-			<symbol src="file:../active_res/osmc/frg_black_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_black_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="black_crest|wmfg_black_crest" >
-			<symbol src="file:../active_res/osmc/frg_black_crest.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_black_crest.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="black_cross|wmfg_black_cross" >
-			<symbol src="file:../active_res/osmc/frg_black_cross.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_black_cross.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="black_diamond|wmfg_black_diamond" >
-			<symbol src="file:../active_res/osmc/frg_black_diamond.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_black_diamond.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="black_dot|wmfg_black_dot" >
-			<symbol src="file:../active_res/osmc/frg_black_dot.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_black_dot.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="black_fork|wmfg_black_fork" >
-			<symbol src="file:../active_res/osmc/frg_black_fork.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_black_fork.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="black_horse|wmfg_black_horse" >
-			<symbol src="file:../active_res/osmc/frg_black_horse.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_black_horse.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="black_pointer|wmfg_black_pointer" >
-			<symbol src="file:../active_res/osmc/frg_black_pointer.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_black_pointer.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="black_rectangle|wmfg_black_rectangle" >
-			<symbol src="file:../active_res/osmc/frg_black_rectangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_black_rectangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="black_rectangle_line|wmfg_black_rectangle_line" >
-			<symbol src="file:../active_res/osmc/frg_black_rectangle_line.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_black_rectangle_line.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="black_red_diamond|wmfg_black_red_diamond" >
-			<symbol src="file:../active_res/osmc/frg_black_red_diamond.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_black_red_diamond.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="black_right|wmfg_black_right" >
-			<symbol src="file:../active_res/osmc/frg_black_right.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_black_right.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="black_triangle|wmfg_black_triangle" >
-			<symbol src="file:../active_res/osmc/frg_black_triangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_black_triangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="black_triangle_line|wmfg_black_triangle_line" >
-			<symbol src="file:../active_res/osmc/frg_black_triangle_line.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_black_triangle_line.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="black_x|wmfg_black_x" >
-			<symbol src="file:../active_res/osmc/frg_black_x.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_black_x.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<!-- =============== FRG GREEN ================ -->
 		<rule e="any" k="osmc_foreground" v="green_L|wmfg_green_l" >
-			<symbol src="file:../active_res/osmc/frg_green_L.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_L.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_arch|wmfg_green_arch" >
-			<symbol src="file:../active_res/osmc/frg_green_arch.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_arch.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_backslash|wmfg_green_backslash" >
-			<symbol src="file:../active_res/osmc/frg_green_backslash.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_backslash.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_bar|wmfg_green_bar" >
-			<symbol src="file:../active_res/osmc/frg_green_bar.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_bar.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_bowl|wmfg_green_bowl" >
-			<symbol src="file:../active_res/osmc/frg_green_bowl.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_bowl.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_circle|wmfg_green_circle" >
-			<symbol src="file:../active_res/osmc/frg_green_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_corner|wmfg_green_corner" >
-			<symbol src="file:../active_res/osmc/frg_green_corner.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_corner.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_cross|wmfg_green_cross" >
-			<symbol src="file:../active_res/osmc/frg_green_cross.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_cross.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_diamond|wmfg_green_diamond" >
-			<symbol src="file:../active_res/osmc/frg_green_diamond.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_diamond.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_dot|wmfg_green_dot" >
-			<symbol src="file:../active_res/osmc/frg_green_dot.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_dot.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_drop_line|wmfg_green_drop_line" >
-			<symbol src="file:../active_res/osmc/frg_green_drop_line.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_drop_line.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_hiker|wmfg_green_hiker" >
-			<symbol src="file:../active_res/osmc/frg_green_hiker.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_hiker.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_fork|wmfg_green_fork" >
-			<symbol src="file:../active_res/osmc/frg_green_fork.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_fork.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_horse|wmfg_green_horse" >
-			<symbol src="file:../active_res/osmc/frg_green_horse.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_horse.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_lower|wmfg_green_lower" >
-			<symbol src="file:../active_res/osmc/frg_green_lower.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_lower.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_pointer|wmfg_green_pointer" >
-			<symbol src="file:../active_res/osmc/frg_green_pointer.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_pointer.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_rectangle|wmfg_green_rectangle" >
-			<symbol src="file:../active_res/osmc/frg_green_rectangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_rectangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_right|wmfg_green_right" >
-			<symbol src="file:../active_res/osmc/frg_green_right.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_right.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_slash|wmfg_green_slash" >
-			<symbol src="file:../active_res/osmc/frg_green_slash.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_slash.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_stripe|wmfg_green_stripe" >
-			<symbol src="file:../active_res/osmc/frg_green_stripe.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_stripe.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_triangle|wmfg_green_triangle" >
-			<symbol src="file:../active_res/osmc/frg_green_triangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_triangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_triangle_line|wmfg_green_triangle_line" >
-			<symbol src="file:../active_res/osmc/frg_green_triangle_line.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_triangle_line.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_triangle_turned|wmfg_green_triangle_turned" >
-			<symbol src="file:../active_res/osmc/frg_green_triangle_turned.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_triangle_turned.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_turned_T|wmfg_green_turned_t" >
-			<symbol src="file:../active_res/osmc/frg_green_turned_T.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_turned_T.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="green_x|wmfg_green_x" >
-			<symbol src="file:../active_res/osmc/frg_green_x.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_green_x.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<!-- =============== FRG WHITE	 ================ -->
 		<rule e="any" k="osmc_foreground" v="white_arch|wmfg_white_arch" >
-			<symbol src="file:../active_res/osmc/frg_white_arch.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_white_arch.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="white_bar|wmfg_white_bar" >
-			<symbol src="file:../active_res/osmc/frg_white_bar.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_white_bar.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="white_circle|wmfg_white_circle" >
-			<symbol src="file:../active_res/osmc/frg_white_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_white_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="white_cross|wmfg_white_cross" >
-			<symbol src="file:../active_res/osmc/frg_white_cross.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_white_cross.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="white_diamond|wmfg_white_diamond" >
-			<symbol src="file:../active_res/osmc/frg_white_diamond.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_white_diamond.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="white_diamond_line|wmfg_white_diamond_line" >
-			<symbol src="file:../active_res/osmc/frg_white_diamond_line.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_white_diamond_line.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="white_dot|wmfg_white_dot" >
-			<symbol src="file:../active_res/osmc/frg_white_dot.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_white_dot.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="white_hiker|wmfg_white_hiker" >
-			<symbol src="file:../active_res/osmc/frg_white_hiker.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_white_hiker.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="white_lower|wmfg_white_lower" >
-			<symbol src="file:../active_res/osmc/frg_white_lower.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_white_lower.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="white_pointer|wmfg_white_pointer" >
-			<symbol src="file:../active_res/osmc/frg_white_pointer.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_white_pointer.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="white_rectangle|wmfg_white_rectangle" >
-			<symbol src="file:../active_res/osmc/frg_white_rectangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_white_rectangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="white_rectangle_line|wmfg_white_rectangle_line" >
-			<symbol src="file:../active_res/osmc/frg_white_rectangle_line.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_white_rectangle_line.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="white_red_diamond|wmfg_white_red_diamond" >
-			<symbol src="file:../active_res/osmc/frg_white_red_diamond.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_white_red_diamond.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="white_right|wmfg_white_right" >
-			<symbol src="file:../active_res/osmc/frg_white_right.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_white_right.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="white_stripe|wmfg_white_stripe" >
-			<symbol src="file:../active_res/osmc/frg_white_stripe.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_white_stripe.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="white_triangle|wmfg_white_triangle" >
-			<symbol src="file:../active_res/osmc/frg_white_triangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_white_triangle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="white_triangle_line|wmfg_white_triangle_line" >
-			<symbol src="file:../active_res/osmc/frg_white_triangle_line.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_white_triangle_line.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="white_turned_T|wmfg_white_turned_t" >
-			<symbol src="file:../active_res/osmc/frg_white_turned_T.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_white_turned_T.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="white_x|wmfg_white_x" >
-			<symbol src="file:../active_res/osmc/frg_white_x.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_white_x.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<!-- =============== FRG SYMBOLS	 ================ -->
 		<rule e="any" k="osmc_foreground" v="ammonit|wmfg_ammonit">
-			<symbol src="file:../active_res/osmc/frg_ammonit.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_ammonit.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="heart|wmfg_heart">
-			<symbol src="file:../active_res/osmc/frg_heart.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_heart.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="hiker|wmfg_hiker">
-			<symbol src="file:../active_res/osmc/frg_hiker.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_hiker.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="mine|wmfg_mine">
-			<symbol src="file:../active_res/osmc/frg_mine.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_mine.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="orange_bar|wmfg_orange_bar">
-			<symbol src="file:../active_res/osmc/frg_orange_bar.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_orange_bar.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="orange_diamond_line|wmfg_orange_diamond_line">
-			<symbol src="file:../active_res/osmc/frg_orange_diamond_line.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_orange_diamond_line.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="orange_dot|wmfg_orange_dot">
-			<symbol src="file:../active_res/osmc/frg_orange_dot.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_orange_dot.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="orange_right|wmfg_orange_right" >
-			<symbol src="file:../active_res/osmc/frg_orange_right.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_orange_right.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="shell|wmfg_shell">
-			<symbol src="file:../active_res/osmc/frg_shell.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_shell.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="shell_modern|wmfg_shell_modern">
-			<symbol src="file:../active_res/osmc/frg_shell_modern.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_shell_modern.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="tower|wmfg_tower">
-			<symbol src="file:../active_res/osmc/frg_tower.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_tower.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_foreground" v="wolfshook|wmfg_wolfshook">
-			<symbol src="file:../active_res/osmc/frg_wolfshook.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/frg_wolfshook.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 
 		<!-- ================= OSMC_BACKGROUND ======================== -->
 		<rule e="any" k="osmc_background" v="black|wmbg_black" >
-			<symbol src="file:../active_res/osmc/bcg_black.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_black.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="black_circle|wmbg_black_circle">
-			<symbol src="file:../active_res/osmc/bcg_black_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_black_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="blue|wmbg_blue">
-			<symbol src="file:../active_res/osmc/bcg_blue.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_blue.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="blue_circle|wmbg_blue_circle">
-			<symbol src="file:../active_res/osmc/bcg_blue_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_blue_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="blue_frame|wmbg_blue_frame">
-			<symbol src="file:../active_res/osmc/bcg_blue_frame.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_blue_frame.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="blue_round|wmbg_blue_round">
-			<symbol src="file:../active_res/osmc/bcg_blue_round.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_blue_round.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="brown|wmbg_brown">
-			<symbol src="file:../active_res/osmc/bcg_brown.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_brown.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="green|wmbg_green">
-			<symbol src="file:../active_res/osmc/bcg_green.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_green.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="green_circle|wmbg_green_circle">
-			<symbol src="file:../active_res/osmc/bcg_green_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_green_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="green_frame|wmbg_green_frame">
-			<symbol src="file:../active_res/osmc/bcg_green_frame.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_green_frame.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="green_round|wmbg_green_round">
-			<symbol src="file:../active_res/osmc/bcg_green_round.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_green_round.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="orange|wmbg_orange">
-			<symbol src="file:../active_res/osmc/bcg_orange.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_orange.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="purple_bcg|wmbg_purple">
-			<symbol src="file:../active_res/osmc/bcg_purple.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_purple.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="red|wmbg_red">
-			<symbol src="file:../active_res/osmc/bcg_red.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_red.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="red_circle|wmbg_red_circle">
-			<symbol src="file:../active_res/osmc/bcg_red_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_red_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="red_frame|wmbg_red_frame">
-			<symbol src="file:../active_res/osmc/bcg_red_frame.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_red_frame.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="red_round|wmbg_red_round">
-			<symbol src="file:../active_res/osmc/bcg_red_round.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_red_round.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="white|wmbg_white">
-			<symbol src="file:../active_res/osmc/bcg_white.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_white.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="white_circle|wmbg_white_circle">
-			<symbol src="file:../active_res/osmc/bcg_white_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_white_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="white_round|wmbg_white_round">
-			<symbol src="file:../active_res/osmc/bcg_white_round.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_white_round.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="yellow|wmbg_yellow">
-			<symbol src="file:../active_res/osmc/bcg_yellow.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_yellow.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="yellow_circle|wmbg_yellow_circle">
-			<symbol src="file:../active_res/osmc/bcg_yellow_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_yellow_circle.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		<rule e="any" k="osmc_background" v="yellow_frame|wmbg_yellow_frame">
-			<symbol src="file:../active_res/osmc/bcg_yellow_frame.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
+			<symbol src="file:/osmc/bcg_yellow_frame.svg" force-draw="1" symbol-width="10dp" scale-icon-size="16,1.15"/>
 		</rule>
 		
 		<!-- Text in Wanderwegemarkierung, OpenAndroMaps only -->
@@ -2625,7 +2625,7 @@
 		<rule e="node" k="natural" v="peak">
 			<rule e="any" k="peak_dist" v="pd_1" zoom-min="9">
 				<rule e="node" k="summit:cross" v="yes">
-					<symbol src="file:../active_res/symbols/peak_cross.svg" symbol-width="12dp" symbol-height="15dp" scale-icon-size="13,1.15" />
+					<symbol src="file:/symbols/peak_cross.svg" symbol-width="12dp" symbol-height="15dp" scale-icon-size="13,1.15" />
 					<rule e="node" k="*" v="*" zoom-min="11" >
 						<caption k="name" dy="-8dp" scale-dy-size="14,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="14,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.8dp" />
 						<rule e="node" k="*" v="*" zoom-min="12">
@@ -2634,7 +2634,7 @@
 					</rule>
 				</rule>
 				<rule e="node" k="summit:cross" v="~|no">
-					<symbol src="file:../active_res/symbols/peak.svg" symbol-width="12dp" scale-icon-size="13,1.15" />
+					<symbol src="file:/symbols/peak.svg" symbol-width="12dp" scale-icon-size="13,1.15" />
 					<rule e="node" k="*" v="*" zoom-min="11" >
 						<caption k="name" dy="-5dp" scale-dy-size="14,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="14,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.8dp" />
 						<rule e="node" k="*" v="*" zoom-min="12">
@@ -2645,7 +2645,7 @@
 			</rule>
 			<rule e="any" k="peak_dist" v="pd_2" zoom-min="11">
 				<rule e="node" k="summit:cross" v="yes">
-					<symbol src="file:../active_res/symbols/peak_cross.svg" symbol-width="12dp" symbol-height="15dp" scale-icon-size="13,1.15" />
+					<symbol src="file:/symbols/peak_cross.svg" symbol-width="12dp" symbol-height="15dp" scale-icon-size="13,1.15" />
 					<rule e="node" k="*" v="*" zoom-min="13" >
 						<caption k="name" dy="-8dp" scale-dy-size="14,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="14,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.8dp" />
 						<rule e="node" k="*" v="*" zoom-min="14">
@@ -2654,7 +2654,7 @@
 					</rule>
 				</rule>
 				<rule e="node" k="summit:cross" v="~|no">
-					<symbol src="file:../active_res/symbols/peak.svg" symbol-width="12dp" scale-icon-size="13,1.15" />
+					<symbol src="file:/symbols/peak.svg" symbol-width="12dp" scale-icon-size="13,1.15" />
 					<rule e="node" k="*" v="*" zoom-min="13" >
 						<caption k="name" dy="-5dp" scale-dy-size="14,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="14,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.8dp" />
 						<rule e="node" k="*" v="*" zoom-min="14">
@@ -2665,7 +2665,7 @@
 			</rule>
 			<rule e="any" k="peak_dist" v="pd_3|~" zoom-min="12">
 				<rule e="node" k="summit:cross" v="yes">
-					<symbol src="file:../active_res/symbols/peak_cross.svg" symbol-width="12dp" symbol-height="15dp" scale-icon-size="13,1.15" />
+					<symbol src="file:/symbols/peak_cross.svg" symbol-width="12dp" symbol-height="15dp" scale-icon-size="13,1.15" />
 					<rule e="node" k="*" v="*" zoom-min="13" >
 						<caption k="name" dy="-8dp" scale-dy-size="14,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="14,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.8dp" />
 						<rule e="node" k="*" v="*" zoom-min="14">
@@ -2674,7 +2674,7 @@
 					</rule>
 				</rule>
 				<rule e="node" k="summit:cross" v="~|no">
-					<symbol src="file:../active_res/symbols/peak.svg" symbol-width="12dp" scale-icon-size="13,1.15" />
+					<symbol src="file:/symbols/peak.svg" symbol-width="12dp" scale-icon-size="13,1.15" />
 					<rule e="node" k="*" v="*" zoom-min="13" >
 						<caption k="name" dy="-5dp" scale-dy-size="14,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="14,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.8dp" />
 						<rule e="node" k="*" v="*" zoom-min="14">
@@ -2685,14 +2685,14 @@
 			</rule>
 			<rule e="any" k="peak_dist" v="pd_4" zoom-min="13">
 				<rule e="node" k="summit:cross" v="yes">
-					<symbol src="file:../active_res/symbols/peak_cross.svg" symbol-width="12dp" symbol-height="15dp" scale-icon-size="13,1.15" />
+					<symbol src="file:/symbols/peak_cross.svg" symbol-width="12dp" symbol-height="15dp" scale-icon-size="13,1.15" />
 					<caption k="name" dy="-8dp" scale-dy-size="14,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="14,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.8dp" />
 					<rule e="node" k="*" v="*" zoom-min="14">
 						<caption k="ele" dy="15dp" scale-dy-size="15,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="15,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.8dp" />
 					</rule>
 				</rule>
 				<rule e="node" k="summit:cross" v="~|no">
-					<symbol src="file:../active_res/symbols/peak.svg" symbol-width="12dp" scale-icon-size="13,1.15" />
+					<symbol src="file:/symbols/peak.svg" symbol-width="12dp" scale-icon-size="13,1.15" />
 					<caption k="name" dy="-5dp" scale-dy-size="14,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="14,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.8dp" />
 					<rule e="node" k="*" v="*" zoom-min="14">
 						<caption k="ele" dy="15dp" scale-dy-size="15,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="15,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.8dp" />
@@ -2701,12 +2701,12 @@
 			</rule>
 			<rule e="any" k="peak_dist" v="pd_5" zoom-min="14">
 				<rule e="node" k="summit:cross" v="yes">
-					<symbol src="file:../active_res/symbols/peak_cross.svg" symbol-width="12dp" symbol-height="15dp" scale-icon-size="13,1.15" />
+					<symbol src="file:/symbols/peak_cross.svg" symbol-width="12dp" symbol-height="15dp" scale-icon-size="13,1.15" />
 					<caption k="name" dy="-8dp" scale-dy-size="14,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="14,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.8dp" />
 					<caption k="ele" dy="15dp" scale-dy-size="15,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="15,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.8dp" />
 				</rule>
 				<rule e="node" k="summit:cross" v="~|no">
-					<symbol src="file:../active_res/symbols/peak.svg" symbol-width="12dp" scale-icon-size="13,1.15" />
+					<symbol src="file:/symbols/peak.svg" symbol-width="12dp" scale-icon-size="13,1.15" />
 					<caption k="name" dy="-5dp" scale-dy-size="14,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="14,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.8dp" />
 					<caption k="ele" dy="15dp" scale-dy-size="15,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="15,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.8dp" />
 				</rule>
@@ -2716,7 +2716,7 @@
 		<!-- Vulkane -->
 		<rule e="node" k="natural" v="volcano">
 			<rule e="any" k="peak_dist" v="pd_1" zoom-min="9">
-				<symbol src="file:../active_res/symbols/volcano.svg" symbol-width="12dp" scale-icon-size="13,1.15" />
+				<symbol src="file:/symbols/volcano.svg" symbol-width="12dp" scale-icon-size="13,1.15" />
 				<rule e="node" k="*" v="*" zoom-min="11" >
 					<caption k="name" dy="-5dp" scale-dy-size="14,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="14,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.8dp" />
 					<rule e="node" k="*" v="*" zoom-min="12">
@@ -2725,7 +2725,7 @@
 				</rule>
 			</rule>
 			<rule e="any" k="peak_dist" v="pd_2" zoom-min="11">
-				<symbol src="file:../active_res/symbols/volcano.svg" symbol-width="12dp" scale-icon-size="13,1.15" />
+				<symbol src="file:/symbols/volcano.svg" symbol-width="12dp" scale-icon-size="13,1.15" />
 				<rule e="node" k="*" v="*" zoom-min="13" >
 					<caption k="name" dy="-5dp" scale-dy-size="14,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="14,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.8dp" />
 					<rule e="node" k="*" v="*" zoom-min="14">
@@ -2734,7 +2734,7 @@
 				</rule>
 			</rule>
 			<rule e="any" k="peak_dist" v="pd_3|~" zoom-min="12">
-				<symbol src="file:../active_res/symbols/volcano.svg" symbol-width="12dp" scale-icon-size="13,1.15" />			
+				<symbol src="file:/symbols/volcano.svg" symbol-width="12dp" scale-icon-size="13,1.15" />			
 				<rule e="node" k="*" v="*" zoom-min="13" >
 					<caption k="name" dy="-5dp" scale-dy-size="14,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="14,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.8dp" />
 					<rule e="node" k="*" v="*" zoom-min="14">
@@ -2743,14 +2743,14 @@
 				</rule>
 			</rule>
 			<rule e="any" k="peak_dist" v="pd_4" zoom-min="13">
-				<symbol src="file:../active_res/symbols/volcano.svg" symbol-width="12dp" scale-icon-size="13,1.15" />			
+				<symbol src="file:/symbols/volcano.svg" symbol-width="12dp" scale-icon-size="13,1.15" />			
 				<caption k="name" dy="-5dp" scale-dy-size="14,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="14,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.8dp" />
 				<rule e="node" k="*" v="*" zoom-min="14">
 					<caption k="ele" dy="15dp" scale-dy-size="15,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="15,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.8dp" />
 				</rule>
 			</rule>
 			<rule e="any" k="peak_dist" v="pd_5" zoom-min="14">
-				<symbol src="file:../active_res/symbols/volcano.svg" symbol-width="12dp" scale-icon-size="13,1.15" />			
+				<symbol src="file:/symbols/volcano.svg" symbol-width="12dp" scale-icon-size="13,1.15" />			
 				<caption k="name" dy="-5dp" scale-dy-size="14,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="14,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.8dp" />
 				<caption k="ele" dy="15dp" scale-dy-size="15,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="15,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.8dp" />
 			</rule>
@@ -2834,7 +2834,7 @@
 		<!-- power generator -->
 		<rule e="node" k="power" v="generator">
 			<rule e="node" k="generator:source" v="wind" >
-				<symbol src="file:../active_res/symbols/power_generator_wind.svg" symbol-width="12dp" scale-icon-size="14,1.15" />
+				<symbol src="file:/symbols/power_generator_wind.svg" symbol-width="12dp" scale-icon-size="14,1.15" />
 			</rule>
 		</rule>
 
@@ -2844,25 +2844,25 @@
 			<!-- Amenity POIs > 14 -->
 			<rule e="node" k="amenity" v="*" zoom-min="14">
 				<rule e="node" k="amenity" v="hospital">
-					<symbol src="file:../active_res/symbols/hospital.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+					<symbol src="file:/symbols/hospital.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 				</rule>
 				<rule e="node" k="amenity" v="place_of_worship">
 					<rule e="node" k="religion" v="christian">
 						<rule e="node" k="building" v="cathedral|church|yes">
-							<symbol src="file:../active_res/symbols/church.svg" symbol-width="14dp" scale-icon-size="15,1.15" />
+							<symbol src="file:/symbols/church.svg" symbol-width="14dp" scale-icon-size="15,1.15" />
 						</rule>
 						<rule e="node" k="building" v="chapel">
-							<symbol src="file:../active_res/symbols/chapel.svg" symbol-width="14dp" scale-icon-size="15,1.15" />
+							<symbol src="file:/symbols/chapel.svg" symbol-width="14dp" scale-icon-size="15,1.15" />
 						</rule>
 					</rule>
 					<rule e="node" k="religion" v="jewish">
-						<symbol src="file:../active_res/symbols/synagogue.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+						<symbol src="file:/symbols/synagogue.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 					</rule>
 					<rule e="node" k="religion" v="muslim|moslem">
-						<symbol src="file:../active_res/symbols/muslim.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+						<symbol src="file:/symbols/muslim.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 					</rule>
 					<rule e="node" k="religion" v="buddhist">
-						<symbol src="file:../active_res/symbols/buddhist.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+						<symbol src="file:/symbols/buddhist.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 					</rule>
 				</rule>
 			</rule>
@@ -2870,13 +2870,13 @@
 			<!-- Amenity POIs > 15 -->
 			<rule e="node" k="amenity" v="*" zoom-min="15" >
 				<rule e="node" k="amenity" v="bus_station" zoom-min="15" cat="pub_transp">
-					<symbol src="file:../active_res/symbols/bus_station.svg" symbol-width="12dp" scale-icon-size="16,1.15" />
+					<symbol src="file:/symbols/bus_station.svg" symbol-width="12dp" scale-icon-size="16,1.15" />
 				</rule>
 				<rule e="node" k="amenity" v="shelter" zoom-min="15">
-					<symbol src="file:../active_res/symbols/shelter.svg" symbol-width="12dp" scale-icon-size="16,1.15" force-draw="1" />
+					<symbol src="file:/symbols/shelter.svg" symbol-width="12dp" scale-icon-size="16,1.15" force-draw="1" />
 				</rule>
 				<rule e="node" k="amenity" v="drinking_water">
-					<symbol src="file:../active_res/symbols/drinking_water.svg" symbol-width="12dp" scale-icon-size="16,1.15" />
+					<symbol src="file:/symbols/drinking_water.svg" symbol-width="12dp" scale-icon-size="16,1.15" />
 				</rule>
 				<!-- labels for amenity > 15 -->
 				<rule e="way" k="amenity" v="hospital">
@@ -2887,19 +2887,19 @@
 			<!-- Amenity POIs > 16 -->
 			<rule e="node" k="amenity" v="*" zoom-min="16">
 				<rule e="node" k="amenity" v="hunting_stand">
-					<symbol src="file:../active_res/symbols/hunting_stand.svg" symbol-width="10dp" scale-icon-size="17,1.3" />
+					<symbol src="file:/symbols/hunting_stand.svg" symbol-width="10dp" scale-icon-size="17,1.3" />
 				</rule>
 				<rule e="node" k="amenity" v="restaurant" cat="restaurant">
-					<symbol src="file:../active_res/symbols/restaurant.svg"  symbol-width="10dp" scale-icon-size="17,1.15"/>
+					<symbol src="file:/symbols/restaurant.svg"  symbol-width="10dp" scale-icon-size="17,1.15"/>
 				</rule>
 				<rule e="node" k="amenity" v="cafe" cat="restaurant">
-					<symbol src="file:../active_res/symbols/cafe.svg" symbol-width="10dp" scale-icon-size="17,1.15" />
+					<symbol src="file:/symbols/cafe.svg" symbol-width="10dp" scale-icon-size="17,1.15" />
 				</rule>
 				<rule e="node" k="amenity" v="bus_station" cat="pub_transp">
 					<caption k="name" dy="10dp" scale-dy-size="17,1.15" font-style="normal" font-family="sans_serif" font-size="8dp" scale-font-size="17,1.15" fill="#333333" stroke="#ffffff" stroke-width="1.5dp" />
 				</rule>
 				<rule e="any" k="amenity" v="fountain">
-					<symbol src="file:../active_res/symbols/fountain.svg" symbol-width="12dp" scale-icon-size="17,1.15" />
+					<symbol src="file:/symbols/fountain.svg" symbol-width="12dp" scale-icon-size="17,1.15" />
 				</rule>
 				
 				<!-- labels for amenity > 16 -->
@@ -2911,10 +2911,10 @@
 			<!-- Amenity POIs > 17 -->
 			<rule e="node" k="amenity" v="*" zoom-min="17" >
 				<rule e="node" k="amenity" v="bench">
-					<symbol src="file:../active_res/symbols/bench.svg" symbol-width="10dp" scale-icon-size="18,1.3" />
+					<symbol src="file:/symbols/bench.svg" symbol-width="10dp" scale-icon-size="18,1.3" />
 				</rule>
 				<rule e="node" k="amenity" v="toilets">
-					<symbol src="file:../active_res/symbols/toilets.svg" symbol-width="12dp" scale-icon-size="18,1.15"/>
+					<symbol src="file:/symbols/toilets.svg" symbol-width="12dp" scale-icon-size="18,1.15"/>
 				</rule>
 
 				<!-- labels for amenity > 17 -->
@@ -2938,10 +2938,10 @@
 		<rule e="node" k="highway" v="*">
 			<rule e="node" k="highway" v="bus_stop" zoom-min="16" cat="pub_transp">
 				<rule e="any" k="*" v="*" country="DE">
-					<symbol src="file:../active_res/symbols/bus_stop_germany.svg" symbol-width="12dp" scale-icon-size="17,1.15" />
+					<symbol src="file:/symbols/bus_stop_germany.svg" symbol-width="12dp" scale-icon-size="17,1.15" />
 				</rule>
 				<rule e="any" k="*" v="*" country="*|!DE" >
-					<symbol src="file:../active_res/symbols/bus_stop.svg" symbol-width="12dp" scale-icon-size="17,1.15" />
+					<symbol src="file:/symbols/bus_stop.svg" symbol-width="12dp" scale-icon-size="17,1.15" />
 				</rule>
 				<rule e="node" k="highway" v="bus_stop" zoom-min="18">
 					<caption k="name" dy="16dp" scale-dy-size="19,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="19,1.15" fill="#333333" stroke="#ffffff" stroke-width="1.5dp" />
@@ -2953,7 +2953,7 @@
 			</rule>
 			<!-- Rettungspunkte (only for OpenAndroMaps) -->
 			<rule e="node" k="highway" v="emergency_access_point" zoom-min="14" cat="emergency_access_point">
-				<symbol src="file:../active_res/symbols/emergency_access_point.svg" symbol-width="10dp" scale-icon-size="15,1.15" force-draw="1"/>
+				<symbol src="file:/symbols/emergency_access_point.svg" symbol-width="10dp" scale-icon-size="15,1.15" force-draw="1"/>
 				<rule e="any" k="*" v="*" zoom-min="15">
 					<caption k="name" dy="-15dp" scale-dy-size="16,1.15" font-style="bold" font-family="sans_serif" font-size="10dp" scale-font-size="16,1.15" fill="#DA0092" stroke="#FFFFFF" stroke-width="1.5dp" />
 					<!--OAM Transform ref to addr:housenumber -->
@@ -2965,28 +2965,28 @@
 		<!-- historic -->
 		<rule e="any" k="historic" v="*" zoom-min="13">
 			<rule e="any" k="historic" v="castle">
-				<symbol src="file:../active_res/symbols/castle.svg" symbol-width="12dp" scale-icon-size="14,1.15"/>
+				<symbol src="file:/symbols/castle.svg" symbol-width="12dp" scale-icon-size="14,1.15"/>
 			</rule>
 			<rule e="any" k="historic" v="ruins">
-				<symbol src="file:../active_res/symbols/ruins.svg" symbol-width="12dp" scale-icon-size="14,1.15"/>
+				<symbol src="file:/symbols/ruins.svg" symbol-width="12dp" scale-icon-size="14,1.15"/>
 			</rule>
 			<rule e="any" k="historic" v="wayside_cross|wayside_shrine" zoom-min="14" >
-				<symbol src="file:../active_res/symbols/wayside_cross.svg" symbol-width="8dp" scale-icon-size="15,1.15"/>
+				<symbol src="file:/symbols/wayside_cross.svg" symbol-width="8dp" scale-icon-size="15,1.15"/>
 			</rule>
 			<rule e="any" k="historic" v="monument" zoom-min="14" >
-				<symbol src="file:../active_res/symbols/monument.svg" symbol-width="10dp" scale-icon-size="15,1.15"/>
+				<symbol src="file:/symbols/monument.svg" symbol-width="10dp" scale-icon-size="15,1.15"/>
 			</rule>
 			<rule e="any" k="historic" v="memorial" zoom-min="15" >
-				<symbol src="file:../active_res/symbols/memorial.svg" symbol-width="12dp" scale-icon-size="16,1.15"/>
+				<symbol src="file:/symbols/memorial.svg" symbol-width="12dp" scale-icon-size="16,1.15"/>
 			</rule>
 			<rule e="any" k="historic" v="mine" zoom-min="14">
-				<symbol src="file:../active_res/symbols/mineshaft.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+				<symbol src="file:/symbols/mineshaft.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 			</rule>
 			<rule e="any" k="historic" v="archaeological_site" zoom-min="16" >
-				<symbol src="file:../active_res/symbols/archaeological_site.svg" symbol-width="12dp" scale-icon-size="17,1.15"/>
+				<symbol src="file:/symbols/archaeological_site.svg" symbol-width="12dp" scale-icon-size="17,1.15"/>
 			</rule>
 			<rule e="any" k="historic" v="boundary_stone" zoom-min="16" > <!-- only for OpenAndroMaps -->
-				<symbol src="file:../active_res/symbols/boundary_stone.svg" symbol-width="4dp" scale-icon-size="17,1.15"/>
+				<symbol src="file:/symbols/boundary_stone.svg" symbol-width="4dp" scale-icon-size="17,1.15"/>
 			</rule>
 			
 			<!-- show name only for castle or ruins-->
@@ -3000,43 +3000,43 @@
 
 		<!-- leisure -->
 		<rule e="any" k="leisure" v="playground" zoom-min="16">
-			<symbol src="file:../active_res/symbols/playground.svg"  symbol-width="12dp" scale-icon-size="17,1.3" />
+			<symbol src="file:/symbols/playground.svg"  symbol-width="12dp" scale-icon-size="17,1.3" />
 			<rule e="any" k="*" v="*" zoom-min="17">
 				<caption k="name" dy="-11dp" scale-dy-size="18,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="18,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.5dp" />
 			</rule>
 		</rule>
 		<rule e="node" k="leisure" v="picnic_table" zoom-min="16">
-			<symbol src="file:../active_res/symbols/picnic_site.svg" symbol-width="12dp" scale-icon-size="17,1.15" />
+			<symbol src="file:/symbols/picnic_site.svg" symbol-width="12dp" scale-icon-size="17,1.15" />
 		</rule>
 
 		<!-- man_made -->
 		<rule e="any" k="man_made" v="lighthouse" zoom-min="14">
-			<symbol src="file:../active_res/symbols/lighthouse.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+			<symbol src="file:/symbols/lighthouse.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 			<rule e="any" k="man_made" v="lighthouse" zoom-min="17">
 				<caption k="name" dy="20dp" scale-dy-size="18,1.3" font-style="normal" font-family="sans_serif" font-size="9dp" scale-font-size="18,1.15" fill="#333333" stroke="#ffffff" stroke-width="1.5dp" />
 			</rule>
 		</rule>
 		<rule e="node" k="man_made" v="adit|adit_disused" zoom-min="14">
-			<symbol src="file:../active_res/symbols/cave_entrance.svg" symbol-width="10dp" scale-icon-size="15,1.15" />
+			<symbol src="file:/symbols/cave_entrance.svg" symbol-width="10dp" scale-icon-size="15,1.15" />
 		</rule>
 		
 		<rule e="node" k="man_made" v="mineshaft" zoom-min="14">
-			<symbol src="file:../active_res/symbols/mineshaft.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+			<symbol src="file:/symbols/mineshaft.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 		</rule>
 		<rule e="node" k="man_made" v="cross" zoom-min="14">
-			<symbol src="file:../active_res/symbols/cross.svg" symbol-width="14dp" scale-icon-size="15,1.3" />
+			<symbol src="file:/symbols/cross.svg" symbol-width="14dp" scale-icon-size="15,1.3" />
 		</rule>
 		<rule e="node" k="man_made" v="cairn" zoom-min="15" cat="landscapefeat"> <!-- Nur bei OpenAndroMaps -->
-			<symbol src="file:../active_res/symbols/cairn.svg" symbol-width="16dp" scale-icon-size="16,1.15" />
+			<symbol src="file:/symbols/cairn.svg" symbol-width="16dp" scale-icon-size="16,1.15" />
 		</rule>
 
 		<!-- man_made=tower for LoMaps-->
 		<rule e="node" k="man_made" v="tower" zoom-min="14">
 			<rule e="node" k="tower:type" v="communication" >
-				<symbol src="file:../active_res/symbols/tower_communication.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+				<symbol src="file:/symbols/tower_communication.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 			</rule>
 			<rule e="node" k="tower:type" v="~|observation" >
-				<symbol src="file:../active_res/symbols/tower_observation.svg" symbol-width="10dp" scale-icon-size="15,1.15" />
+				<symbol src="file:/symbols/tower_observation.svg" symbol-width="10dp" scale-icon-size="15,1.15" />
 			</rule>
 			<caption k="name" dy="10dp" scale-dy-size="15,1.15" font-style="normal" font-family="sans_serif" font-size="8dp" scale-font-size="15,1.15" fill="#333333" stroke="#ffffff" stroke-width="1.0dp" />
 		</rule>
@@ -3044,32 +3044,32 @@
 		<!-- tower for OpenAndroMaps-->
 		<rule e="node" k="tower" v="*" zoom-min="14">
 			<rule e="node" k="tower" v="communication" >
-				<symbol src="file:../active_res/symbols/tower_communication.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+				<symbol src="file:/symbols/tower_communication.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 			</rule>
 			<rule e="node" k="tower" v="~|observation" >
-				<symbol src="file:../active_res/symbols/tower_observation.svg" symbol-width="10dp" scale-icon-size="15,1.15" />
+				<symbol src="file:/symbols/tower_observation.svg" symbol-width="10dp" scale-icon-size="15,1.15" />
 			</rule>
 			<caption k="name" dy="10dp" scale-dy-size="15,1.15" font-style="normal" font-family="sans_serif" font-size="8dp" scale-font-size="15,1.15" fill="#333333" stroke="#ffffff" stroke-width="1.0dp" />
 		</rule>
 
 		<!-- barrier -->
 		<rule e="node" k="barrier" v="gate" zoom-min="16">
-			<symbol src="file:../active_res/symbols/gate.svg"  symbol-width="9dp" scale-icon-size="17,1.15" />
+			<symbol src="file:/symbols/gate.svg"  symbol-width="9dp" scale-icon-size="17,1.15" />
 		</rule>
 		<rule e="node" k="barrier" v="lift_gate" zoom-min="17">
-			<symbol src="file:../active_res/symbols/lift_gate.svg"  symbol-width="10dp" scale-icon-size="18,1.15" />
+			<symbol src="file:/symbols/lift_gate.svg"  symbol-width="10dp" scale-icon-size="18,1.15" />
 		</rule>
 
 		<!-- water_well (Brunnen), only OpenAndroMaps -->
 		<rule e="any" k="man_made" v="water_well" zoom-min="16">
 			<rule e="any" k="drinking_water" v="yes">
-				<symbol src="file:../active_res/symbols/water_well_drinking.svg" symbol-width="12dp" scale-icon-size="17,1.15" />
+				<symbol src="file:/symbols/water_well_drinking.svg" symbol-width="12dp" scale-icon-size="17,1.15" />
 				<rule e="any" k="*" v="*" zoom-min="18">
 					<caption k="name" dy="11dp" scale-dy-size="19,1.15" font-style="normal" font-family="sans_serif" font-size="8dp" scale-font-size="19,1.15" fill="#333333" stroke="#ffffff" stroke-width="1.0dp" />
 				</rule>
 			</rule>
 			<rule e="any" k="drinking_water" v="no|~">
-				<symbol src="file:../active_res/symbols/water_well.svg" symbol-width="12dp" scale-icon-size="17,1.15" />
+				<symbol src="file:/symbols/water_well.svg" symbol-width="12dp" scale-icon-size="17,1.15" />
 				<rule e="any" k="*" v="*" zoom-min="18">
 					<caption k="name" dy="11dp" scale-dy-size="19,1.15" font-style="normal" font-family="sans_serif" font-size="8dp" scale-font-size="19,1.15" fill="#333333" stroke="#ffffff" stroke-width="1.0dp" />
 				</rule>
@@ -3078,7 +3078,7 @@
 
 		<!-- military -->
 		<rule e="node" k="military" v="bunker|bunker_disused" zoom-min="14" >
-			<symbol src="file:../active_res/symbols/bunker.svg" symbol-width="10dp" scale-icon-size="15,1.15" />
+			<symbol src="file:/symbols/bunker.svg" symbol-width="10dp" scale-icon-size="15,1.15" />
 		</rule>
 
 		<!-- mountain_pass -->
@@ -3087,16 +3087,16 @@
 				<circle r="1.0dp" scale-radius="true" fill="#CCCCCC" stroke="#666666" stroke-width="0.4dp" />
 			</rule>
 			<rule e="any" k="dir_saddle" v="ds_0" >
-				<symbol src="file:../active_res/symbols/mountain_pass_0.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+				<symbol src="file:/symbols/mountain_pass_0.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 			</rule>
 			<rule e="any" k="dir_saddle" v="ds_45" >
-				<symbol src="file:../active_res/symbols/mountain_pass_45.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+				<symbol src="file:/symbols/mountain_pass_45.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 			</rule>
 			<rule e="any" k="dir_saddle" v="ds_90" >
-				<symbol src="file:../active_res/symbols/mountain_pass_90.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+				<symbol src="file:/symbols/mountain_pass_90.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 			</rule>
 			<rule e="any" k="dir_saddle" v="ds_135" >
-				<symbol src="file:../active_res/symbols/mountain_pass_135.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+				<symbol src="file:/symbols/mountain_pass_135.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 			</rule>
 			<caption k="name" dy="-8dp" scale-dy-size="15,1.3" font-style="bold" font-size="8dp" scale-font-size="15,1.15" fill="#797979" stroke="#ffffff" stroke-width="0.8dp" />
 			<rule e="any" k="*" v="*" zoom-min="15">
@@ -3111,16 +3111,16 @@
 					<circle r="1.0dp" scale-radius="true" fill="#CCCCCC" stroke="#666666" stroke-width="0.4dp" />
 				</rule>
 				<rule e="any" k="dir_saddle" v="ds_0" >
-					<symbol src="file:../active_res/symbols/mountain_pass_0.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+					<symbol src="file:/symbols/mountain_pass_0.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 				</rule>
 				<rule e="any" k="dir_saddle" v="ds_45" >
-					<symbol src="file:../active_res/symbols/mountain_pass_45.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+					<symbol src="file:/symbols/mountain_pass_45.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 				</rule>
 				<rule e="any" k="dir_saddle" v="ds_90" >
-					<symbol src="file:../active_res/symbols/mountain_pass_90.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+					<symbol src="file:/symbols/mountain_pass_90.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 				</rule>
 				<rule e="any" k="dir_saddle" v="ds_135" >
-					<symbol src="file:../active_res/symbols/mountain_pass_135.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+					<symbol src="file:/symbols/mountain_pass_135.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 				</rule>
 				<caption k="name" dy="-8dp" scale-dy-size="15,1.3" font-style="bold" font-size="8dp" scale-font-size="15,1.15" fill="#797979" stroke="#ffffff" stroke-width="0.8dp" />
 				<rule e="any" k="*" v="*" zoom-min="15">
@@ -3128,25 +3128,25 @@
 				</rule>
 			</rule>
 			<rule e="node" k="natural" v="cave_entrance">
-				<symbol src="file:../active_res/symbols/cave_entrance.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+				<symbol src="file:/symbols/cave_entrance.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 				<rule e="node" k="natural" v="*" zoom-min="16" >
 					<caption k="name" dy="11dp" scale-dy-size="17,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="17,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.5dp" />
 				</rule>
 			</rule>
 			<rule e="node" k="natural" v="tree" zoom-min="16" cat="landscapefeat">
-				<symbol src="file:../active_res/symbols/tree.svg" symbol-width="10dp" scale-icon-size="17,1.3" />
+				<symbol src="file:/symbols/tree.svg" symbol-width="10dp" scale-icon-size="17,1.3" />
 				<rule e="node" k="natural" v="*" zoom-min="18" >
 					<caption k="name" dy="20dp" scale-dy-size="19,1.15" font-style="normal" font-family="sans_serif" font-size="8dp" scale-font-size="19,1.15" fill="#164526" stroke="#FFFFFF" stroke-width="0.5dp" />
 				</rule>
 			</rule>
 			<rule e="node" k="natural" v="rock|stone|nat_stone" cat="landscapefeat">
-				<symbol src="file:../active_res/symbols/rock.svg" symbol-width="14dp" scale-icon-size="15,1.3" />
+				<symbol src="file:/symbols/rock.svg" symbol-width="14dp" scale-icon-size="15,1.3" />
 				<rule e="node" k="natural" v="*" zoom-min="16" >
 					<caption k="name" dy="16dp" scale-dy-size="17,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="17,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.5dp" />
 				</rule>
 			</rule>
 			<rule e="node" k="natural" v="spring">
-				<symbol src="file:../active_res/symbols/spring.svg" symbol-width="14dp" scale-icon-size="15,1.15" />
+				<symbol src="file:/symbols/spring.svg" symbol-width="14dp" scale-icon-size="15,1.15" />
 			</rule>
 		</rule>
 	
@@ -3157,7 +3157,7 @@
 				<circle r="3.5dp" fill="#CC0000" stroke="#FFFFFF" stroke-width="0.5dp" />
 			</rule>
 			<rule e="node" k="railway" v="station" zoom-min="15">
-				<symbol src="file:../active_res/symbols/railway_station.svg" symbol-width="12dp" scale-icon-size="16,1.15" />
+				<symbol src="file:/symbols/railway_station.svg" symbol-width="12dp" scale-icon-size="16,1.15" />
 			</rule>
 			<rule e="node" k="railway" v="station" zoom-min="16">
 				<caption k="name" dy="15dp" scale-dy-size="17,1.15" font-style="bold" font-family="sans_serif" font-size="8dp" scale-font-size="17,1.15" fill="#333333" stroke="#ffffff" stroke-width="1.5dp" />
@@ -3189,15 +3189,15 @@
 		<rule e="any" k="tourism" v="*">
 			<rule e="node" k="tourism" v="*" zoom-min="14">
 				<rule e="node" k="tourism" v="camp_site">
-					<symbol src="file:../active_res/symbols/campSite.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+					<symbol src="file:/symbols/campSite.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 				</rule>
 				<rule e="node" k="tourism" v="alpine_hut">
-					<symbol src="file:../active_res/symbols/alpine_hut.svg" symbol-width="12dp" scale-icon-size="15,1.15" force-draw="1" />
+					<symbol src="file:/symbols/alpine_hut.svg" symbol-width="12dp" scale-icon-size="15,1.15" force-draw="1" />
 					<caption k="ele" dy="27dp" scale-dy-size="15,1.3" font-style="bold" font-size="6dp" scale-font-size="15,1.15" fill="#797979" stroke="#ffffff" stroke-width="2.0dp" />
 					<caption k="name" dy="18dp" scale-dy-size="15,1.3" font-style="bold" font-size="8dp" scale-font-size="15,1.15" fill="#797979" stroke="#ffffff" stroke-width="2.0dp" />
 				</rule>
 				<rule e="node" k="tourism" v="museum">
-					<symbol src="file:../active_res/symbols/museum.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+					<symbol src="file:/symbols/museum.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
 					<rule e="node" k="tourism" v="museum" zoom-min="16">
 						<caption k="name" dy="15dp" scale-dy-size="17,1.15" font-style="bold" font-size="8dp" scale-font-size="17,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.5dp" />
 					</rule>
@@ -3206,14 +3206,14 @@
 
 			<rule e="node" k="tourism" v="*" zoom-min="15">
 				<rule e="node" k="tourism" v="viewpoint">
-					<symbol src="file:../active_res/symbols/viewpoint.svg" symbol-width="14dp" scale-icon-size="16,1.15" />
+					<symbol src="file:/symbols/viewpoint.svg" symbol-width="14dp" scale-icon-size="16,1.15" />
 				</rule>
 				<rule e="node" k="tourism" v="camp_site|viewpoint">
 					<caption k="name" dy="12dp" scale-dy-size="15,1.15" font-style="bold" font-size="8dp" scale-font-size="15,1.15" fill="#797979" stroke="#ffffff" stroke-width="1.5dp" />
 				</rule>
 				<rule e="node" k="tourism" v="information" >
 					<rule e="node" k="information" v="office|information_office">
-						<symbol src="file:../active_res/symbols/information_office.svg" force-draw="1" symbol-width="12dp" scale-icon-size="16,1.15" />
+						<symbol src="file:/symbols/information_office.svg" force-draw="1" symbol-width="12dp" scale-icon-size="16,1.15" />
 						<caption k="name" font-style="bold" font-size="7dp" fill="#333333" stroke="#ffffff" stroke-width="1.5dp" />
 					</rule>
 				</rule>
@@ -3222,17 +3222,17 @@
 			<rule e="node" k="tourism" v="*" zoom-min="16">
 				<rule e="node" k="tourism" v="information" >
 					<rule e="node" k="information" v="guidepost">
-						<symbol src="file:../active_res/symbols/guidepost.svg" symbol-width="12dp" scale-icon-size="17,1.3" />
+						<symbol src="file:/symbols/guidepost.svg" symbol-width="12dp" scale-icon-size="17,1.3" />
 						<rule e="node" k="information" v="guidepost" zoom-min="17">
 							<caption k="name" dy="13dp" scale-dy-size="18,1.15" font-style="bold_italic" font-size="8dp" fill="#333333" scale-font-size="18,1.15" stroke="#ffffff" stroke-width="2.0dp" />
 						</rule>
 					</rule>
 				</rule>
 				<rule e="node" k="tourism" v="picnic_site">
-					<symbol src="file:../active_res/symbols/picnic_site.svg" symbol-width="12dp" scale-icon-size="17,1.15" />
+					<symbol src="file:/symbols/picnic_site.svg" symbol-width="12dp" scale-icon-size="17,1.15" />
 				</rule>
 				<rule e="node" k="information" v="map|board">
-					<symbol src="file:../active_res/symbols/information.svg" symbol-width="10dp" scale-icon-size="17,1.15"/>
+					<symbol src="file:/symbols/information.svg" symbol-width="10dp" scale-icon-size="17,1.15"/>
 				</rule>
 			</rule>
 		</rule>

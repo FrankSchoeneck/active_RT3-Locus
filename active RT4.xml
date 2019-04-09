@@ -1,0 +1,2805 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rendertheme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" map-background="#f4f3e9"
+    map-background-outside="#dddddd" version="4" xmlns="http://mapsforge.org/renderTheme"
+    xsi:schemaLocation="http://mapsforge.org/renderTheme ../../renderTheme-V4.xsd">
+
+	<!--
+		active RT4 Mapsforge Rendertheme for Apps with Mapsforge support and Openandromaps
+		by LocusUser#1 (Frank Schöneck)
+		Contact: LocusUser1@gmx.de
+		
+		inspiriert from Outdooractive.com map, style Summer
+	-->
+
+	<stylemenu id="active_RT4" defaultvalue="hiking_color" defaultlang="de">
+
+		<!-- overlays -->
+		<layer id="L_hikingtrails_color" enabled="false">
+			<name lang="de" value="Wanderwege" />
+			<name lang="en" value="Waymarked Trails" />
+			<cat id="hikingtrails_color" />
+			<cat id="hikingtrails_symbols" />
+		</layer>
+
+		<layer id="L_hikingtrails_transp" enabled="false">
+			<name lang="de" value="Wanderwege" />
+			<name lang="en" value="Waymarked Trails" />
+			<cat id="hikingtrails_transp" />
+			<cat id="hikingtrails_symbols" />
+		</layer>
+
+		<layer id="L_trail_markings" enabled="true">
+			<name lang="de" value="Wegemarkierungen" />
+			<name lang="en" value="Trail markings" />
+			<cat id="trail_markings" />
+		</layer>
+
+		<layer id="L_hikingnodes" enabled="false">
+			<name lang="de" value="Wanderwege Knotenpunkte" />
+			<name lang="en" value="Hiking Nodes" />
+			<cat id="hikingnodes" />
+		</layer>
+
+		<layer id="L_contourlines" enabled="false">
+			<name lang="de" value="Höhenlinien" />
+			<name lang="en" value="Contour lines" />
+			<cat id="contourlines" />
+		</layer>
+
+		<layer id="L_boundaries_areas" enabled="true">
+			<name lang="de" value="Grenzen + geschützte Gebiete" />
+			<name lang="en" value="Boundaries + protected areas" />
+			<cat id="boundaries_areas" />
+		</layer>
+
+		<layer id="L_landscapefeat" enabled="true">
+			<name lang="de" value="Landschaftsmerkmale" />
+			<name lang="en" value="landscape features" />
+			<cat id="landscapefeat" />
+		</layer>
+
+		<layer id="L_parking" enabled="true">
+			<name lang="de" value="Parkplätze" />
+			<name lang="en" value="Parking" />
+			<cat id="parking" />
+		</layer>
+
+		<layer id="L_publictransport" enabled="true">
+			<name lang="de" value="Öffentlicher Verkehr" />
+			<name lang="en" value="Public transport" />
+			<cat id="pub_transp" />
+		</layer>
+
+		<layer id="L_restaurant" enabled="false">
+			<name lang="de" value="Restaurants + Cafés" />
+			<name lang="en" value="Restaurants + Cafés" />
+			<cat id="restaurant" />
+		</layer>
+
+		<layer id="L_emergency_access_point" enabled="false">
+			<name lang="de" value="Rettungspunkte" />
+			<name lang="en" value="Emergency access points" />
+			<cat id="emergency_access_point" />
+		</layer>
+
+		<!-- mapstyles -->
+		<layer id="hiking_color" visible="true">
+			<name lang="de" value="Wanderwege Farbig" />
+			<name lang="en" value="Trails colored" />
+			<overlay id="L_hikingtrails_color" />
+			<overlay id="L_trail_markings" />
+			<overlay id="L_hikingnodes" />
+			<overlay id="L_contourlines" />
+			<overlay id="L_boundaries_areas" />
+			<overlay id="L_landscapefeat" />
+			<overlay id="L_publictransport" />
+			<overlay id="L_parking" />
+			<overlay id="L_restaurant" />
+			<overlay id="L_emergency_access_point" />
+		</layer>
+
+		<layer id="hiking_transp" visible="true">
+			<name lang="de" value="Wanderwege Transparent" />
+			<name lang="en" value="Trails transparent" />
+			<overlay id="L_hikingtrails_transp" />
+			<overlay id="L_trail_markings" />
+			<overlay id="L_hikingnodes" />
+			<overlay id="L_contourlines" />
+			<overlay id="L_boundaries_areas" />
+			<overlay id="L_landscapefeat" />
+			<overlay id="L_publictransport" />
+			<overlay id="L_parking" />
+			<overlay id="L_restaurant" />
+			<overlay id="L_emergency_access_point" />
+		</layer>
+	</stylemenu>
+
+
+	<!-- =====================================================
+								WAYS
+	====================================================== -->
+
+	<!-- Render sea -->
+	<rule e="way" k="*" v="*" >
+		<rule e="way" k="natural" v="sea">
+			<area fill="#9ec8f6" />
+		</rule>
+		<rule e="way" k="natural" v="nosea">
+			<area fill="#f4f3e9" />
+		</rule>
+	</rule>
+
+	<!-- coastline -->
+	<rule e="way" k="natural" v="coastline">
+		<rule e="way" k="*" v="*" closed="no" zoom-max="14">
+			<line stroke="#699FC4" stroke-width="1.0" />
+		</rule>
+		<rule e="way" k="*" v="*" zoom-min="15">
+			<line stroke="#699FC4" stroke-width="0.3" />
+		</rule>
+	</rule>
+
+	<!-- city and industrial areas -->
+	<rule e="way" k="highway|landuse" v="*" zoom-min="10">
+		<rule e="way" k="landuse" v="residential|construction">
+			<area fill="#e0e0e0" />
+		</rule>
+		<rule e="way" k="landuse" v="commercial">
+			<area fill="#c6c6c6" stroke="#c6c6c6" stroke-width="0.2" />
+		</rule>
+		<rule e="way" k="landuse" v="retail|garages|greenfield">
+			<area fill="#D5D5D5" stroke="#e4e4e4" stroke-width="0.2" />
+		</rule>
+		<rule e="way" k="landuse" v="farmyard">
+			<area fill="#f5f4ee" stroke="#e4e4e4" stroke-width="0.2" />
+		</rule>
+		<rule e="way" k="landuse" v="industrial|brownfield|railway">
+			<area fill="#f2f2f2" stroke="#e4e4e4" stroke-width="0.2" />
+		</rule>
+		<rule e="way" k="landuse" v="landfill|quarry">
+			<area fill="#C4C4C4" stroke="#556b2f" stroke-width="0.2" />
+		</rule>
+		<rule e="way" k="landuse" v="allotments">
+			<area fill="#dce4cd" stroke="#556b2f" stroke-width="0.2" />
+		</rule>
+	</rule>
+
+	<!-- render park before wood -->
+	<rule e="way" k="leisure|landuse" v="*" zoom-min="13">
+		<rule e="way" k="leisure|landuse" v="park|village_green" >
+			<area fill="#BAD5A6" stroke="#6fc18e" />
+		</rule>
+		<rule e="way" k="leisure|landuse" v="recreation_ground" >
+			<area fill="#F6F4E1" stroke="#6fc18e" />
+		</rule>
+
+		<!-- park captions -->
+		<rule e="way" k="leisure|landuse" v="park|village_green|recreation_ground" zoom-min="17">
+			<caption k="name" font-style="bold" font-size="7" fill="#34972D" stroke="#FFFFFF" />
+		</rule>
+	</rule>
+
+	<!-- wood -->
+	<rule e="way" k="natural|landuse" v="forest|wood" zoom-min="10">
+		<rule e="way" k="*" v="*" zoom-min="10">
+			<rule e="way" k="*" v="*" zoom-max="12">
+				<area fill="#d2d9a2" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="13">
+				<area fill="#D4DAA4" />
+				<rule e="any" k="wood|leaf_type" v="coniferous|needleleaved">
+					<area src="file:/patterns/wood_coniferous_transparent.svg" symbol-width="40" />
+				</rule>
+				<rule e="any" k="wood|leaf_type" v="deciduous|broadleaved">
+					<area src="file:/patterns/wood_deciduous_transparent.svg" symbol-width="40" />
+				</rule>
+				<rule e="any" k="wood|leaf_type" v="~|mixed|leafless">
+					<area src="file:/patterns/wood_mixed_transparent.svg" symbol-width="40" />
+				</rule>
+			</rule>
+		</rule>
+
+		<!-- wood captions -->
+		<rule e="way" k="*" v="*" zoom-min="15">
+			<caption k="name" font-style="bold" font-size="10" fill="#164526" stroke="#FFFFFF" stroke-width="2.0" />
+		</rule>
+	</rule>
+	
+	<!-- cutline (Schneise im Wald) -->
+	<rule e="way" k="man_made" v="cutline" zoom-min="13">
+		<rule e="way" k="*" v="*" closed="no">
+			<line stroke="#90faf8e5" stroke-width="1.4" stroke-linecap="butt" />
+		</rule>
+		<rule e="way" k="*" v="*" closed="yes">
+			<area fill="#90faf8e5" />
+		</rule>
+	</rule>
+
+	<!-- farmland -->
+	<rule e="way" k="landuse" v="farm|farmland">
+		<area fill="#EDE6C4" />
+	</rule>
+	
+	<!-- landuse -->
+	<rule e="way" k="landuse" v="*">
+		<!-- military -->
+		<rule e="way" k="landuse" v="military" zoom-min="10" closed="yes">
+			<area fill="#D2BCB9" />
+		</rule>
+		<rule e="way" k="*" v="*" zoom-min="12" >
+			<rule e="way" k="landuse" v="grass" closed="yes">
+				<area fill="#faf8e5" />
+			</rule>
+			<rule e="way" k="landuse" v="vineyard" closed="yes">
+				<area fill="#c9d9a8" />
+				<rule e="way" k="*" v="*" zoom-min="14">
+					<area src="file:/patterns/vineyard.svg" symbol-width="16" />
+				</rule>
+			</rule>
+		</rule>
+		<rule e="way" k="*" v="*" zoom-min="14" >
+			<rule e="way" k="landuse" v="meadow" closed="yes">
+				<area fill="#faf8e5" />
+				<area src="file:/patterns/medow.svg" />
+			</rule>
+			<rule e="way" k="landuse" v="cemetery" closed="yes">
+				<area fill="#E6E6C5" stroke="#e4e4e4" stroke-width="0.2" />
+				<area src="file:/patterns/cemetery.svg" />
+			</rule>
+		</rule>
+	</rule>
+
+	<!-- natural -->
+	<rule e="way" k="natural" v="*">
+
+		<rule e="way" k="natural" v="*" zoom-min="8">
+			<rule e="way" k="natural" v="glacier" closed="yes">
+				<area fill="#50D3E9FF" />
+				<area src="file:/patterns/glacier.svg" />
+			</rule>
+			<rule e="way" k="natural" v="grassland" closed="yes">
+				<area fill="#faf8e5" />
+				<area src="file:/patterns/medow.svg" />
+			</rule>
+			<rule e="way" k="natural" v="fell" closed="yes">
+				<area fill="#dae2cb" />
+			</rule>
+			<rule e="way" k="natural" v="rock" closed="yes">
+				<area fill="#dddddd" />
+				<area src="file:/patterns/rock.svg" symbol-width="32" />
+			</rule>
+			<rule e="way" k="natural" v="scree|shingle" closed="yes">
+				<area fill="#dddddd" />
+				<area src="file:/patterns/scree.svg" symbol-width="32" />
+			</rule>
+		</rule>
+		
+		<rule e="way" k="natural" v="*" zoom-min="12">
+			<rule e="way" k="natural" v="crater" closed="no">
+				<line stroke="#8c4600" stroke-width="0.7" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="natural" v="crater" closed="yes">
+				<area fill="#308c4600" />
+			</rule>
+		</rule>
+
+		<rule e="way" k="natural" v="*" zoom-min="13">
+			<rule e="way" k="natural" v="marsh|wetland" closed="yes">
+				<area src="file:/patterns/marsh.svg" symbol-width="16" />
+			</rule>
+			<rule e="way" k="natural" v="beach" closed="yes">
+				<area fill="#f4e3be" />
+			</rule>
+			<rule e="way" k="natural" v="heath" closed="yes">
+				<area fill="#faf8e5" />
+				<area src="file:/patterns/heath.svg" />
+			</rule>
+			<rule e="way" k="natural" v="scrub" closed="yes">
+				<area fill="#faf8e5" />
+				<area src="file:/patterns/scrub.svg" symbol-width="16" />
+			</rule>
+		</rule>
+
+		<rule e="way" k="natural" v="*" zoom-min="14">
+			<rule e="way" k="natural" v="cliff" closed="no" cat="landscapefeat" >
+				<line stroke="#70606060" stroke-width="1.0" stroke-dasharray="1.8,2" stroke-linecap="butt"/>
+				<pathText k="name" font-style="bold" font-family="sans_serif" font-size="19" fill="#333333" stroke="#FFFFFF" stroke-width="1.5" />
+				<rule e="way" k="natural" v="*" zoom-min="15">
+					<lineSymbol dy="0.5" src="file:/symbols/cliff.svg" repeat="true" repeat-gap="1" repeat-start="1" rotate="true" align-center="true" symbol-scaling="size" symbol-width="6" symbol-height="10" />
+				</rule>		
+			</rule>
+			<rule e="way" k="natural" v="cliff" closed="yes" cat="landscapefeat">
+				<line stroke="#70606060" stroke-width="1.0" stroke-dasharray="1.8,2" stroke-linecap="butt" />
+				<caption k="name" font-style="bold_italic" font-family="sans_serif" font-size="19" fill="#333333" stroke="#FFFFFF" stroke-width="1.5" />
+			</rule>
+			<rule e="way" k="natural" v="crevasse" closed="no">
+				<line stroke="#73dcff" stroke-width="0.7" stroke-linecap="butt" />
+				<line stroke="#ff7396" stroke-width="0.5" stroke-dasharray="2,2" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="natural" v="crevasse" closed="yes">
+				<line stroke="#73dcff" stroke-width="0.3" />
+				<area fill="#50ff7396" />
+			</rule>
+		</rule>
+
+		<!-- Natural captions -->
+		<rule e="any" k="natural" v="bay" zoom-min="13">
+			<caption k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#595959" stroke="#FFFFFF" stroke-width="1.5" />
+		</rule>
+		<rule e="way" k="natural" v="beach" zoom-min="15">
+			<caption k="name" font-style="normal" font-family="sans_serif" font-size="8" fill="#a98663" />
+		</rule>
+		<rule e="way" k="natural" v="heath|marsh|wetland" zoom-min="16">
+			<caption k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#797979" />
+		</rule>
+	</rule>
+
+	<!-- amenity -->
+	<rule e="any" k="amenity" v="*" zoom-min="13">
+		<!-- amenity > 13 -->
+		<rule e="way" k="amenity" v="school|college|university">
+			<area fill="#E8D7D5" stroke="#e4e4e4" stroke-width="0.15" />
+		</rule>
+
+		<!-- amenity > 14 -->
+		<rule e="any" k="amenity" v="*" zoom-min="14" >
+			<rule e="way" k="amenity" v="hospital">
+				<area fill="#F2D9D7" stroke="#DBBDBA" stroke-width="0.2" />
+				<symbol src="file:/symbols/hospital.svg" symbol-width="14"/>
+				<rule e="way" k="amenity" v="hospital" zoom-min="15" >
+					<caption k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
+				</rule>
+			</rule>
+
+			<!-- church or cathedral -->
+			<rule e="way" k="amenity" v="place_of_worship" zoom-min="14">
+				<rule e="way" k="religion" v="christian">
+					<rule e="way" k="building" v="cathedral|church|yes">
+						<symbol id="place_of_worship" src="file:/symbols/church.svg" symbol-width="16" />
+					</rule>
+					<rule e="way" k="building" v="chapel">
+						<symbol id="place_of_worship" src="file:/symbols/chapel.svg" symbol-width="16" />
+					</rule>
+				</rule>
+				<rule e="way" k="religion" v="jewish">
+					<symbol id="place_of_worship" src="file:/symbols/synagogue.svg" symbol-width="14" />
+				</rule>
+				<rule e="way" k="religion" v="muslim|moslem">
+					<symbol id="place_of_worship" src="file:/symbols/muslim.svg" symbol-width="14" />
+				</rule>
+				<rule e="way" k="religion" v="buddhist">
+					<symbol id="place_of_worship" src="file:/symbols/buddhist.svg" symbol-width="14" />
+				</rule>
+				<!-- captions place_of_worship -->
+				<rule e="way" k="amenity" v="place_of_worship" zoom-min="17">
+					<caption symbol-id="id_place_of_worship" k="name" font-style="normal" font-family="sans_serif" font-size="12" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
+				</rule>
+			</rule>
+
+			<!-- amenity > 15 -->
+			<rule e="any" k="amenity" v="*" zoom-min="15">
+				<rule e="way" k="amenity" v="bus_station" cat="pub_transp">
+					<symbol id="id_bus_station" src="file:/symbols/bus_station.svg" symbol-width="16" />
+					<rule e="any" k="amenity" v="*" zoom-min="16" cat="pub_transp">
+						<caption symbol-id="id_bus_station" k="name" font-style="normal" font-family="sans_serif" font-size="8" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
+					</rule>
+				</rule>
+				<rule e="any" k="amenity" v="parking">
+					<area fill="#E2E2E2" stroke="#707070" stroke-width="0.2" />
+					<rule e="any" k="access" v="private|acc_no|permit|permissive" cat="parking">
+						<area src="file:/patterns/access-private.svg" symbol-width="8" />
+						<symbol src="file:/symbols/parking_private.svg" symbol-width="12" />
+					</rule>
+					<rule e="any" k="access" v="destination" cat="parking">
+						<area src="file:/patterns/access-destination.svg" symbol-width="8" />
+						<symbol src="file:/symbols/parking_private.svg" symbol-width="12" />
+					</rule>
+					<rule e="any" k="access" v="~|yes|public" cat="parking">
+						<symbol src="file:/symbols/parking.svg" symbol-width="12" />
+					</rule>
+				</rule>
+				<rule e="way" k="amenity" v="shelter">
+					<symbol id="id_shelter" src="file:/symbols/shelter.svg" symbol-width="20" display="always" symbol-scaling="size" />
+					<rule e="any" k="amenity" v="*" zoom-min="16">
+						<caption symbol-id="id_shelter" k="name" position="below" font-style="bold" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.5" />
+					</rule>
+				</rule>
+			</rule>
+			
+			<!-- amenity > 16 -->
+			<rule e="way" k="amenity" v="*" zoom-min="16">
+				<rule e="way" k="amenity" v="grave_yard">
+					<area fill="#AACAAE" stroke="#e4e4e4" stroke-width="0.2" />
+					<area src="file:/patterns/cemetery.svg" />
+				</rule>
+				<rule e="way" k="amenity" v="hunting_stand">
+					<symbol src="file:/symbols/hunting_stand.svg" symbol-width="14" />
+				</rule>
+			</rule>
+
+			<!-- amenity > 17 -->
+			<rule e="way" k="amenity" v="*" zoom-min="17">
+				<rule e="way" k="amenity" v="toilets">
+					<symbol src="file:/symbols/toilets.svg" symbol-width="18" />
+				</rule>
+			</rule>
+		</rule>
+	</rule>
+	
+	<!-- sport -->
+	<rule e="way" k="sport" v="*" zoom-min="14">
+		<area fill="#C9D998" />
+	</rule>
+
+	<!-- leisure -->
+	<rule e="way" k="leisure" v="*" zoom-min="12">
+		<rule e="way" k="leisure" v="stadium|sports_centre">
+			<area fill="#D2DEA9" stroke="#6fc18e" stroke-width="0.1" />
+		</rule>
+		<rule e="way" k="leisure" v="pitch">
+			<area fill="#C9D998" stroke="#6fc18e" stroke-width="0.1" />
+		</rule>
+		<rule e="way" k="leisure" v="water_park">
+			<area fill="#DAE4BD" />
+		</rule>
+		<rule e="way" k="leisure" v="golf_course|common|green" >
+			<area fill="#BAD5A6" />
+		</rule>
+		<rule e="way" k="leisure" v="garden" >
+			<area fill="#c5d4ab" />
+		</rule>
+		<rule e="way" k="leisure" v="playground|playing_fields|dog_park" zoom-min="14">
+			<area fill="#DBE4CD" stroke="#6fc18e" stroke-width="0.1" />
+		</rule>
+		<rule e="way" k="leisure" v="track|byway|ls_track" zoom-min="14">
+			<area fill="#d8e1ba" stroke="#6fc18e" stroke-width="0.1" />
+		</rule>
+		<rule e="way" k="leisure" v="swimming_pool" zoom-min="13">
+			<area fill="#B3DDFF" stroke="#6060ff" stroke-width="0.15" />
+		</rule>
+
+		<rule e="way" k="leisure" v="stadium|sports_centre|water_park|golf_course|playing_fields" zoom-min="16">
+			<caption k="name" font-style="normal" font-family="sans_serif" font-size="12" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
+		</rule>
+	</rule>
+
+	<!-- historic -->
+	<rule e="way" k="historic" v="*" zoom-min="12">
+		<rule e="way" k="historic" v="archaeological_site">
+			<area fill="#f5f4e1" stroke="#818181" stroke-width="0.1" />
+		</rule>
+	</rule>
+
+	<!-- tourism areas -->
+	<rule e="way" k="tourism" v="*">
+		<!-- tourism zoom > 13 -->
+		<rule e="way" k="tourism" v="*" zoom-min="13">
+			<rule e="way" k="tourism" v="camp_site|zoo">
+				<area fill="#E5E5C5" stroke="#6fc18e" stroke-width="0.15" />
+			</rule>
+		</rule>
+
+		<!-- tourism zoom > 14 -->
+		<rule e="way" k="tourism" v="*" zoom-min="14">
+			<rule e="way" k="tourism" v="picnic_site" >
+				<area fill="#c7f1a3" />
+			</rule>
+			<rule e="way" k="tourism" v="attraction" >
+				<area fill="#e0e0e0" stroke="#707070" stroke-width="0.15"/>
+			</rule>
+		</rule>
+
+		<!-- tourism captions -->
+		<rule e="way" k="tourism" v="zoo" zoom-min="15">
+			<caption k="name" font-style="normal" font-family="sans_serif" font-size="12" fill="#333333" stroke="#FFFFFF" stroke-width="1.5" />
+		</rule>
+		<rule e="way" k="tourism" v="attraction" zoom-min="17">
+			<caption k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
+		</rule>
+	</rule>
+	<!-- end of tourism areas -->
+
+	<!-- Contour lines -->
+	<rule e="way" k="contour_ext" v="*" zoom-min="8" cat="contourlines">
+		<!-- contour lines level 8 & 9 -->
+		<rule e="way" k="contour_ext" v="*" zoom-max="9">
+			<rule e="way" k="contour_ext" v="elevation_major">
+				<line stroke="#A9641B" stroke-width="0.22" />
+			</rule>
+		</rule>
+		<!-- contour lines level 10, 11 &12 -->
+		<rule e="way" k="contour_ext" v="*" zoom-min="10" zoom-max="12">
+			<rule e="way" k="contour_ext" v="elevation_medium">
+				<line stroke="#A9641B" stroke-width="0.15" />
+			</rule>
+			<rule e="way" k="contour_ext" v="elevation_major">
+				<line stroke="#A9641B" stroke-width="0.3" />
+			</rule>
+		</rule>
+		<!-- contour lines level 13 -->
+		<rule e="way" k="contour_ext" v="*" zoom-min="13" zoom-max="13">
+			<rule e="way" k="contour_ext" v="elevation_medium">   
+				<line stroke="#A9641B" stroke-width="0.12" />
+			</rule>
+			<rule e="way" k="contour_ext" v="elevation_major">   
+				<line stroke="#A9641B" stroke-width="0.24" />
+			</rule>
+		</rule>
+		<!-- contour lines level 14-->
+		<rule e="way" k="contour_ext" v="*" zoom-min="14" zoom-max="14">
+			<rule e="way" k="contour_ext" v="elevation_minor">   
+				<line stroke="#A9641B" stroke-width="0.07" />
+			</rule>
+			<rule e="way" k="contour_ext" v="elevation_medium|elevation_major">   
+				<line stroke="#A9641B" stroke-width="0.14" />
+				<pathText k="ele" font-style="bold" font-size="10" fill="#A9641B" stroke="#a0ffffff" stroke-width="1.5" /> <!-- ab V5 um rotate="false" ergänzen ?-->
+			</rule>   
+		</rule>
+		<!-- contour lines level 15-->
+		<rule e="way" k="contour_ext" v="*" zoom-min="15" zoom-max="15">
+			<rule e="way" k="contour_ext" v="elevation_minor" zoom-max="15">   
+				<line stroke="#A9641B" stroke-width="0.075" />
+			</rule>
+			<rule e="way" k="contour_ext" v="elevation_medium|elevation_major">   
+				<line stroke="#A9641B" stroke-width="0.15" />
+				<pathText k="ele" font-style="bold" font-size="10" fill="#A9641B" stroke="#a0ffffff" stroke-width="1.5" /> <!-- ab V5 um rotate="false" ergänzen ?-->
+			</rule>
+		</rule>
+		<!-- contour lines level 16 & 17 -->
+		<rule e="way" k="contour_ext" v="*" zoom-min="16" zoom-max="17">
+			<rule e="way" k="contour_ext" v="elevation_minor">   
+				<line stroke="#A9641B" stroke-width="0.0525" />
+			</rule>
+			<rule e="way" k="contour_ext" v="elevation_medium|elevation_major">   
+				<line stroke="#A9641B" stroke-width="0.105" />
+				<pathText k="ele" font-style="bold" font-size="11" fill="#A9641B" stroke="#a0ffffff" stroke-width="2" /> <!-- ab V5 um rotate="false" ergänzen ?-->
+			</rule>
+		</rule>   
+		<!-- contour lines level 18 and above -->
+		<rule e="way" k="contour_ext" v="*" zoom-min="18">
+			<rule e="way" k="contour_ext" v="elevation_minor">   
+				<line stroke="#A9641B" stroke-width="0.0375" />
+			</rule>
+			<rule e="way" k="contour_ext" v="elevation_medium|elevation_major">   
+				<line stroke="#A9641B" stroke-width="0.075" />
+				<pathText k="ele" font-style="bold" font-size="12" fill="#A9641B" stroke="#a0ffffff" stroke-width="2" /> <!-- ab V5 um rotate="false" ergänzen ?-->
+			</rule>
+		</rule>
+	</rule>
+	
+	<!-- waterways and water -->
+	<rule e="way" k="waterway" v="*">
+		<!-- drain = Abwassergraben, Abfluss -->
+		<!-- ditch = Wassergraben -->
+		<rule e="way" k="waterway" v="drain|ditch">
+			<rule e="way" k="intermittent|seasonal" v="~">
+				<line stroke="#1A8DFF" stroke-width="0.4"  />
+				<line stroke="#A4CEFE" stroke-width="0.2"  />
+			</rule>
+			<rule e="way" k="intermittent|seasonal" v="wwi_yes|seas_yes" zoom-min="15"> <!-- Beschreibt, nicht ständig Wasser führend, only OpenAndroMaps -->
+				<line stroke="#1A8DFF" stroke-width="0.4" stroke-dasharray="3,6" />
+				<line stroke="#A4CEFE" stroke-width="0.2" />
+			</rule>
+		</rule>
+		<!-- Kanal -->
+		<rule e="way" k="waterway" v="canal">
+			<rule e="way" k="intermittent|seasonal" v="~">
+				<line stroke="#1A8DFF" stroke-width="1.3"  />
+				<line stroke="#A4CEFE" stroke-width="1.0"  />
+			</rule>
+			<rule e="way" k="intermittent|seasonal" v="wwi_yes|seas_yes" zoom-min="15"> <!-- Beschreibt, nicht ständig Wasser führend, only OpenAndroMaps -->
+				<line stroke="#1A8DFF" stroke-width="1.3" stroke-dasharray="3,6" />
+				<line stroke="#A4CEFE" stroke-width="1.0" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="12">
+				<pathText k="name" font-style="normal" font-size="10" fill="#035FBC" stroke="#ffffff" stroke-width="0.5" />
+			</rule>
+		</rule>
+		<!-- Bach -->
+		<rule e="way" k="waterway" v="stream" zoom-min="13">
+			<rule e="way" k="*" v="*" zoom-min="13" zoom-max="14">
+				<rule e="way" k="intermittent|seasonal" v="~">
+					<line stroke="#4A9CFD" stroke-width="0.4"  />
+				</rule>
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="15">
+				<rule e="way" k="intermittent|seasonal" v="~">
+					<line stroke="#4A9CFD" stroke-width="0.2"  />
+				</rule>
+				<rule e="way" k="intermittent|seasonal" v="wwi_yes|seas_yes"> <!-- Beschreibt, nicht ständig Wasser führend, only OpenAndroMaps -->
+					<line stroke="#4A9CFD" stroke-width="0.2" stroke-dasharray="3,6"  />
+				</rule>
+				<pathText k="name" font-style="normal" font-size="9" dy="-0.5" fill="#035FBC" stroke="#ffffff" stroke-width="0.5" />
+			</rule>
+		</rule>
+		<!-- Fluss -->
+		<rule e="way" k="waterway" v="river">
+			<rule e="way" k="intermittent|seasonal" v="~">
+				<line stroke="#1A8DFF" stroke-width="2.0"  />
+				<line stroke="#A4CEFE" stroke-width="1.6"  />
+			</rule>
+			<rule e="way" k="intermittent|seasonal" v="wwi_yes|seas_yes"> <!-- Beschreibt, nicht ständig Wasser führend, only OpenAndroMaps -->
+				<line stroke="#1A8DFF" stroke-width="2.0" stroke-dasharray="3,6"  />
+				<line stroke="#A4CEFE" stroke-width="1.6"  />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="12">
+				<pathText k="name" font-style="normal" font-size="12" fill="#035FBC" stroke="#ffffff" stroke-width="0.5" />
+			</rule>
+		</rule>
+		<!-- Dock -->
+		<rule e="way" k="waterway" v="dock">
+			<area fill="#A4CEFE" />
+		</rule>
+		<!-- Schleuse -->
+		<rule e="way" k="lock" v="yes" zoom-min="14">
+			<rule e="way" k="waterway" v="river">
+				<line stroke="#000044" stroke-width="2.0" stroke-linecap="square" />
+				<line stroke="#A4CEFE" stroke-width="1.6" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="waterway" v="canal">
+				<line stroke="#000044" stroke-width="1.6" stroke-linecap="square" />
+				<line stroke="#A4CEFE" stroke-width="1.2" stroke-linecap="butt" />
+			</rule>
+		</rule>
+		<!-- Wehr -->
+		<rule e="way" k="waterway" v="weir">
+			<line stroke="#000044" stroke-width="0.3" />
+		</rule>
+		<!-- Staudamm oder Staumauer -->
+		<rule e="way" k="waterway" v="dam" zoom-min="10">
+			<area fill="#ECEBD9" />
+			<line stroke="#444444" stroke-width="0.5" />
+			<rule e="way" k="*" v="*" zoom-min="16">
+				<caption k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.5" />
+			</rule>
+		</rule>
+	</rule>	
+	<!-- Wasserfall -->
+	<rule e="any" k="waterway|natural" v="waterfall" zoom-min="14">
+		<symbol src="file:/symbols/waterfall.svg" symbol-width="16" />
+	</rule>
+	<!-- bodys of water-->
+	<rule e="way" k="landuse|natural" v="reservoir|basin|water">
+		<line stroke="#1A8DFF" stroke-width="0.5" />
+		<area fill="#A4CEFE"/>
+		<rule e="way" k="natural" v="water" zoom-min="14">
+			<caption k="name" font-style="normal" font-size="10" fill="#035FBC" stroke="#ffffff" stroke-width="0.5"/>
+		</rule>
+	</rule>
+	<!-- Breiter Fluss (muß hinter body of water gerendert werden) -->
+	<rule e="way" k="waterway" v="riverbank">
+		<area fill="#A4CEFE" />
+	</rule>	
+	<!-- end of water -->
+	
+	<!-- runways casings and areas -->
+	<rule e="way" k="aeroway" v="*" zoom-min="10">
+		<rule e="way" k="aeroway" v="aerodrome" closed="yes" zoom-min="13" >
+			<area fill="#D1D1D1" />
+		</rule>
+		<rule e="way" k="aeroway" v="apron" zoom-min="13" >
+			<area fill="#B5B5B5" />
+		</rule>
+		<rule e="way" k="aeroway" v="terminal" zoom-min="13" >
+			<area fill="#999898" stroke="#858585" stroke-width="0.1" />
+		</rule>
+		<rule e="way" k="aeroway" v="*" closed="yes">
+			<rule e="way" k="aeroway" v="taxiway" zoom-min="12" >
+				<area stroke="#A8A6A6" fill="#FEFEFE" stroke-width="2.0" />
+			</rule>
+			<rule e="way" k="aeroway" v="runway" zoom-min="10" >
+				<area stroke="#A8A6A6" fill="#FEFEFE" stroke-width="2.0" />
+			</rule>
+		</rule>
+		<rule e="way" k="aeroway" v="*" closed="no">
+			<rule e="way" k="aeroway" v="taxiway" zoom-min="12" >
+				<line stroke="#A8A6A6" stroke-width="2.4" stroke-linecap="butt" />
+				<line stroke="#FEFEFE" stroke-width="2.0" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="aeroway" v="runway" zoom-min="10" >
+				<line stroke="#A8A6A6" stroke-width="6.0" stroke-linecap="square" />
+				<line stroke="#FEFEFE" stroke-width="5.2" stroke-linecap="square" />
+			</rule>
+		</rule>
+
+		<rule e="way" k="*" v="*" zoom-min="16">
+			<caption k="name" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.5" />
+		</rule>
+	</rule>
+
+	<!-- military -->
+	<rule e="way" k="military" v="*" zoom-min="13">
+		<rule e="way" k="military" v="airfield|naval_base" >
+			<area fill="#D2BCB9" />
+		</rule>
+		<rule e="way" k="military" v="bunker|bunker_disused" >
+			<symbol src="file:/symbols/bunker.svg" symbol-width="11" />
+		</rule>
+		<rule e="way" k="*" v="*" zoom-min="16">
+			<caption k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#E57A7A" stroke="#ffffff" stroke-width="2.0" />
+		</rule>
+	</rule>
+
+	<!-- platform (Bahnsteige)-->
+	<rule e="way" k="railway|public_transport" v="platform" zoom-min="15" >
+		<rule e="way" k="*" v="*" closed="yes">
+			<area fill="#999999" />
+		</rule>
+		<rule e="way" k="*" v="*" closed="no">
+			<line stroke="#999999" stroke-width="0.8" />
+		</rule>
+	</rule>
+
+	<!-- turning circle casing -->
+	<rule e="node" k="highway" v="turning_circle|mini_roundabout" zoom-min="15" >
+		<circle radius="0.9" scale-radius="true" fill="#53534e" />
+	</rule>
+
+	<!-- building -->
+	<rule e="way" k="building" v="*" zoom-min="14" zoom-max="15">
+		<area fill="#b2b2b2" />
+	</rule>
+	<rule e="way" k="building" v="*" zoom-min="16">
+		<area fill="#999999" stroke="#818181" stroke-width="0.1" />
+	</rule>
+	<rule e="way" k="building" v="construction" zoom-min="14" zoom-max="15"> <!-- only OpenAndroMaps -->
+		<area fill="#cccccc" />
+	</rule>
+	<rule e="way" k="building" v="construction" zoom-min="16"> <!-- only OpenAndroMaps -->
+		<area fill="#cccccc" stroke="#818181" stroke-width="0.1" />
+		<line stroke="#C0F8F8F8" stroke-width="0.2" stroke-dasharray="2,2" />
+	</rule>
+	<rule e="way" k="building" v="*" zoom-min="18">
+		<caption k="name" position="below" dy="8" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.0" />
+	</rule>
+	
+	<!-- house numbers -->
+	<rule e="any" k="*" v="*" zoom-min="18">
+		<caption k="addr:housenumber" font-style="normal" font-size="8" fill="#424251" />
+	</rule>
+
+	<!-- non-physical boundaries -->
+	<rule e="way" k="admin_level" v="*" cat="boundaries_areas">
+		<!-- admin_level 4 = Bundesländergrenze, 5 = Regierungsbezirke, 6 = Kreisgrenzen -->
+		<rule e="way" k="admin_level" v="4|5|6" zoom-max="14">
+				<line stroke="#995499" stroke-width="1.5" stroke-dasharray="15,5,4,5" stroke-linecap="butt" />
+				<line stroke="#995499" stroke-width="3" stroke-dasharray="1,13,1,14" stroke-linecap="butt" />
+		</rule>
+		<rule e="way" k="admin_level" v="4|5|6" zoom-min="15" zoom-max="20">
+			<line stroke="#995499" stroke-width="0.6" stroke-dasharray="15,5,4,5" stroke-linecap="butt" />
+			<line stroke="#995499" stroke-width="2" stroke-dasharray="1,13,1,14" stroke-linecap="butt" />
+			<pathText k="name" dy="-2" font-style="normal" font-family="sans_serif" font-size="12" fill="#995499" stroke="#ffffff" stroke-width="2.0" />
+		</rule>
+		<!-- admin_level 2 = Staatsgrenze -->
+		<rule e="way" k="admin_level" v="2" zoom-max="14">
+			<line stroke="#60995499" stroke-width="12" stroke-linecap="butt" />
+			<line stroke="#995499" stroke-width="1.5" stroke-dasharray="15,5,4,5" stroke-linecap="butt" />
+			<line stroke="#995499" stroke-width="3" stroke-dasharray="1,13,1,14" stroke-linecap="butt" />
+		</rule>
+		<rule e="way" k="admin_level" v="2" zoom-min="15" zoom-max="20">
+			<line stroke="#60995499" stroke-width="6" stroke-linecap="butt" />
+			<line stroke="#995499" stroke-width="0.75" stroke-dasharray="15,5,2,5" stroke-linecap="butt" />
+			<line stroke="#995499" stroke-width="2" stroke-dasharray="0.5,14,0.5,12" stroke-linecap="butt" />
+			<pathText k="name" dy="-6" font-style="normal" font-family="sans_serif" font-size="12" fill="#995499" stroke="#ffffff" stroke-width="2.0" />
+		</rule>
+	</rule>
+
+	<!-- NATIONAL PARK -->
+	<rule e="way" k="boundary" v="national_park|protected_area" cat="boundaries_areas">
+		<rule e="way" k="protect_class" v="1|~" zoom-max="13">
+			<area fill="#2034972d" stroke="#818181" stroke-width="0.01"/>
+		</rule>
+		<rule e="way" k="protect_class" v="1|~" zoom-min="14">
+			<line stroke="#6bb96c" stroke-width="0.8" stroke-linecap="butt" />
+		</rule>
+
+		<!-- captions -->
+		<rule e="way" k="boundary" v="national_park" zoom-min="12" zoom-max="14">
+			<caption k="name" font-style="bold" font-family="sans_serif" font-size="10" fill="#164526" stroke="#ffffff" stroke-width="2.0" />
+		</rule>
+		<rule e="way" k="protect_class" v="1|~" zoom-min="15">
+			<pathText k="name" font-style="bold" font-family="sans_serif" font-size="10" fill="#164526" stroke="#ffffff" stroke-width="2.0" />
+		</rule>
+	</rule>
+
+	<!-- ferry routes -->
+	<rule e="way" k="route" v="ferry" zoom-max="13">
+		<line stroke="#1E71C6" stroke-width="0.6" stroke-dasharray="10,5" stroke-linecap="butt" />
+	</rule>
+	<rule e="way" k="route" v="ferry" zoom-min="14">
+		<line stroke="#1E71C6" stroke-width="0.3" stroke-dasharray="10,5" stroke-linecap="butt" />
+		<pathText k="name" font-style="bold" font-size="10" dy="-2" fill="#1E71C6" stroke="#ffffff" stroke-width="1.0" />
+	</rule>
+
+	<!-- Deich|Damm, only OpenAndroMaps -->
+	<rule e="way" k="man_made|embankment" v="dyke|embankment|emb_yes" zoom-min="14" cat="landscapefeat">
+		<line stroke="#6D6D6D" dy="2.2" stroke-width="1.5" stroke-dasharray="0.5,5" stroke-linecap="butt" />
+		<line stroke="#6D6D6D" dy="1.5" stroke-width="0.2" stroke-linecap="butt" />
+		<line stroke="#6D6D6D" dy="-1.5" stroke-width="0.2" stroke-linecap="butt" />
+		<line stroke="#6D6D6D" dy="-2.2" stroke-width="1.5" stroke-dasharray="0.5,5" stroke-linecap="butt" />
+	</rule>
+	
+	<!-- Highways -->
+	<rule e="way" k="tunnel" v="~|no|false">
+	
+		<!-- highway -->
+		<rule e="way" k="highway" v="*">
+
+			<!-- OUTLINE FOR HIGHWAY AREA -->
+			<rule e="way" k="area" v="yes|true">
+				<rule e="way" k="highway" v="cycleway|footway|footpath|path|road" zoom-min="12" >
+					<area stroke="#4F4F4F" stroke-width="0.1" />
+				</rule>
+				<rule e="way" k="highway" v="pedestrian|residential|living_street|service|unclassified" zoom-min="13">
+					<area stroke="#4F4F4F" stroke-width="0.1" />
+				</rule>
+			</rule>
+
+			<!-- CORE for highway areas -->
+			<rule e="way" k="area" v="yes|true">
+				<rule e="way" k="highway" v="cycleway|footway|footpath|path" zoom-min="12">
+					<area fill="#EDEDED"/>
+				</rule>
+				<rule e="way" k="highway" v="pedestrian" zoom-min="13">
+					<area fill="#F6C4F6"/>
+				</rule>
+				<rule e="way" k="highway" v="residential|living_street|unclassified" zoom-min="13">
+					<area fill="#ffffff" />
+				</rule>
+				<rule e="way" k="highway" v="road|service" zoom-min="13">
+					<area fill="#ffffff" />
+				</rule>
+			</rule>
+			
+			<!-- no area -->
+			<rule e="way" k="area" v="~|no|false">
+
+				<!-- ====================== BRIDGE ====================== -->
+				<rule e="way" k="bridge" v="yes|movable|true">
+
+					<rule e="way" k="highway" v="steps|path" zoom-min="14">
+						<line stroke="#000000" stroke-width="0.7" stroke-linecap="butt" />
+						<line stroke="#FFFFFF" stroke-width="0.5" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" k="highway" v="bridleway|cycleway|footway" zoom-min="14">
+						<line stroke="#000000" stroke-width="0.7" stroke-linecap="butt" />
+						<line stroke="#FFFFFF" stroke-width="0.5" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" k="highway" v="track|byway" zoom-min="13">
+						<line stroke="#000000" stroke-width="0.9" stroke-linecap="butt" />
+						<line stroke="#FFFFFF" stroke-width="0.7" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" k="highway" v="construction" zoom-min="13">
+						<line stroke="#000000" stroke-width="1.2" stroke-linecap="butt" />
+						<line stroke="#FFFFFF" stroke-width="0.8" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" k="highway" v="service" zoom-min="13">
+						<line stroke="#000000" stroke-width="1.2" stroke-linecap="butt" />
+						<line stroke="#FFFFFF" stroke-width="0.8" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" k="highway" v="residential|living_street|unclassified" zoom-min="13">
+						<line stroke="#000000" stroke-width="1.2" stroke-linecap="butt" />
+						<line stroke="#FFFFFF" stroke-width="0.8" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" k="highway" v="pedestrian" zoom-min="13">
+						<line stroke="#F6C4F6" stroke-width="1.5" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" k="highway" v="tertiary_link|secondary_link|primary_link|trunk_link" zoom-min="13">
+						<line stroke="#000000" stroke-width="1.6" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" k="highway" v="motorway_link">
+						<line stroke="#999999" stroke-width="1.6" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" k="highway" v="tertiary|raceway" zoom-min="13">
+						<line stroke="#000000" stroke-width="1.6" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" k="highway" v="secondary" zoom-min="12">
+						<line stroke="#000000" stroke-width="1.6" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" k="highway" v="primary">
+						<line stroke="#000000" stroke-width="1.6" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" k="highway" v="trunk">
+						<line stroke="#000000" stroke-width="1.6" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" k="highway" v="motorway">
+						<line stroke="#999999" stroke-width="2.0" stroke-linecap="butt" />
+					</rule>
+				</rule>
+				<!-- end of bridge -->
+
+				<!-- ==================== HIGHWAY OUTLINE ========================== -->
+				<rule e="way" k="bridge" v="~|no|false">
+					<!-- Tracks -->
+					<rule e="way" k="highway" v="track|byway">
+						<!-- Schotterweg -->
+						<rule e="way" k="tracktype" v="grade2" zoom-min="13">
+							<line stroke="#53534e" stroke-width="0.8" stroke-dasharray="8,4" stroke-linecap="butt"/>
+						</rule>
+						<!-- Teerweg -->
+						<rule e="way" k="tracktype" v="grade1" zoom-min="13">
+							<line stroke="#53534e" stroke-width="0.8" stroke-linecap="butt"/>
+						</rule>
+					</rule>
+					<!-- Fussgängerzone -->
+					<rule e="way" k="highway" v="pedestrian">
+						<line stroke="#53534e" stroke-width="1.3" />
+					</rule>
+					<!-- Radweg -->
+					<rule e="way" k="highway" v="cycleway" zoom-min="14">
+						<line stroke="#53534e" stroke-width="0.7" />
+					</rule>
+					<!-- Strasse im Bau -->
+					<rule e="way" k="highway" v="construction" zoom-min="13">
+						<line stroke="#53534e" stroke-width="1.0" stroke-linecap="round" />
+					</rule>
+					<!-- Zufahrtsstrase -->
+					<rule e="way" k="highway" v="service|road" zoom-min="13">
+						<line stroke="#53534e" stroke-width="1.0" stroke-linecap="round" />
+					</rule>
+					<!-- Wohnstrasse -->
+					<rule e="way" k="highway" v="residential|living_street|unclassified" zoom-min="13">
+						<line stroke="#53534e" stroke-width="1.0" stroke-linecap="round" />
+					</rule>
+					<!-- Nebenstraßen -->
+					<rule e="way" k="highway" v="tertiary_link" zoom-min="12">
+						<line stroke="#999999" stroke-width="1.4" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" k="highway" v="tertiary|raceway" zoom-min="13">
+						<line stroke="#53534e" stroke-width="1.4" stroke-linecap="butt" />
+					</rule>
+
+					<!-- Landstraßen -->
+					<rule e="way" k="highway" v="secondary_link"  zoom-min="11">
+						<line stroke="#999999" stroke-width="1.4" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" k="highway" v="secondary" zoom-min="11">
+						<line stroke="#999999" stroke-width="1.4" stroke-linecap="butt" />
+					</rule>
+					<!-- Bundesstrassen -->
+					<rule e="way" k="highway" v="primary_link">
+						<line stroke="#999999" stroke-width="1.4" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" k="highway" v="primary">
+						<line stroke="#999999" stroke-width="1.4" stroke-linecap="butt" />
+					</rule>
+					<!-- Schnellstrassen -->
+					<rule e="way" k="highway" v="trunk_link">
+						<line stroke="#999999" stroke-width="1.4" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" k="highway" v="trunk">
+						<line stroke="#999999" stroke-width="1.4" stroke-linecap="butt" />
+					</rule>
+					<!-- Autobahnen -->
+					<rule e="way" k="highway" v="motorway_link">
+						<line stroke="#999999" stroke-width="1.4" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" k="highway" v="motorway">
+						<line stroke="#999999" stroke-width="2.0" stroke-linecap="butt" />
+					</rule>
+				</rule>
+				<!-- end of highway outlines -->
+			</rule>
+
+			<!-- ===================== HIGHWAYS CORE ========================== -->
+			<rule e="way" k="area" v="~|no|false">
+				<rule e="way" k="highway" v="steps" zoom-min="14">
+					<line stroke="#747474" stroke-width="0.4" stroke-dasharray="0.7,0.5" stroke-linecap="butt" />
+					<rule e="way" k="*" v="*" zoom-min="15">
+						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="9" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
+					</rule>
+				</rule>
+				<rule e="way" k="highway" v="path|footway" zoom-min="14">
+					<rule e="way" k="trail_visibility" v="~|excellent|good|intermediate">
+						<rule e="way" k="sac_scale" v="~">
+							<line stroke="#747474" stroke-width="0.4" stroke-dasharray="8,6" stroke-linecap="butt" />
+						</rule>
+						<rule e="way" k="sac_scale" v="T1|hiking">
+							<line stroke="#747474" stroke-width="0.4" stroke-dasharray="8,6" stroke-linecap="butt" />
+						</rule>
+						<rule e="way" k="sac_scale" v="T2|mountain_hiking">
+							<line stroke="#3052FF" stroke-width="0.4" stroke-dasharray="8,6" stroke-linecap="butt" />
+						</rule>
+						<rule e="way" k="sac_scale" v="T3|demanding_mountain_hiking">
+							<line stroke="#FF0000" stroke-width="0.4" stroke-dasharray="8,6" stroke-linecap="butt" />
+						</rule>
+						<rule e="way" k="sac_scale" v="T4|alpine_hiking">
+							<line stroke="#000000" stroke-width="0.4" stroke-dasharray="8,6" stroke-linecap="butt" />
+						</rule>
+						<rule e="way" k="sac_scale" v="T5|demanding_alpine_hiking|T6|difficult_alpine_hiking">
+							<line stroke="#000000" stroke-width="0.4" stroke-dasharray="4,1,0.5,1,0.5,1" stroke-linecap="butt" />
+						</rule>
+						<rule e="way" k="foot" v="ft_no"> <!-- Rote Markierung falls Weg nicht für Füßgänger -->
+							<line stroke="#FF4000" stroke-width="0.4" stroke-dasharray="3,5" stroke-linecap="butt" />
+						</rule>
+						<rule e="way" k="*" v="*">
+							<pathText k="name" font-family="sans_serif" font-style="normal" font-size="9" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
+						</rule>
+					</rule>
+					<!-- schwer sichtbare Wege -->
+					<rule e="way" k="trail_visibility" v="bad|horrible|no" zoom-min="15">
+						<line stroke="#44747474" stroke-width="0.3" />
+						<line stroke="#747474" stroke-width="0.3" stroke-dasharray="2,6" stroke-linecap="butt" />           
+					</rule>
+				</rule>
+				<!-- Tracks -->
+				<rule e="way" k="highway" v="track|byway">
+					<!-- Wiesenweg|Unbefestigt -->
+					<rule e="way" k="tracktype" v="grade4|grade5" zoom-min="14">
+						<line stroke="#747474" stroke-width="0.4" stroke-dasharray="8,6" stroke-linecap="butt" />
+					</rule>
+					<!-- Feldweg -->
+					<rule e="way" k="tracktype" v="grade3" zoom-min="14">
+						<line stroke="#747474" stroke-width="0.4" />
+					</rule>
+					<!-- Teerweg|Schotterweg -->
+					<rule e="way" k="tracktype" v="grade1|grade2" zoom-min="13">
+						<line stroke="#ffffff" stroke-width="0.6" />
+					</rule>
+					<rule e="way" k="tracktype" v="~|no|false" zoom-min="13">
+						<line stroke="#747474" stroke-width="0.4" />
+					</rule>
+					<rule e="way" k="foot" v="ft_no"> <!-- Rote Markierung falls Weg nicht für Füßgänger -->
+						<line stroke="#FF4000" stroke-width="0.4" stroke-dasharray="3,5" stroke-linecap="butt" />
+					</rule>
+					<rule e="way" k="*" v="*">
+						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="9" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
+					</rule>
+				</rule>
+				<!-- Klettersteige (via_ferrata) -->
+				<rule e="way" k="via_ferrata_flag|via_ferrata_scale" v="set|yes|*" zoom-min="14">
+					<symbol id="id_via_ferrata" src="file:/symbols/via_ferrata.svg" symbol-width="16"/>
+					<line stroke="#FF0000" stroke-width="0.4" stroke-linecap="butt"/>
+					<line stroke="#000000" stroke-width="0.4" stroke-dasharray="4,1,0.5,1,0.5,1" stroke-linecap="butt"/>
+					<rule e="any" k="*" v="*" zoom-min="15">
+						<caption symbol-id="id_via_ferrata" k="name" position="above" font-family="sans_serif" font-style="normal" font-size="9.0" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
+						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="9.0" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
+					</rule>
+				</rule>
+				<!-- Reitweg -->
+				<rule e="way" k="highway" v="bridleway" zoom-min="15">
+					<line stroke="#747474" stroke-width="0.4" stroke-dasharray="2,6" stroke-linecap="butt" />
+					<rule e="way" k="*" v="*" zoom-min="15">
+						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="9" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
+					</rule>
+				</rule>
+				<!-- Radweg -->
+				<rule e="way" k="highway" v="cycleway" zoom-min="14">
+					<line stroke="#ffffff" stroke-width="0.4" />
+					<rule e="way" k="*" v="*" zoom-min="15">
+						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="8" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
+					</rule>
+				</rule>
+				<!-- Fussgängerzone -->
+				<rule e="way" k="highway" v="pedestrian" zoom-min="13">
+					<line stroke="#fecbfe" stroke-width="1.1" />
+					<rule e="way" k="*" v="*" zoom-min="15">
+						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
+					</rule>
+				</rule>
+				<!-- Strasse im Bau -->
+				<rule e="way" k="highway" v="construction" zoom-min="13">
+					<line stroke="#d0d0d0" stroke-width="0.8" />
+					<rule e="way" k="*" v="*" zoom-min="15">
+						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
+					</rule>
+				</rule>
+				<!-- Zufahrtsstrasse -->
+				<rule e="way" k="highway" v="service|road" zoom-min="13">
+					<line stroke="#ffffff" stroke-width="0.8" />
+					<rule e="way" k="*" v="*" zoom-min="17" >
+						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="9" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
+					</rule>
+				</rule>
+				<!-- Wohnstrasse -->
+				<rule e="way" k="highway" v="residential|living_street|unclassified" zoom-min="13">
+					<line stroke="#ffffff" stroke-width="0.8" />
+					<rule e="way" k="*" v="*" zoom-min="16" >
+						<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FFFFFF" stroke-width="3.0" />
+					</rule>
+				</rule>
+				<!-- Private Wege -->
+				<rule e="way" k="access" v="private|acc_no|destination" zoom-min="14">
+					<line stroke="#CCCCCC" stroke-width="0.8" />
+				</rule>
+				
+				<!-- Abzweige -->
+				<rule e="way" k="highway" v="tertiary_link" zoom-min="13">
+					<line stroke="#FFFFFF" stroke-width="1.0" />
+				</rule>
+				<rule e="way" k="highway" v="secondary_link" zoom-min="12">
+					<line stroke="#FEF8B9" stroke-width="1.0" />
+				</rule>
+				<rule e="way" k="highway" v="primary_link">
+					<line stroke="#fff486" stroke-width="1.0" />
+				</rule>
+				<rule e="way" k="highway" v="trunk_link">
+					<line stroke="#FEF8B9" stroke-width="1.0" />
+				</rule>
+				<rule e="way" k="highway" v="motorway_link">
+					<line stroke="#FFD466" stroke-width="1.0"/>
+				</rule>
+
+				<!-- Hauptstrasse -->
+				<rule e="way" k="highway" v="tertiary|raceway" zoom-min="13">
+					<line stroke="#FEF8B9" stroke-width="1.0" />
+					<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FEF8B9" stroke-width="3.0" />
+				</rule>
+				<!-- Landstraßen -->
+				<rule e="way" k="highway" v="secondary" zoom-min="11">
+					<line stroke="#FEF8B9" stroke-width="1.0" />
+					<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#FEF8B9" stroke-width="3.0" />
+					<rule e="way" k="network|hknetwork" v="~"> <!-- Nötig damit bei OAM keine Radwege/Wanderwege Namen angezeigt werden -->
+						<caption k="ref" font-family="sans_serif" font-style="normal" font-size="10" fill="#000000" stroke="#FEF8B9" stroke-width="3.0" />
+					</rule>
+				</rule>
+				<!-- Bundesstrassen -->
+				<rule e="way" k="highway" v="primary">
+					<line stroke="#fff486" stroke-width="1.0" />
+					<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#fff486" stroke-width="3.0" />
+					<rule e="way" k="network|hknetwork" v="~"> <!-- Nötig damit bei OAM keine Radwege/Wanderwege Namen angezeigt werden -->
+						<caption k="ref" font-family="sans_serif" font-style="normal" font-size="10" fill="#000000" stroke="#fff486" stroke-width="3.0" />
+					</rule>
+				</rule>
+				<!-- Schnellstrassen -->
+				<rule e="way" k="highway" v="trunk">
+					<line stroke="#fff486" stroke-width="1.0" />
+					<pathText k="name" font-family="sans_serif" font-style="normal" font-size="10" fill="#393935" stroke="#fff486" stroke-width="3.0" />
+					<rule e="way" k="network|hknetwork" v="~"> <!-- Nötig damit bei OAM keine Radwege/Wanderwege Namen angezeigt werden -->
+						<caption k="ref" font-family="sans_serif" font-style="normal" font-size="10" fill="#000000" stroke="#fff486" stroke-width="3.0" />
+					</rule>
+				</rule>
+				<!-- Autobahnen -->
+				<rule e="way" k="highway" v="motorway">
+					<line stroke="#FFD466" stroke-width="1.6" stroke-linecap="butt" />
+					<rule e="any" k="*" v="*" zoom-max="13">
+						<caption k="ref" font-style="bold" font-size="10" fill="#FFFFFF" stroke="#265cff" stroke-width="3" />
+					</rule>
+					<rule e="any" k="*" v="*" zoom-min="14">
+						<pathText k="ref" font-style="bold" font-size="10" fill="#FFFFFF" stroke="#265cff" stroke-width="3" />
+					</rule>
+					<!--<pathText k="ref" font-family="sans_serif" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff" stroke-width="2.0" />-->
+				</rule>
+		
+				<!-- Maut pflichtige werden mit roten Punkten versehen -->
+				<rule e="way" k="toll" v="yes|tl_yes" zoom-min="14">
+					<line stroke="#88DD0000" stroke-width="0.8" stroke-dasharray="1,12" stroke-linecap="round" />
+				</rule>
+				<!-- Wege wo der Zugang eine Lizenz oder eine Genehmigung verlangt -->
+				<rule e="way" k="access" v="permit" zoom-min="14">
+					<line stroke="#88DD0000" stroke-width="0.8" stroke-dasharray="1,12" stroke-linecap="round" />
+				</rule>
+
+			</rule>
+			<!-- END off no area core-->
+		</rule>
+		<!-- END off highways-->
+	</rule>
+	<!-- END ways that are not tunnels -->
+
+	<rule e="way" k="tunnel" v="true|yes">
+		<!-- highway tunnel casings -->
+		<rule e="way" k="highway" v="*" zoom-min="8" >
+			<rule e="way" k="highway" v="motorway_link">
+				<line stroke="#50FFD466" stroke-width="1.4" stroke-linecap="butt" />
+				<line stroke="#707070" dy="0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
+				<line stroke="#707070" dy="-0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="highway" v="motorway">
+				<line stroke="#50FFD466" stroke-width="2.0" stroke-linecap="butt" />
+				<line stroke="#707070" dy="1.0" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
+				<line stroke="#707070" dy="-1.0" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
+			</rule>
+		</rule>
+		<rule e="way" k="highway" v="*" zoom-min="14" >
+			<rule e="way" k="highway" v="steps|footway|path|bridleway">
+				<line stroke="#50FFFFFF" stroke-width="0.4" stroke-linecap="butt" />
+				<line stroke="#707070" dy="0.2" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
+				<line stroke="#707070" dy="-0.2" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="highway" v="track|byway">
+				<line stroke="#50FFFFFF" stroke-width="0.6" stroke-linecap="butt" />
+				<line stroke="#707070" dy="0.3" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
+				<line stroke="#707070" dy="-0.3" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="highway" v="cycleway">
+				<line stroke="#50FFFFFF" stroke-width="0.7" stroke-linecap="butt" />
+				<line stroke="#707070" dy="0.35" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
+				<line stroke="#707070" dy="-0.35" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="highway" v="pedestrian">
+				<line stroke="#50FFFFFF" stroke-width="1.3" stroke-linecap="butt" />
+				<line stroke="#707070" dy="0.65" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
+				<line stroke="#707070" dy="-0.65" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="highway" v="service|road|residential|living_street|unclassified">
+				<line stroke="#50FFFFFF" stroke-width="1.0" stroke-linecap="butt" />
+				<line stroke="#707070" dy="0.5" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
+				<line stroke="#707070" dy="-0.5" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="highway" v="tertiary|raceway|tertiary_link|primary|secondary|trunk|primary_link|secondary_link|trunk_link">
+				<line stroke="#50FFFFFF" stroke-width="1.4" stroke-linecap="butt" />
+				<line stroke="#707070" dy="0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
+				<line stroke="#707070" dy="-0.7" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
+			</rule>
+		</rule>
+	</rule>
+	<!-- END tunnels -->
+
+	<!-- railway (no tunnel) -->
+	<rule e="way" k="railway" v="*">
+		<rule e="way" k="tunnel" v="~|false|no">
+			<rule e="way" k="railway" v="station" zoom-min="13">
+				<area fill="#9b9b79" stroke="#707070" stroke-width="0.2" />
+			</rule>
+
+			<!-- railway bridge casings -->
+			<rule e="way" k="bridge" v="yes|movable|true">
+				<rule e="way" k="railway" v="tram">
+					<line stroke="#000000" stroke-width="0.4" stroke-linecap="butt" />
+				</rule>
+				<rule e="way" k="railway" v="subway">
+					<line stroke="#000000" stroke-width="0.7" stroke-linecap="butt" />
+				</rule>
+				<rule e="way" k="railway" v="funicular" zoom-min="14">
+					<line stroke="#000000" stroke-width="2.0" stroke-linecap="butt" />
+					<line stroke="#F7F7F7" stroke-width="1.8" stroke-linecap="butt" />
+				</rule>
+				<rule e="way" k="railway" v="preserved" zoom-min="13">
+					<line stroke="#000000" stroke-width="2.0" stroke-linecap="butt" />
+					<line stroke="#F7F7F7" stroke-width="1.8" stroke-linecap="butt" />
+				</rule>
+				<rule e="way" k="railway" v="rail|light_rail|narrow_gauge">
+					<line stroke="#000000" stroke-width="2.2" stroke-linecap="butt" />
+					<line stroke="#F7F7F7" stroke-width="2.0" stroke-linecap="butt" />
+				</rule>
+			</rule>
+
+			<!-- railway casings and cores -->
+			<!-- Eisenbahn, auch S-Bahn -->
+			<rule e="way" k="railway" v="rail">
+				<line stroke="#6D6D6D" stroke-width="1.1" stroke-linecap="butt" />
+				<line stroke="#FFFFFF" stroke-width="0.6" stroke-linecap="butt" />
+				<line stroke="#6D6D6D" stroke-width="2.0" stroke-dasharray="0.4,6" stroke-linecap="butt" />
+			</rule>
+			<!-- Straßenbahnen -->
+			<rule e="way" k="railway" v="tram" zoom-min="13" cat="pub_transp">
+				<line stroke="#90FC0101" stroke-width="0.3" stroke-linecap="butt" />
+			</rule>
+			<!-- U-Bahn -->
+			<rule e="way" k="railway" v="subway" zoom-min="13" cat="pub_transp">
+				<line stroke="#90FC0101" stroke-width="0.5" stroke-dasharray="4,4" stroke-linecap="butt" />
+			</rule>
+			<!-- Stadtbahn -->
+			<rule e="way" k="railway" v="light_rail" zoom-min="12" >
+				<line stroke="#6D6D6D" stroke-width="1.1" stroke-linecap="butt" />
+				<line stroke="#FEFEFE" stroke-width="0.6" stroke-linecap="butt" />
+				<line stroke="#6D6D6D" stroke-width="2.0" stroke-dasharray="0.3,5" stroke-linecap="butt" />
+			</rule>
+			<!-- Stadtbahn -->
+			<rule e="way" k="railway" v="light_rail" zoom-min="12" cat="pub_transp">
+				<line stroke="#FE4EFE" stroke-width="0.3" stroke-linecap="butt" />
+			</rule>
+			<!-- Schmalspurbahnen -->
+			<rule e="way" k="railway" v="narrow_gauge" zoom-min="13">
+				<line stroke="#6D6D6D" stroke-width="0.9" stroke-linecap="butt" />
+				<line stroke="#FEFEFE" stroke-width="0.5" stroke-linecap="butt" />
+				<line stroke="#6D6D6D" stroke-width="1.8" stroke-dasharray="0.4,6" stroke-linecap="butt" />
+			</rule>
+			<!-- Standseilbahn -->
+			<rule e="way" k="railway" v="funicular" zoom-min="14">
+				<line stroke="#6D6D6D" stroke-width="0.9" stroke-linecap="butt" />
+				<line stroke="#FEFEFE" stroke-width="0.5" stroke-linecap="butt" />
+				<line stroke="#6D6D6D" stroke-width="1.8" stroke-dasharray="0.4,6" stroke-linecap="butt" />
+			</rule>
+			<!-- Museumsbahn -->
+			<rule e="way" k="railway" v="preserved" zoom-min="13">
+				<line stroke="#6D6D6D" stroke-width="0.9" stroke-linecap="butt" />
+				<line stroke="#FEFEFE" stroke-width="0.5" stroke-linecap="butt" />
+				<line stroke="#6D6D6D" stroke-width="1.8" stroke-dasharray="0.4,6" stroke-linecap="butt" />
+			</rule>
+		</rule>
+		<!-- End off railway -->
+
+
+		<!-- railway tunnel -->
+		<rule e="way" k="tunnel" v="true|yes">
+			<rule e="way" k="railway" v="subway" zoom-min="13" cat="pub_transp">
+				<line stroke="#800000FF" stroke-width="0.5" stroke-dasharray="4,4" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="railway" v="tram|light_rail" cat="pub_transp">
+				<line stroke="#90FC0101" stroke-width="0.3" stroke-dasharray="4,4" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="railway" v="narrow_gauge">
+				<line stroke="#90FC0101" stroke-width="0.3" stroke-dasharray="4,4" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="railway" v="funicular|preserved">
+				<line stroke="#3c3c3c" stroke-width="1.3" stroke-dasharray="6,5" stroke-linecap="butt" />
+				<line stroke="#ffffff" stroke-width="1.0" stroke-dasharray="6,5" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="railway" v="rail">
+				<line stroke="#3c3c3c" stroke-width="1.4" stroke-dasharray="6,5" stroke-linecap="butt" />
+				<line stroke="#ffffff" stroke-width="1.0" stroke-dasharray="6,5" stroke-linecap="butt" />
+			</rule>
+		</rule>
+	</rule>
+
+	<!-- man_made features -->
+	<rule e="way" k="man_made" v="*" zoom-min="14">
+		<rule e="way" k="man_made" v="pier" zoom-min="15">
+			<rule e="way" k="*" v="*" closed="no">
+				<line stroke="#676867" stroke-width="0.6" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="*" v="*" closed="yes">
+				<area fill="#676867" stroke="#d0d0d0" stroke-width="0.2" />
+			</rule>
+		</rule>
+		<rule e="way" k="man_made" v="groyne" zoom-min="15"> <!-- Nur bei OpenAndroMaps -->
+			<line stroke="#aaaaaa" stroke-width="0.6" stroke-linecap="butt" />
+		</rule>
+		<rule e="way" k="man_made" v="watermill" zoom-min="14">
+			<symbol id="id_watermill" src="file:/symbols/watermill.svg" symbol-width="18" />
+			<rule e="way" k="*" v="*" zoom-min="17">
+				<caption symbol-id="id_watermill" k="name" font-style="normal" font-family="sans_serif" font-size="9" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
+			</rule>
+		</rule>
+		<rule e="way" k="man_made" v="windmill" zoom-min="14">
+			<symbol id="id_windmill" src="file:/symbols/windmill.svg" symbol-width="12" />
+			<rule e="way" k="*" v="*" zoom-min="17">
+				<caption symbol-id="id_windmill" k="name" font-style="normal" font-family="sans_serif" font-size="9" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
+			</rule>
+		</rule>
+	</rule>
+
+	<!-- wall, barries -->
+	<rule e="way" k="barrier" v="*" zoom-min="14">
+		<rule e="way" k="barrier" v="fence|wall|city_wall">
+			<line stroke="#545454" stroke-width="0.05" stroke-linecap="butt" />
+		</rule>
+		<rule e="way" k="barrier" v="retaining_wall">
+			<line stroke="#888888" stroke-width="0.05" stroke-linecap="butt" />
+		</rule>
+	</rule>
+
+	<!-- aerial ways -->
+	<rule e="way" k="aerialway" v="*" zoom-min="12">
+		<rule e="way" k="*" v="*" zoom-min="12" zoom-max="14">
+			<rule e="way" k="aerialway" v="cable_car">
+				<line stroke="#202020" stroke-width="0.5" stroke-linecap="butt" />
+				<line stroke="#202020" stroke-width="2.0" stroke-dasharray="15,20" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="aerialway" v="chair_lift">
+				<line stroke="#202020" stroke-width="0.6" stroke-linecap="butt" />
+				<lineSymbol src="file:/symbols/drag_lift.svg" symbol-width="12" repeat="true" repeat-gap="6" />
+			</rule>
+			<rule e="way" k="aerialway" v="goods">
+				<line stroke="#74746B" stroke-width="0.6" stroke-linecap="butt" />
+			</rule>
+			<rule e="way" k="aerialway" v="gondola">
+				<line stroke="#202020" stroke-width="0.6" stroke-linecap="butt" />
+				<line stroke="#202020" stroke-width="2.5" stroke-dasharray="1,10" />
+			</rule>
+			<rule e="way" k="aerialway" v="drag_lift|zip_line">
+				<line stroke="#202020" stroke-width="0.4" stroke-linecap="butt" />
+			</rule>
+		</rule>
+		<rule e="way" k="*" v="*" zoom-min="15" >
+			<rule e="way" k="aerialway" v="cable_car">
+				<line stroke="#202020" stroke-width="0.5" stroke-linecap="butt" />
+				<lineSymbol src="file:/symbols/cable_car.svg" symbol-width="18" repeat="true" repeat-gap="40" />
+			</rule>
+			<rule e="way" k="aerialway" v="chair_lift">
+				<line stroke="#202020" stroke-width="0.4" stroke-linecap="butt" />
+				<lineSymbol src="file:/symbols/chair_lift.svg" symbol-width="20" repeat="true" repeat-gap="40" />
+			</rule>
+			<rule e="way" k="aerialway" v="goods">
+				<line stroke="#74746B" stroke-width="0.4" stroke-linecap="butt" />
+				<lineSymbol src="file:/symbols/goods.svg" symbol-width="18" repeat="true" repeat-gap="40" />
+			</rule>
+			<rule e="way" k="aerialway" v="gondola">
+				<line stroke="#74746B" stroke-width="0.5" stroke-linecap="butt" />
+				<lineSymbol src="file:/symbols/gondola.svg" symbol-width="16" repeat="true" repeat-gap="50" />
+			</rule>
+			<rule e="way" k="aerialway" v="drag_lift">
+				<line stroke="#202020" stroke-width="0.4" stroke-linecap="butt" />
+				<lineSymbol src="file:/symbols/drag_lift.svg" symbol-width="16" repeat="true" repeat-gap="10" />
+			</rule>
+			<rule e="way" k="aerialway" v="zip_line">
+				<line stroke="#202020" stroke-width="0.4" stroke-linecap="butt" />
+			</rule>
+		</rule>
+		<rule e="way" k="aerialway" v="*" zoom-min="13">
+			<pathText k="name" dy="-6" font-style="bold" font-size="10" fill="#606060" stroke="#E5FFFFFF" stroke-width="3.0" display="always" />
+		</rule>
+	</rule>
+
+	<!-- place -->
+	<rule e="way" k="place" v="locality" zoom-min="17">
+		<caption k="name" font-style="normal" font-family="sans_serif" font-size="12" fill="#000000" stroke="#ffffff" stroke-width="2.5" />
+	</rule>
+	
+	<!-- Power areas and lines -->
+	<rule e="way" k="power" v="*" zoom-min="13">
+		<!-- power generator -->
+		<rule e="way" k="power" v="generator|station|sub_station|substation" >
+			<area fill="#C1C1C1" />
+		</rule>
+		<!--power line -->
+		<rule e="way" k="power" v="line" zoom-min="14" cat="landscapefeat">
+			<line stroke="#727272" stroke-width="0.2" stroke-linecap="butt" />
+			<line stroke="#727272" stroke-width="1.3" stroke-dasharray="0,20,0.6,50" stroke-linecap="butt" />
+			<line stroke="#727272" stroke-width="0.6" stroke-dasharray="0.3,40,0.3,30" />
+		</rule>
+		<rule e="way" k="power" v="minor_line" zoom-min="15" cat="landscapefeat"> <!-- OpenAndroMaps only-->
+			<line stroke="#727272" stroke-width="0.2" stroke-linecap="butt" />
+			<line stroke="#727272" stroke-width="0.6" stroke-dasharray="0.3,40,0.3,30" />
+		</rule>
+	</rule>
+
+	<!-- HIKING TRAILS
+		iwn = International ( > 500 km, Europäischer Fernwanderweg)
+		nwn = nationaler Fernweg (200..500 km, mehrere Bundesländer/quer durch ein BL)
+		rwn = Regionalweg (50..200 km, mehrere Landkreise/Kantone).
+		lwn = Lokaler Weg ( < 50 km, in einem Landkreis, eine mehrere Gemeinden)
+	-->
+	<!-- cat Wanderwege Transparent (Darstellung gemäß Outdooractive) -->
+	<rule e="way" k="hknetwork" v="*" cat="hikingtrails_transp">
+		<rule e="way" k="hknetwork" v="iwn|nwn" zoom-min="7" zoom-max="11">
+			<line stroke="#F2221E" stroke-width="1.8" />
+			<line stroke="#E7B3B3" stroke-width="1.3" />
+		</rule>
+
+		<rule e="way" k="hknetwork" v="iwn|nwn" zoom-min="12" zoom-max="13">
+			<line stroke="#95F2221E" stroke-width="3.0" />
+			<line stroke="#95E7B3B3" stroke-width="2.0" />
+		</rule>
+		<rule e="way" k="hknetwork" v="lwn|rwn" zoom-min="12" zoom-max="13">
+			<line stroke="#95db8c8c" stroke-width="2.0" />
+		</rule>
+
+		<rule e="way" k="hknetwork" v="iwn|nwn|lwn|rwn" zoom-min="14">
+			<line dy="-0.6" stroke="#80e60707" stroke-width="0.2" />
+			<line stroke="#60f66966" stroke-width="1.0" />
+			<line dy="0.6" stroke="#80e60707" stroke-width="0.2" />
+		</rule>
+
+		<!-- TEXT TO PATH -->
+		<rule e="way" k="hknetwork" v="iwn|nwn" zoom-min="13">
+			<pathText k="ref" dy="-1.5" font-style="bold" font-size="8" fill="#631f1f" stroke="#ffffff" stroke-width="2.0" />
+		</rule>
+		<rule e="way" k="hknetwork" v="rwn|lwn" zoom-min="14">
+			<pathText k="ref" dy="-1.5" font-style="bold" font-size="8" fill="#631f1f" stroke="#ffffff" stroke-width="2.0" />
+		</rule>
+	</rule>
+
+	<!-- cat Wanderwege Farbig -->
+	<rule e="way" k="hknetwork" v="*" cat="hikingtrails_color">
+		<!-- Wanderwege die kein Farb-Tag haben (Darstellung gemäß Waymarked Trails) -->
+		<rule e="way" k="osmc_color" v="~">
+			<rule e="way" k="hknetwork" v="*" zoom-min="7" zoom-max="12">
+				<rule e="way" k="hknetwork" v="iwn">
+					<line stroke="#b02c21" stroke-width="0.7" stroke-linecap="butt"/>
+				</rule>
+				<rule e="way" k="hknetwork" v="nwn">
+					<line stroke="#3247d1" stroke-width="0.7" stroke-linecap="butt"/>
+				</rule>
+			</rule>
+		
+			<rule e="way" k="hknetwork" v="rwn" zoom-min="12" zoom-max="12">
+				<line stroke="#eda518" stroke-width="0.7" stroke-linecap="butt"/>
+			</rule>
+
+			<rule e="way" k="hknetwork" v="*" zoom-min="13" zoom-max="18">
+				<rule e="way" k="hknetwork" v="iwn">
+					<line dy="-0.7" stroke="#b02c21" stroke-width="0.7" stroke-linecap="butt"/>
+				</rule>
+				<rule e="way" k="hknetwork" v="nwn">
+					<line dy="-0.7" stroke="#3247d1" stroke-width="0.7" stroke-linecap="butt"/>
+				</rule>
+				<rule e="way" k="hknetwork" v="rwn">
+					<line dy="0.7" stroke="#eda518" stroke-width="0.7" stroke-linecap="butt"/>
+				</rule>
+				<rule e="way" k="hknetwork" v="lwn">
+					<line dy="0.7" stroke="#d01ab8" stroke-width="0.7" stroke-linecap="butt"/>
+				</rule>
+			</rule>
+
+			<rule e="way" k="hknetwork" v="*" zoom-min="19">
+				<rule e="way" k="hknetwork" v="iwn">
+					<line stroke="#50b02c21" stroke-width="0.7" stroke-linecap="butt"/>
+				</rule>
+				<rule e="way" k="hknetwork" v="nwn">
+					<line stroke="#503247d1" stroke-width="0.7" stroke-linecap="butt"/>
+				</rule>
+				<rule e="way" k="hknetwork" v="rwn">
+					<line stroke="#50eda518" stroke-width="0.7" stroke-linecap="butt" />
+				</rule>
+				<rule e="way" k="hknetwork" v="lwn">
+					<line stroke="#50d01ab8" stroke-width="0.7" stroke-linecap="butt" />
+				</rule>
+			</rule>
+		</rule>
+		
+		<!-- HIKING PATH OSMC:COLOR --> 
+		<rule e="way" k="osmc_color" v="*">
+			<rule e="way" k="osmc_color" v="*" zoom-min="12" zoom-max="18">
+				<rule e="way" k="osmc_color" v="wmco_blue|blue">
+					<line dy="0.7" stroke="#0026ff" stroke-width="0.7"/>
+				</rule>
+				<rule e="way" k="osmc_color" v="wmco_yellow|yellow">
+					<line dy="0.7" stroke="#DEC90A" stroke-width="0.7"/>
+				</rule>
+				<rule e="way" k="osmc_color" v="wmco_green|green">
+					<line dy="0.7" stroke="#267f00" stroke-width="0.7"/>
+				</rule>
+				<rule e="way" k="osmc_color" v="wmco_red|red">
+					<line dy="0.7" stroke="#EA3200" stroke-width="0.7"/>
+				</rule>
+				<rule e="way" k="osmc_color" v="wmco_black|black">
+					<line dy="0.7" stroke="#000000" stroke-width="0.7"/>
+				</rule>
+				<rule e="way" k="osmc_color" v="wmco_white|white">
+					<line dy="0.7" stroke="#EDEDED" stroke-width="0.7"/>
+				</rule>
+				<rule e="way" k="osmc_color" v="wmco_purple|purple">
+					<line dy="0.7" stroke="#fe67fe" stroke-width="0.7"/>
+				</rule>
+				<rule e="way" k="osmc_color" v="wmco_orange|orange">
+					<line dy="0.7" stroke="#ff8000" stroke-width="0.7"/>
+				</rule>
+			</rule>
+
+			<rule e="way" k="osmc_color" v="*" zoom-min="19">
+				<rule e="way" k="osmc_color" v="wmco_blue|blue">
+					<line dy="1.0" stroke="#500026ff" stroke-width="1.0" stroke-linecap="butt" />
+				</rule>
+				<rule e="way" k="osmc_color" v="wmco_yellow|yellow">
+					<line dy="1.0" stroke="#50F2DB0A" stroke-width="1.0" stroke-linecap="butt" />
+				</rule>
+				<rule e="way" k="osmc_color" v="wmco_green|green">
+					<line dy="-1.0" stroke="#50267f00" stroke-width="1.0" stroke-linecap="butt" />
+				</rule>
+				<rule e="way" k="osmc_color" v="wmco_red|red">
+					<line dy="-1.0" stroke="#50EA3200" stroke-width="1.0" stroke-linecap="butt" />
+				</rule>
+				<rule e="way" k="osmc_color" v="wmco_black|black">
+					<line dy="1.0" stroke="#50000000" stroke-width="1.0" stroke-linecap="butt" />
+				</rule>
+				<rule e="way" k="osmc_color" v="wmco_white|white">
+					<line dy="-1.0" stroke="#50EDEDED" stroke-width="1.0" stroke-linecap="butt" />
+				</rule>
+				<rule e="way" k="osmc_color" v="wmco_purple|purple">
+					<line dy="1.0" stroke="#50fe67fe" stroke-width="1.0" stroke-linecap="butt" />
+				</rule>
+				<rule e="way" k="osmc_color" v="wmco_orange|orange">
+					<line dy="1.0" stroke="#50ff8000" stroke-width="1.0" stroke-linecap="butt" />
+				</rule>
+			</rule>
+		</rule>
+
+		<!-- TEXT TO PATH -->
+		<rule e="way" k="hknetwork" v="iwn|nwn" zoom-min="13" >
+			<pathText k="ref" dy="-1.5" font-style="bold" font-size="8" fill="#631f1f" stroke="#ffffff" stroke-width="2.0" />
+		</rule>
+		<rule e="way" k="hknetwork" v="rwn" zoom-min="14">
+			<pathText k="ref" dy="-1.5" font-style="bold" font-size="8" fill="#631f1f" stroke="#ffffff" stroke-width="2.0" />
+		</rule>
+		<rule e="way" k="hknetwork" v="lwn" zoom-min="15">
+			<pathText k="ref" dy="-1.5" font-style="bold" font-size="8" fill="#631f1f" stroke="#ffffff" stroke-width="2.0" />
+		</rule>
+	</rule>
+
+	<!-- hiking nodes, OpenAndroMaps only-->
+	<rule e="node" k="hike_node" v="*" cat="hikingnodes">
+		<rule e="any" k="*" v="*" zoom-max="12" zoom-min="12">
+			<circle radius="6.4" scale-radius="false" fill="#ffffff" stroke="#009900" stroke-width="1.5" />
+			<caption k="name" priority="3" dy="3" font-style="bold" font-size="8" fill="#009900" stroke="#E5FFFFFF" stroke-width="2.0" />
+		</rule>
+		<rule e="any" k="*" v="*" zoom-max="14" zoom-min="13">
+			<circle radius="8.0" scale-radius="false" fill="#ffffff" stroke="#009900" stroke-width="2.0" />
+			<caption k="name" priority="3" dy="4" font-style="bold" font-size="10" fill="#009900" stroke="#E5FFFFFF" stroke-width="2.0" />
+		</rule>
+		<rule e="any" k="*" v="*" zoom-min="15">
+			<circle radius="10.4" scale-radius="false" fill="#ffffff" stroke="#009900" stroke-width="2.0" />
+			<caption k="name" priority="3" dy="5" font-style="bold" font-size="12" fill="#009900" stroke="#E5FFFFFF" stroke-width="2.0" />
+		</rule>
+	</rule>
+
+	<!-- HIKING PATH OSMC:SYMBOL für OpenAndroMaps -->
+	<rule e="any" k="osmc" v="osmc_yes" zoom-min="15" cat="trail_markings"> <!-- rule für cat=Wegemarkierungen -->
+		<!-- ================= OSMC_FOREGROUND ======================== -->
+		<!-- =============== FRG BLUE ================ -->
+		<rule e="any" k="osmc_foreground" v="wmfg_blue_arch">
+			<symbol src="file:/osmc/frg_blue_arch.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_blue_l">
+			<symbol src="file:/osmc/frg_blue_L.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_blue_bar">
+			<symbol src="file:/osmc/frg_blue_bar.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_blue_bowl" >
+			<symbol src="file:/osmc/frg_blue_bowl.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_blue_circle" >
+			<symbol src="file:/osmc/frg_blue_circle.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_blue_corner" >
+			<symbol src="file:/osmc/frg_blue_corner.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_blue_cross" >
+			<symbol src="file:/osmc/frg_blue_cross.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_blue_diamond" >
+			<symbol src="file:/osmc/frg_blue_diamond.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_blue_dot" >
+			<symbol src="file:/osmc/frg_blue_dot.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_blue_fork" >
+			<symbol src="file:/osmc/frg_blue_fork.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_blue_lower" >
+			<symbol src="file:/osmc/frg_blue_lower.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_blue_pointer" >
+			<symbol src="file:/osmc/frg_blue_pointer.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_blue_rectangle" >
+			<symbol src="file:/osmc/frg_blue_rectangle.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_blue_right" >
+			<symbol src="file:/osmc/frg_blue_right.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_blue_slash" >
+			<symbol src="file:/osmc/frg_blue_slash.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_blue_stripe" >
+			<symbol src="file:/osmc/frg_blue_stripe.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_blue_triangle" >
+			<symbol src="file:/osmc/frg_blue_triangle.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_blue_triangle_turned" >
+			<symbol src="file:/osmc/frg_blue_triangle_turned.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_blue_turned_t" >
+			<symbol src="file:/osmc/frg_blue_turned_T.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_blue_x" >
+			<symbol src="file:/osmc/frg_blue_x.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<!-- =============== FRG RED ================ -->
+		<rule e="any" k="osmc_foreground" v="wmfg_red_arch" >
+			<symbol src="file:/osmc/frg_red_arch.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_backslash" >
+			<symbol src="file:/osmc/frg_red_backslash.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_bar" >
+			<symbol src="file:/osmc/frg_red_bar.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_circle" >
+			<symbol src="file:/osmc/frg_red_circle.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_corner" >
+			<symbol src="file:/osmc/frg_red_corner.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_crest" >
+			<symbol src="file:/osmc/frg_red_crest.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_cross" >
+			<symbol src="file:/osmc/frg_red_cross.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_diamond" >
+			<symbol src="file:/osmc/frg_red_diamond.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_dot" >
+			<symbol src="file:/osmc/frg_red_dot.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_drop" >
+			<symbol src="file:/osmc/frg_red_drop.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_drop_line" >
+			<symbol src="file:/osmc/frg_red_drop_line.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_hiker" >
+			<symbol src="file:/osmc/frg_red_hiker.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_fork" >
+			<symbol src="file:/osmc/frg_red_fork.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_l" >
+			<symbol src="file:/osmc/frg_red_L.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_lower" >
+			<symbol src="file:/osmc/frg_red_lower.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_pointer" >
+			<symbol src="file:/osmc/frg_red_pointer.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_rectangle" >
+			<symbol src="file:/osmc/frg_red_rectangle.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_right" >
+			<symbol src="file:/osmc/frg_red_right.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_slash" >
+			<symbol src="file:/osmc/frg_red_slash.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_stripe" >
+			<symbol src="file:/osmc/frg_red_stripe.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_triangle" >
+			<symbol src="file:/osmc/frg_red_triangle.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_triangle_turned" >
+			<symbol src="file:/osmc/frg_red_triangle_turned.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_turned_t" >
+			<symbol src="file:/osmc/frg_red_turned_T.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_red_x" >
+			<symbol src="file:/osmc/frg_red_x.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<!-- =============== FRG YELLOW ================ -->
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_arch" >
+			<symbol src="file:/osmc/frg_yellow_arch.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_backslash" >
+			<symbol src="file:/osmc/frg_yellow_backslash.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_bar" >
+			<symbol src="file:/osmc/frg_yellow_bar.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_bowl" >
+			<symbol src="file:/osmc/frg_yellow_bowl.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_circle" >
+			<symbol src="file:/osmc/frg_yellow_circle.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_corner" >
+			<symbol src="file:/osmc/frg_yellow_corner.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_cross" >
+			<symbol src="file:/osmc/frg_yellow_cross.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_diamond" >
+			<symbol src="file:/osmc/frg_yellow_diamond.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_dot" >
+			<symbol src="file:/osmc/frg_yellow_dot.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_hiker" >
+			<symbol src="file:/osmc/frg_yellow_hiker.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_fork" >
+			<symbol src="file:/osmc/frg_yellow_fork.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_l" >
+			<symbol src="file:/osmc/frg_yellow_L.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_lower" >
+			<symbol src="file:/osmc/frg_yellow_lower.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_pointer" >
+			<symbol src="file:/osmc/frg_yellow_pointer.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_rectangle" >
+			<symbol src="file:/osmc/frg_yellow_rectangle.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_rectangle_line" >
+			<symbol src="file:/osmc/frg_yellow_rectangle_line.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_right" >
+			<symbol src="file:/osmc/frg_yellow_right.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_slash" >
+			<symbol src="file:/osmc/frg_yellow_slash.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_stripe" >
+			<symbol src="file:/osmc/frg_yellow_stripe.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_triangle" >
+			<symbol src="file:/osmc/frg_yellow_triangle.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_turned_t" >
+			<symbol src="file:/osmc/frg_yellow_turned_T.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_yellow_x" >
+			<symbol src="file:/osmc/frg_yellow_x.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<!-- =============== FRG BLACK	 ================ -->
+		<rule e="any" k="osmc_foreground" v="wmfg_black_arch" >
+			<symbol src="file:/osmc/frg_black_arch.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_black_bar" >
+			<symbol src="file:/osmc/frg_black_bar.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_black_circle" >
+			<symbol src="file:/osmc/frg_black_circle.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_black_crest" >
+			<symbol src="file:/osmc/frg_black_crest.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_black_cross" >
+			<symbol src="file:/osmc/frg_black_cross.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_black_diamond" >
+			<symbol src="file:/osmc/frg_black_diamond.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_black_dot" >
+			<symbol src="file:/osmc/frg_black_dot.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_black_fork" >
+			<symbol src="file:/osmc/frg_black_fork.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_black_horse" >
+			<symbol src="file:/osmc/frg_black_horse.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_black_pointer" >
+			<symbol src="file:/osmc/frg_black_pointer.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_black_rectangle" >
+			<symbol src="file:/osmc/frg_black_rectangle.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_black_rectangle_line" >
+			<symbol src="file:/osmc/frg_black_rectangle_line.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_black_red_diamond" >
+			<symbol src="file:/osmc/frg_black_red_diamond.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_black_right" >
+			<symbol src="file:/osmc/frg_black_right.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_black_triangle" >
+			<symbol src="file:/osmc/frg_black_triangle.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_black_triangle_line" >
+			<symbol src="file:/osmc/frg_black_triangle_line.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_black_x" >
+			<symbol src="file:/osmc/frg_black_x.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<!-- =============== FRG GREEN ================ -->
+		<rule e="any" k="osmc_foreground" v="wmfg_green_arch" >
+			<symbol src="file:/osmc/frg_green_arch.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_backslash" >
+			<symbol src="file:/osmc/frg_green_backslash.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_bar" >
+			<symbol src="file:/osmc/frg_green_bar.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_bowl" >
+			<symbol src="file:/osmc/frg_green_bowl.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_circle" >
+			<symbol src="file:/osmc/frg_green_circle.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_corner" >
+			<symbol src="file:/osmc/frg_green_corner.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_cross" >
+			<symbol src="file:/osmc/frg_green_cross.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_diamond" >
+			<symbol src="file:/osmc/frg_green_diamond.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_dot" >
+			<symbol src="file:/osmc/frg_green_dot.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_drop_line" >
+			<symbol src="file:/osmc/frg_green_drop_line.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_hiker" >
+			<symbol src="file:/osmc/frg_green_hiker.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_fork" >
+			<symbol src="file:/osmc/frg_green_fork.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_horse" >
+			<symbol src="file:/osmc/frg_green_horse.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_l" >
+			<symbol src="file:/osmc/frg_green_L.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_lower" >
+			<symbol src="file:/osmc/frg_green_lower.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_pointer" >
+			<symbol src="file:/osmc/frg_green_pointer.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_rectangle" >
+			<symbol src="file:/osmc/frg_green_rectangle.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_right" >
+			<symbol src="file:/osmc/frg_green_right.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_slash" >
+			<symbol src="file:/osmc/frg_green_slash.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_stripe" >
+			<symbol src="file:/osmc/frg_green_stripe.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_triangle" >
+			<symbol src="file:/osmc/frg_green_triangle.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_triangle_line" >
+			<symbol src="file:/osmc/frg_green_triangle_line.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_triangle_turned" >
+			<symbol src="file:/osmc/frg_green_triangle_turned.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_turned_t" >
+			<symbol src="file:/osmc/frg_green_turned_T.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_green_x" >
+			<symbol src="file:/osmc/frg_green_x.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<!-- =============== FRG WHITE	 ================ -->
+		<rule e="any" k="osmc_foreground" v="wmfg_white_arch" >
+			<symbol src="file:/osmc/frg_white_arch.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_white_bar" >
+			<symbol src="file:/osmc/frg_white_bar.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_white_circle" >
+			<symbol src="file:/osmc/frg_white_circle.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_white_cross" >
+			<symbol src="file:/osmc/frg_white_cross.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_white_diamond" >
+			<symbol src="file:/osmc/frg_white_diamond.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_white_diamond_line" >
+			<symbol src="file:/osmc/frg_white_diamond_line.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_white_dot" >
+			<symbol src="file:/osmc/frg_white_dot.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_white_hiker" >
+			<symbol src="file:/osmc/frg_white_hiker.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_white_lower" >
+			<symbol src="file:/osmc/frg_white_lower.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_white_pointer" >
+			<symbol src="file:/osmc/frg_white_pointer.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_white_rectangle" >
+			<symbol src="file:/osmc/frg_white_rectangle.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_white_rectangle_line" >
+			<symbol src="file:/osmc/frg_white_rectangle_line.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_white_red_diamond" >
+			<symbol src="file:/osmc/frg_white_red_diamond.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_white_right" >
+			<symbol src="file:/osmc/frg_white_right.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_white_stripe" >
+			<symbol src="file:/osmc/frg_white_stripe.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_white_triangle" >
+			<symbol src="file:/osmc/frg_white_triangle.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_white_triangle_line" >
+			<symbol src="file:/osmc/frg_white_triangle_line.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_white_turned_t" >
+			<symbol src="file:/osmc/frg_white_turned_T.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_white_x" >
+			<symbol src="file:/osmc/frg_white_x.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<!-- =============== FRG SYMBOLS	 ================ -->
+		<rule e="any" k="osmc_foreground" v="wmfg_ammonit">
+			<symbol src="file:/osmc/frg_ammonit.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_heart">
+			<symbol src="file:/osmc/frg_heart.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_hiker">
+			<symbol src="file:/osmc/frg_hiker.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_mine">
+			<symbol src="file:/osmc/frg_mine.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_orange_bar">
+			<symbol src="file:/osmc/frg_orange_bar.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_orange_diamond_line">
+			<symbol src="file:/osmc/frg_orange_diamond_line.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_orange_dot">
+			<symbol src="file:/osmc/frg_orange_dot.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_orange_right" >
+			<symbol src="file:/osmc/frg_orange_right.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_shell">
+			<symbol src="file:/osmc/frg_shell.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_shell_modern">
+			<symbol src="file:/osmc/frg_shell_modern.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_tower">
+			<symbol src="file:/osmc/frg_tower.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_foreground" v="wmfg_wolfshook">
+			<symbol src="file:/osmc/frg_wolfshook.svg" display="always" priority="3" symbol-scaling="size" symbol-width="12" />
+		</rule>
+
+		<!-- ================= OSMC_BACKGROUND ======================== -->
+		<rule e="any" k="osmc_background" v="wmbg_black" >
+			<symbol src="file:/osmc/bcg_black.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_black_circle">
+			<symbol src="file:/osmc/bcg_black_circle.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_blue">
+			<symbol src="file:/osmc/bcg_blue.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_blue_circle">
+			<symbol src="file:/osmc/bcg_blue_circle.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_blue_frame">
+			<symbol src="file:/osmc/bcg_blue_frame.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_blue_round">
+			<symbol src="file:/osmc/bcg_blue_round.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_brown">
+			<symbol src="file:/osmc/bcg_brown.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_green">
+			<symbol src="file:/osmc/bcg_green.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_green_circle">
+			<symbol src="file:/osmc/bcg_green_circle.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_green_frame">
+			<symbol src="file:/osmc/bcg_green_frame.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_green_round">
+			<symbol src="file:/osmc/bcg_green_round.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_orange">
+			<symbol src="file:/osmc/bcg_orange.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_purple">
+			<symbol src="file:/osmc/bcg_purple.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_red">
+			<symbol src="file:/osmc/bcg_red.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_red_circle">
+			<symbol src="file:/osmc/bcg_red_circle.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_red_frame">
+			<symbol src="file:/osmc/bcg_red_frame.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_red_round">
+			<symbol src="file:/osmc/bcg_red_round.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_white">
+			<symbol src="file:/osmc/bcg_white.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_white_circle">
+			<symbol src="file:/osmc/bcg_white_circle.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_white_round">
+			<symbol src="file:/osmc/bcg_white_round.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_yellow">
+			<symbol src="file:/osmc/bcg_yellow.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_yellow_circle">
+			<symbol src="file:/osmc/bcg_yellow_circle.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		<rule e="any" k="osmc_background" v="wmbg_yellow_frame">
+			<symbol src="file:/osmc/bcg_yellow_frame.svg" display="always" priority="2" symbol-scaling="size" symbol-width="12" />
+		</rule>
+		
+		<!-- Text in Wanderwegemarkierung, OpenAndroMaps only -->
+		<rule e="any" k="osmc_foreground" v="~|no|false"> <!-- nur wenn foreground nichts enthält -->
+			<rule e="any" k="osmc_textcolor" v="~|wmtc_black|wmtc_brown|wmtc_purple|wmtc_red|wmtc_green|wmtc_blue|wmtc_orange">
+				<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
+					<caption k="name" priority="3" display="always" font-size="8.5" font-style="bold" fill="#000000" stroke="#E5FFFFFF" stroke-width="1.0" />
+				</rule>
+				<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4">
+					<caption k="name" priority="3" display="always" font-size="7.5" font-style="bold" fill="#000000" stroke="#E5FFFFFF" stroke-width="1.0" />
+				</rule>
+			</rule>
+			<rule e="any" k="osmc_textcolor" v="wmtc_grey|wmtc_white|wmtc_yellow">
+				<rule e="any" k="osmc_text_len" v="wmtl_1|wmtl_2">
+					<caption k="name" priority="3" display="always" font-size="8.5" font-style="bold" fill="#FFFFFF" stroke="#E5000000" stroke-width="1.0" />
+				</rule>
+				<rule e="any" k="osmc_text_len" v="wmtl_3|wmtl_4">
+					<caption k="name" priority="3" display="always" font-size="7.5" font-style="bold" fill="#FFFFFF" stroke="#E5000000" stroke-width="1.0" />
+				</rule>
+			</rule>
+		</rule>
+	</rule>
+	<!-- END OF ALL WAYS -->
+
+
+	<!-- =====================================================
+								POIS
+	====================================================== -->
+
+	<!-- NATURAl Lower then 13 -->
+	<rule e="node" k="natural" v="*" >
+		<!-- Berggipfel -->
+		<rule e="node" k="natural" v="peak">
+			<rule e="any" k="peak_dist" v="pd_1" zoom-min="9">
+				<rule e="node" k="summit:cross" v="yes">
+					<symbol id="id_peak_cross" src="file:/symbols/peak_cross.svg" symbol-scaling="size" symbol-width="14" symbol-height="17" />
+					<rule e="node" k="*" v="*" zoom-min="11" >
+						<caption symbol-id="id_peak_cross" k="name" position="above" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+					</rule>
+					<rule e="node" k="*" v="*" zoom-min="12">
+						<caption symbol-id="id_peak_cross" k="ele" position="below" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+					</rule>
+				</rule>
+				<rule e="node" k="summit:cross" v="~|no">
+					<symbol id="id_peak" src="file:/symbols/peak.svg" symbol-scaling="size" symbol-width="14" />
+					<rule e="node" k="*" v="*" zoom-min="11" >
+						<caption symbol-id="id_peak" k="name" position="above" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+					</rule>
+					<rule e="node" k="*" v="*" zoom-min="12">
+						<caption symbol-id="id_peak" k="ele" position="below" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+					</rule>
+				</rule>
+			</rule>
+			<rule e="any" k="peak_dist" v="pd_2" zoom-min="11">
+				<rule e="node" k="summit:cross" v="yes">
+					<symbol id="id_peak_cross" src="file:/symbols/peak_cross.svg" symbol-scaling="size" symbol-width="14" symbol-height="17" />
+					<rule e="node" k="*" v="*" zoom-min="13" >
+						<caption symbol-id="id_peak_cross" k="name" position="above" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+					</rule>
+					<rule e="node" k="*" v="*" zoom-min="14">
+						<caption symbol-id="id_peak_cross" k="ele" position="below" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+					</rule>
+				</rule>
+				<rule e="node" k="summit:cross" v="~|no">
+					<symbol id="id_peak" src="file:/symbols/peak.svg" symbol-scaling="size" symbol-width="14" />
+					<rule e="node" k="*" v="*" zoom-min="13" >
+						<caption symbol-id="id_peak" k="name" position="above" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+					</rule>
+					<rule e="node" k="*" v="*" zoom-min="14">
+						<caption symbol-id="id_peak" k="ele" position="below" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+					</rule>
+				</rule>
+			</rule>
+			<rule e="any" k="peak_dist" v="pd_3|~" zoom-min="12">
+				<rule e="node" k="summit:cross" v="yes">
+					<symbol id="id_peak_cross" src="file:/symbols/peak_cross.svg" symbol-scaling="size" symbol-width="14" symbol-height="17" />
+					<rule e="node" k="*" v="*" zoom-min="13" >
+						<caption symbol-id="id_peak_cross" k="name" position="above" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+					</rule>
+					<rule e="node" k="*" v="*" zoom-min="14">
+						<caption symbol-id="id_peak_cross" k="ele" position="below" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+					</rule>
+				</rule>
+				<rule e="node" k="summit:cross" v="~|no">
+					<symbol id="id_peak" src="file:/symbols/peak.svg" symbol-scaling="size" symbol-width="14" />
+					<rule e="node" k="*" v="*" zoom-min="13" >
+						<caption symbol-id="id_peak" k="name" position="above" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+					</rule>
+					<rule e="node" k="*" v="*" zoom-min="14">
+						<caption symbol-id="id_peak" k="ele" position="below" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+					</rule>
+				</rule>
+			</rule>
+			<rule e="any" k="peak_dist" v="pd_4" zoom-min="13">
+				<rule e="node" k="summit:cross" v="yes">
+					<symbol id="id_peak_cross" src="file:/symbols/peak_cross.svg" symbol-scaling="size" symbol-width="14" symbol-height="17" />
+					<caption symbol-id="id_peak_cross" k="name" position="above" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+					<rule e="node" k="*" v="*" zoom-min="14">
+						<caption symbol-id="id_peak_cross" k="ele" position="below" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+					</rule>
+				</rule>
+				<rule e="node" k="summit:cross" v="~|no">
+					<symbol id="id_peak" src="file:/symbols/peak.svg" symbol-scaling="size" symbol-width="14" />
+					<caption symbol-id="id_peak" k="name" position="above" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+					<rule e="node" k="*" v="*" zoom-min="14">
+						<caption symbol-id="id_peak" k="ele" position="below" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+					</rule>
+				</rule>
+			</rule>
+			<rule e="any" k="peak_dist" v="pd_5" zoom-min="14">
+				<rule e="node" k="summit:cross" v="yes">
+					<symbol id="id_peak_cross" src="file:/symbols/peak_cross.svg" symbol-scaling="size" symbol-width="14" symbol-height="17" />
+					<caption symbol-id="id_peak_cross" k="name" position="above" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+					<caption symbol-id="id_peak_cross" k="ele" position="below" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+				</rule>
+				<rule e="node" k="summit:cross" v="~|no">
+					<symbol id="id_peak" src="file:/symbols/peak.svg" symbol-scaling="size" symbol-width="14" />
+					<caption symbol-id="id_peak" k="name" position="above" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+					<caption symbol-id="id_peak" k="ele" position="below" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+				</rule>
+			</rule>
+		</rule>
+		
+		<!-- Vulkane -->
+		<rule e="node" k="natural" v="volcano">
+			<rule e="any" k="peak_dist" v="pd_1" zoom-min="9">
+				<symbol id="id_volcano" src="file:/symbols/volcano.svg" symbol-scaling="size" symbol-width="14" />
+				<rule e="node" k="*" v="*" zoom-min="13" >
+					<caption symbol-id="id_volcano" k="name" position="above" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+				</rule>
+				<rule e="node" k="*" v="*" zoom-min="14">
+					<caption symbol-id="id_volcano" k="ele" position="below" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+				</rule>
+			</rule>
+			<rule e="any" k="peak_dist" v="pd_2" zoom-min="11">
+				<symbol id="id_volcano" src="file:/symbols/volcano.svg" symbol-scaling="size" symbol-width="14" />
+				<rule e="node" k="*" v="*" zoom-min="13" >
+					<caption symbol-id="id_volcano" k="name" position="above" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+				</rule>
+				<rule e="node" k="*" v="*" zoom-min="14">
+					<caption symbol-id="id_volcano" k="ele" position="below" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+				</rule>
+			</rule>
+			<rule e="any" k="peak_dist" v="pd_3|~" zoom-min="12">
+				<symbol id="id_volcano" src="file:/symbols/volcano.svg" symbol-scaling="size" symbol-width="14" />
+				<rule e="node" k="*" v="*" zoom-min="13" >
+					<caption symbol-id="id_volcano" k="name" position="above" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+				</rule>
+				<rule e="node" k="*" v="*" zoom-min="14">
+					<caption symbol-id="id_volcano" k="ele" position="below" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+				</rule>
+			</rule>
+			<rule e="any" k="peak_dist" v="pd_4" zoom-min="13">
+				<symbol id="id_volcano" src="file:/symbols/volcano.svg" symbol-scaling="size" symbol-width="14" />
+				<caption symbol-id="id_volcano" k="name" position="above" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+				<rule e="node" k="*" v="*" zoom-min="14">
+					<caption symbol-id="id_volcano" k="ele" position="below" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+				</rule>
+			</rule>
+			<rule e="any" k="peak_dist" v="pd_5" zoom-min="14">
+				<symbol id="id_volcano" src="file:/symbols/volcano.svg" symbol-scaling="size" symbol-width="14" />
+				<caption symbol-id="id_volcano" k="name" position="above" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+				<caption symbol-id="id_volcano" k="ele" position="below" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.8" />
+			</rule>
+		</rule>
+	</rule>
+
+	<!-- place -->
+	<rule e="node" k="place" v="*">
+		<rule e="node" k="place" v="village" zoom-min="12" zoom-max="12" >
+			<circle radius="3" fill="#D3D3D3" stroke="#9B9B9B" stroke-width="1.0" />
+		</rule>
+		<rule e="node" k="place" v="town" zoom-min="9" zoom-max="11" >
+			<rule e="node" k="*" v="*" zoom-min="9" zoom-max="9" >
+				<circle radius="2" fill="#f4f3e9" stroke="#9B9B9B" stroke-width="1.0" />
+			</rule>
+			<rule e="node" k="*" v="*" zoom-min="10" zoom-max="10" >
+				<circle radius="3" fill="#f4f3e9" stroke="#9B9B9B" stroke-width="1.0" />
+				<circle radius="1.1" stroke="#9B9B9B" stroke-width="1.0" />
+			</rule>
+			<rule e="node" k="*" v="*" zoom-min="11" zoom-max="11" >
+				<circle radius="4" fill="#f4f3e9" stroke="#9B9B9B" stroke-width="1.0" />
+				<circle radius="1.6" stroke="#9B9B9B" stroke-width="1.0" />
+			</rule>
+		</rule>
+		<rule e="node" k="place" v="city" zoom-min="9" zoom-max="11" >
+			<rule e="node" k="*" v="*" zoom-min="6" zoom-max="8" >
+				<circle radius="2" fill="#D3D3D3" stroke="#8E8E8E" stroke-width="1.0" />
+			</rule>
+			<rule e="node" k="*" v="*" zoom-min="9" zoom-max="9" >
+				<circle radius="2" fill="#f4f3e9" stroke="#8E8E8E" stroke-width="1.0" />
+			</rule>
+			<rule e="node" k="*" v="*" zoom-min="10" zoom-max="10" >
+				<circle radius="4" fill="#f4f3e9" stroke="#8E8E8E" stroke-width="1.0" />
+				<circle radius="1.8" fill="#8E8E8E" />
+			</rule>
+			<rule e="node" k="*" v="*" zoom-min="11" zoom-max="11" >
+				<circle radius="5" fill="#f4f3e9" stroke="#8E8E8E" stroke-width="1.0" />
+				<circle radius="2" fill="#8E8E8E" />
+			</rule>
+		</rule>
+		<!-- captions -->
+		<rule e="node" k="place" v="hamlet" zoom-min="13" zoom-max="17">
+			<rule e="node" k="*" v="*" zoom-min="13" zoom-max="13">
+				<caption k="name" font-family="default" font-size="10" fill="#000000" stroke="#ffffff" stroke-width="2.0" />
+			</rule>
+			<rule e="node" k="*" v="*" zoom-min="14" zoom-max="17">
+				<caption k="name" font-family="default" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff" stroke-width="2.5" />
+			</rule>
+		</rule>
+		<rule e="node" k="place" v="village" zoom-min="11" zoom-max="17">
+			<rule e="node" k="*" v="*" zoom-min="11" zoom-max="12">
+				<caption k="name" font-family="default" font-size="9" fill="#000000" stroke="#ffffff" stroke-width="2.0" />
+			</rule>
+			<rule e="node" k="*" v="*" zoom-min="13" zoom-max="17">
+				<caption k="name" font-family="default" font-style="bold" font-size="12" fill="#000000" stroke="#ffffff" stroke-width="2.5" />
+			</rule>
+		</rule>
+		<rule e="node" k="place" v="suburb" zoom-min="13" zoom-max="17">
+			<caption k="name" font-family="sans_serif" font-size="12" fill="#343434" stroke="#f8f3f3" stroke-width="2.0" />
+		</rule>
+		<rule e="node" k="place" v="town" zoom-min="9" zoom-max="15">
+			<rule e="node" k="*" v="*" zoom-min="9" zoom-max="11">
+				<caption k="name" dy="12" font-family="sans_serif" font-style="bold" font-size="11" fill="#000000" stroke="#ffffff" stroke-width="2.8" />
+			</rule>
+			<rule e="node" k="*" v="*" zoom-min="12" zoom-max="15">
+				<caption k="name" font-family="sans_serif" font-style="bold" font-size="13" fill="#000000" stroke="#ffffff" stroke-width="3.0" />
+			</rule>
+		</rule>
+		<rule e="node" k="place" v="city" zoom-max="13">
+			<caption k="name" dy="15" font-family="sans_serif" font-style="bold" font-size="10" fill="#000000" stroke="#FFFFFF" stroke-width="3.0" />
+		</rule>
+		<rule e="node" k="place" v="islet" zoom-min="15"> <!-- wird nur von OpenAndroMaps unterstüzt -->
+			<caption k="name" font-style="bold" font-size="10" fill="#000000" stroke="#ffffff" stroke-width="2.0" />
+		</rule>
+		<rule e="node" k="place" v="island" zoom-min="9" zoom-max="15">
+			<caption k="name" font-style="bold" font-size="12" fill="#000000" stroke="#ffffff" stroke-width="3.0" />
+		</rule>
+		<rule e="node" k="place" v="country" zoom-max="6">
+			<caption k="name" font-style="bold" font-size="25" fill="#000000" stroke="#ffffff" stroke-width="2.0" />
+		</rule>
+	</rule>
+
+	<!-- ALL NODES IN THIS SECTION HAS ZOOM-MIN 13 (or higher) ! -->
+	<rule e="any" k="*" v="*" zoom-min="13">
+		<!-- power generator -->
+		<rule e="node" k="power" v="generator">
+			<rule e="node" k="generator:source" v="wind" >
+				<symbol src="file:/symbols/power_generator_wind.svg" symbol-width="12" />
+			</rule>
+		</rule>
+
+		<!-- amenity -->
+		<rule e="any" k="amenity" v="*">
+
+			<!-- Amenity POIs > 14 -->
+			<rule e="any" k="amenity" v="*" zoom-min="14">
+				<rule e="any" k="amenity" v="hospital">
+					<symbol id="id_hospital" src="file:/symbols/hospital.svg" symbol-width="14" />
+					<rule e="any" k="amenity" v="*" zoom-min="15">
+						<caption symbol-id="id_hospital" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
+					</rule>
+				</rule>
+				<rule e="any" k="amenity" v="place_of_worship">
+					<rule e="any" k="religion" v="christian">
+						<rule e="any" k="building" v="cathedral|church|yes">
+							<symbol id="place_of_worship_christian" src="file:/symbols/church.svg" symbol-width="16" />
+							<rule e="any" k="building" v="*" zoom-min="17">
+								<caption symbol-id="place_of_worship_christian" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.0" />
+							</rule>
+						</rule>
+						<rule e="any" k="building" v="chapel">
+							<symbol id="place_of_worship_chapel" src="file:/symbols/chapel.svg" symbol-width="16" />
+							<rule e="any" k="building" v="*" zoom-min="17">
+								<caption symbol-id="place_of_worship_chapel" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.0" />
+							</rule>
+						</rule>
+					</rule>
+					<rule e="any" k="religion" v="jewish">
+						<symbol id="id_jewish" src="file:/symbols/synagogue.svg" symbol-width="12" />
+						<rule e="any" k="building" v="*" zoom-min="17">
+							<caption symbol-id="id_jewish" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.0" />
+						</rule>
+					</rule>
+					<rule e="any" k="religion" v="muslim|moslem">
+						<symbol id="id_muslim" src="file:/symbols/muslim.svg" symbol-width="14" />
+						<rule e="any" k="building" v="*" zoom-min="17">
+							<caption symbol-id="id_muslim" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.0" />
+						</rule>
+					</rule>
+					<rule e="any" k="religion" v="buddhist">
+						<symbol id="id_buddhist" src="file:/symbols/buddhist.svg" symbol-width="14" />
+						<rule e="any" k="building" v="*" zoom-min="17">
+							<caption symbol-id="id_buddhist" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.0" />
+						</rule>
+					</rule>
+				</rule>
+			</rule>
+
+			<!-- Amenity POIs > 15 -->
+			<rule e="any" k="amenity" v="*" zoom-min="15" >
+				<rule e="any" k="amenity" v="bus_station" zoom-min="15" cat="pub_transp">
+					<symbol id="id_bus_station" src="file:/symbols/bus_station.svg" symbol-width="16" />
+					<rule e="any" k="amenity" v="*" zoom-min="16" cat="pub_transp">
+						<caption symbol-id="id_bus_station" k="name" font-style="normal" font-family="sans_serif" font-size="8" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
+					</rule>
+				</rule>
+				<rule e="any" k="amenity" v="shelter" zoom-min="15">
+					<symbol id="id_shelter" src="file:/symbols/shelter.svg" symbol-width="20" display="always" symbol-scaling="size" />
+					<rule e="any" k="amenity" v="*" zoom-min="16">
+						<caption symbol-id="id_shelter" k="name" position="below" font-style="bold" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.5" />
+					</rule>
+				</rule>
+				<rule e="node" k="amenity" v="drinking_water">
+					<symbol src="file:/symbols/drinking_water.svg" symbol-width="18" />
+				</rule>
+			</rule>
+
+			<!-- Amenity POIs > 16 -->
+			<rule e="any" k="amenity" v="*" zoom-min="16">
+				<rule e="any" k="amenity" v="hunting_stand">
+					<symbol src="file:/symbols/hunting_stand.svg" symbol-width="14" />
+				</rule>
+				<rule e="node" k="amenity" v="restaurant" cat="restaurant">
+					<symbol id="id_restaurant" src="file:/symbols/restaurant.svg"  symbol-width="14" />
+					<rule e="node" k="amenity" v="*" zoom-min="18" cat="restaurant">
+						<caption symbol-id="id_restaurant" k="name" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
+					</rule>
+				</rule>
+				<rule e="node" k="amenity" v="cafe" cat="restaurant">
+					<symbol id="id_cafe" src="file:/symbols/cafe.svg" symbol-width="14" />
+					<rule e="node" k="amenity" v="*" zoom-min="18" cat="restaurant">
+						<caption symbol-id="id_cafe" k="name" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
+					</rule>
+				</rule>
+				<rule e="any" k="amenity" v="fountain">
+					<symbol src="file:/symbols/fountain.svg" symbol-width="16" />
+				</rule>
+			</rule>
+
+			<!-- Amenity POIs > 17 -->
+			<rule e="any" k="amenity" v="*" zoom-min="17" >
+				<rule e="node" k="amenity" v="bench">
+					<symbol src="file:/symbols/bench.svg" symbol-width="14" />
+				</rule>
+				<rule e="any" k="amenity" v="toilets">
+					<symbol src="file:/symbols/toilets.svg" symbol-width="16" />
+				</rule>
+			</rule>
+		</rule>
+
+		<!-- highway -->
+		<rule e="node" k="highway" v="*">
+			<rule e="node" k="highway" v="bus_stop" zoom-min="16" cat="pub_transp">
+				<symbol id="id_bus_stop" src="file:/symbols/bus_stop_germany.svg" symbol-width="12" />
+				<rule e="node" k="highway" v="*" zoom-min="18">
+					<caption symbol-id="id_bus_stop" k="name" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
+				</rule>
+			</rule>
+			<!-- turning circle core -->
+			<rule e="node" k="highway" v="turning_circle|mini_roundabout" zoom-min="15">
+				<circle radius="0.8" scale-radius="true" fill="#FFFFFF" />
+			</rule>
+			<!-- Rettungspunkte (only for OpenAndroMaps) -->
+			<rule e="node" k="highway" v="emergency_access_point" zoom-min="14" cat="emergency_access_point">
+				<symbol id="id_emergency_access_point" src="file:/symbols/emergency_access_point.svg" symbol-width="12" display="always" symbol-scaling="size"/>
+				<rule e="any" k="*" v="*" zoom-min="15">
+					<caption symbol-id="id_emergency_access_point" k="name" position="below" font-style="bold" font-family="sans_serif" font-size="12" fill="#DA0092" stroke="#FFFFFF" stroke-width="1.5" />
+					<!--OAM Transform ref to addr:housenumber -->
+					<caption symbol-id="id_emergency_access_point" k="addr:housenumber" position="above" font-style="bold" font-family="sans_serif" font-size="12" fill="#DA0092" stroke="#FFFFFF" stroke-width="1.5" />
+				</rule>
+			</rule>
+		</rule>
+
+		<!-- historic -->
+		<rule e="any" k="historic" v="*" zoom-min="13">
+			<rule e="any" k="historic" v="castle">
+				<symbol id="id_castle" src="file:/symbols/castle.svg" symbol-width="14" />
+				<rule e="any" k="*" v="*" zoom-min="17">
+					<caption symbol-id="id_castle" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.5" />
+				</rule>
+			</rule>
+			<rule e="any" k="historic" v="ruins">
+				<symbol id="id_ruins" src="file:/symbols/ruins.svg" symbol-width="12" />
+				<rule e="any" k="*" v="*" zoom-min="17">
+					<caption symbol-id="id_ruins" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.5" />
+				</rule>
+			</rule>
+			<rule e="any" k="historic" v="wayside_cross|wayside_shrine" zoom-min="14" >
+				<symbol src="file:/symbols/wayside_cross.svg" symbol-width="8" />
+			</rule>
+			<rule e="any" k="historic" v="monument" zoom-min="14" >
+				<symbol id="id_monument" src="file:/symbols/monument.svg" symbol-width="12" />
+				<rule e="any" k="*" v="*" zoom-min="17" >
+					<caption symbol-id="id_monument" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.5" />
+				</rule>
+			</rule>
+			<rule e="any" k="historic" v="memorial" zoom-min="15" >
+				<symbol id="id_memorial" src="file:/symbols/memorial.svg" symbol-width="12" />
+				<rule e="any" k="*" v="*" zoom-min="17" >
+					<caption symbol-id="id_memorial" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.5" />
+				</rule>
+			</rule>
+			<rule e="any" k="historic" v="mine" zoom-min="14">
+				<symbol id="id_mine" src="file:/symbols/mineshaft.svg" symbol-width="14" />
+				<rule e="any" k="historic" v="*" zoom-min="18" >
+					<caption symbol-id="id_mine" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.5" />
+				</rule>
+			</rule>
+			<rule e="any" k="historic" v="archaeological_site" zoom-min="16" >
+				<symbol id="id_archaeological_site" src="file:/symbols/archaeological_site.svg" symbol-width="12" />
+				<rule e="any" k="historic" v="*" zoom-min="18" >
+					<caption symbol-id="id_archaeological_site" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.5" />
+				</rule>
+			</rule>
+			<rule e="any" k="historic" v="boundary_stone" zoom-min="16" > <!-- only for OpenAndroMaps -->
+				<symbol src="file:/symbols/boundary_stone.svg" symbol-width="4" />
+			</rule>
+
+		</rule>
+
+		<!-- leisure -->
+		<rule e="any" k="leisure" v="playground" zoom-min="16">
+			<symbol id="id_playground" src="file:/symbols/playground.svg"  symbol-width="16" />
+			<rule e="any" k="*" v="*" zoom-min="17">
+				<caption symbol-id="id_playground" k="name" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.5" />
+			</rule>
+		</rule>
+		<rule e="node" k="leisure" v="picnic_table" zoom-min="16">
+			<symbol src="file:/symbols/picnic_site.svg" symbol-width="18" />
+		</rule>
+
+		<!-- man_made -->
+		<rule e="any" k="man_made" v="lighthouse" zoom-min="14">
+			<symbol id="id_lighthouse" src="file:/symbols/lighthouse.svg" symbol-width="12" />
+			<rule e="way" k="*" v="*" zoom-min="17">
+				<caption symbol-id="id_lighthouse" k="name" font-style="normal" font-family="sans_serif" font-size="9" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
+			</rule>
+		</rule>
+		<rule e="node" k="man_made" v="adit|adit_disused" zoom-min="14">
+			<symbol src="file:/symbols/cave_entrance.svg" symbol-width="12" />
+		</rule>
+		<rule e="any" k="man_made" v="mineshaft" zoom-min="14">
+			<symbol src="file:/symbols/mineshaft.svg" symbol-width="14" />
+		</rule>
+		<rule e="node" k="man_made" v="cross" zoom-min="14">
+			<symbol src="file:/symbols/cross.svg" symbol-width="18" />
+		</rule>
+		<rule e="node" k="man_made" v="cairn" zoom-min="15" cat="landscapefeat"> <!-- Nur bei OpenAndroMaps -->
+			<symbol src="file:/symbols/cairn.svg" symbol-width="20" />
+		</rule>
+
+		<!-- tower -->
+		<rule e="node" k="tower" v="*" zoom-min="14">
+			<rule e="node" k="tower" v="communication" >
+				<symbol id="id_communication" src="file:/symbols/tower_communication.svg" symbol-width="14" />
+				<caption symbol-id="id_communication" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.0" />
+			</rule>
+			<rule e="node" k="tower" v="~|observation" >
+				<symbol id="id_observation" src="file:/symbols/tower_observation.svg" symbol-width="12" />
+				<caption symbol-id="id_observation" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.0" />
+			</rule>
+		</rule>
+
+		<!-- barrier -->
+		<rule e="node" k="barrier" v="gate" zoom-min="16">
+			<symbol src="file:/symbols/gate.svg"  symbol-width="12" />
+		</rule>
+		<rule e="node" k="barrier" v="lift_gate" zoom-min="17">
+			<symbol src="file:/symbols/lift_gate.svg"  symbol-width="12" />
+		</rule>
+
+		<!-- water_well (Brunnen), only OpenAndroMaps -->
+		<rule e="any" k="man_made" v="water_well" zoom-min="16">
+			<rule e="any" k="drinking_water" v="yes">
+				<symbol id="id_drinking_water_yes" src="file:/symbols/water_well_drinking.svg" symbol-width="14" />
+				<rule e="any" k="*" v="*" zoom-min="18">
+					<caption symbol-id="id_drinking_water_yes" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.0" />
+				</rule>
+			</rule>
+			<rule e="any" k="drinking_water" v="no|~">
+				<symbol id="id_drinking_water_no" src="file:/symbols/water_well.svg" symbol-width="14" />
+				<rule e="any" k="*" v="*" zoom-min="18">
+					<caption symbol-id="id_drinking_water_no" k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.0" />
+				</rule>
+			</rule>
+		</rule>
+
+		<!-- military -->
+		<rule e="node" k="military" v="bunker|bunker_disused" zoom-min="14" >
+			<symbol src="file:/symbols/bunker.svg" symbol-width="11" />
+		</rule>
+		
+		<!-- mountain_pass -->
+		<rule e="any" k="mountain_pass" v="yes" zoom-min="14" cat="landscapefeat">
+			<rule e="any" k="dir_saddle" v="~" >
+				<circle radius="1" scale-radius="true" fill="#CCCCCC" stroke="#666666" stroke-width="0.4" />
+				<caption k="name" dy="-8" font-style="bold" font-size="10" fill="#797979" stroke="#ffffff" stroke-width="0.8" />
+				<rule e="any" k="*" v="*" zoom-min="15">
+					<caption k="ele" priority="-5" dy="11" font-style="bold" font-size="8" fill="#797979" stroke="#ffffff" stroke-width="2.0" />
+				</rule>
+			</rule>
+			<rule e="any" k="dir_saddle" v="ds_0" >
+				<symbol id="id_ds_0" src="file:/symbols/mountain_pass_0.svg" symbol-width="16" />
+				<caption symbol-id="id_ds_0" k="name" position="above" font-style="bold" font-size="10" fill="#797979" stroke="#ffffff" stroke-width="0.8" />
+				<rule e="any" k="*" v="*" zoom-min="15">
+					<caption k="ele" symbol-id="id_ds_0" position="below" font-style="bold" font-size="8" fill="#797979" stroke="#ffffff" stroke-width="2.0" />
+				</rule>
+			</rule>
+			<rule e="any" k="dir_saddle" v="ds_45" >
+				<symbol id="id_ds_45" src="file:/symbols/mountain_pass_45.svg" symbol-width="16" />
+				<caption symbol-id="id_ds_45" k="name" position="above" font-style="bold" font-size="10" fill="#797979" stroke="#ffffff" stroke-width="0.8" />
+				<rule e="any" k="*" v="*" zoom-min="15">
+					<caption k="ele" symbol-id="id_ds_45" position="below" font-style="bold" font-size="8" fill="#797979" stroke="#ffffff" stroke-width="2.0" />
+				</rule>
+			</rule>
+			<rule e="any" k="dir_saddle" v="ds_90" >
+				<symbol id="id_ds_90" src="file:/symbols/mountain_pass_90.svg" symbol-width="16" />
+				<caption symbol-id="id_ds_90" k="name" position="above" font-style="bold" font-size="10" fill="#797979" stroke="#ffffff" stroke-width="0.8" />
+				<rule e="any" k="*" v="*" zoom-min="15">
+					<caption k="ele" symbol-id="id_ds_90" position="below" font-style="bold" font-size="8" fill="#797979" stroke="#ffffff" stroke-width="2.0" />
+				</rule>
+			</rule>
+			<rule e="any" k="dir_saddle" v="ds_135" >
+				<symbol id="id_ds_135" src="file:/symbols/mountain_pass_135.svg" symbol-width="16" />
+				<caption symbol-id="id_ds_135" k="name" position="above" font-style="bold" font-size="10" fill="#797979" stroke="#ffffff" stroke-width="0.8" />
+				<rule e="any" k="*" v="*" zoom-min="15">
+					<caption k="ele" symbol-id="id_ds_135" position="below" font-style="bold" font-size="8" fill="#797979" stroke="#ffffff" stroke-width="2.0" />
+				</rule>
+			</rule>
+		</rule>
+
+		<!-- natural -->
+		<rule e="any" k="natural" v="*" zoom-min="14">
+			<rule e="any" k="natural" v="saddle" cat="landscapefeat">
+				<rule e="any" k="dir_saddle" v="~" >
+					<circle radius="1" scale-radius="true" fill="#CCCCCC" stroke="#666666" stroke-width="0.4" />
+					<caption k="name" dy="-8" font-style="bold" font-size="10" fill="#797979" stroke="#ffffff" stroke-width="0.8" />
+					<rule e="any" k="*" v="*" zoom-min="15">
+						<caption k="ele" priority="-5" dy="11" font-style="bold" font-size="8" fill="#797979" stroke="#ffffff" stroke-width="2.0" />
+					</rule>
+				</rule>
+				<rule e="any" k="dir_saddle" v="ds_0" >
+					<symbol id="id_ds_0" src="file:/symbols/mountain_pass_0.svg" symbol-width="16" />
+					<caption symbol-id="id_ds_0" k="name" position="above" font-style="bold" font-size="10" fill="#797979" stroke="#ffffff" stroke-width="0.8" />
+					<rule e="any" k="*" v="*" zoom-min="15">
+						<caption k="ele" symbol-id="id_ds_0" position="below" font-style="bold" font-size="8" fill="#797979" stroke="#ffffff" stroke-width="2.0" />
+					</rule>
+				</rule>
+				<rule e="any" k="dir_saddle" v="ds_45" >
+					<symbol id="id_ds_45" src="file:/symbols/mountain_pass_45.svg" symbol-width="16" />
+					<caption symbol-id="id_ds_45" k="name" position="above" font-style="bold" font-size="10" fill="#797979" stroke="#ffffff" stroke-width="0.8" />
+					<rule e="any" k="*" v="*" zoom-min="15">
+						<caption k="ele" symbol-id="id_ds_45" position="below" font-style="bold" font-size="8" fill="#797979" stroke="#ffffff" stroke-width="2.0" />
+					</rule>
+				</rule>
+				<rule e="any" k="dir_saddle" v="ds_90" >
+					<symbol id="id_ds_90" src="file:/symbols/mountain_pass_90.svg" symbol-width="16" />
+					<caption symbol-id="id_ds_90" k="name" position="above" font-style="bold" font-size="10" fill="#797979" stroke="#ffffff" stroke-width="0.8" />
+					<rule e="any" k="*" v="*" zoom-min="15">
+						<caption k="ele" symbol-id="id_ds_90" position="below" font-style="bold" font-size="8" fill="#797979" stroke="#ffffff" stroke-width="2.0" />
+					</rule>
+				</rule>
+				<rule e="any" k="dir_saddle" v="ds_135" >
+					<symbol id="id_ds_135" src="file:/symbols/mountain_pass_135.svg" symbol-width="16" />
+					<caption symbol-id="id_ds_135" k="name" position="above" font-style="bold" font-size="10" fill="#797979" stroke="#ffffff" stroke-width="0.8" />
+					<rule e="any" k="*" v="*" zoom-min="15">
+						<caption k="ele" symbol-id="id_ds_135" position="below" font-style="bold" font-size="8" fill="#797979" stroke="#ffffff" stroke-width="2.0" />
+					</rule>
+				</rule>
+			</rule>
+			<rule e="node" k="natural" v="cave_entrance">
+				<symbol id="id_cave_entrance" src="file:/symbols/cave_entrance.svg" symbol-width="12" />
+				<rule e="node" k="natural" v="*" zoom-min="16" >
+					<caption symbol-id="id_cave_entrance" k="name" font-style="bold" font-family="sans_serif" font-size="12" fill="#333333" stroke="#ffffff" stroke-width="0.5" />
+				</rule>
+			</rule>
+			<rule e="node" k="natural" v="tree" zoom-min="16" cat="landscapefeat">
+				<symbol id="id_tree" src="file:/symbols/tree.svg" symbol-width="10" />
+				<rule e="node" k="natural" v="*" zoom-min="18" >
+					<caption symbol-id="id_tree" k="name" font-style="normal" font-family="sans_serif" font-size="8" fill="#164526" stroke="#FFFFFF" stroke-width="0.5" />
+				</rule>
+			</rule>
+			<rule e="node" k="natural" v="rock|stone|nat_stone" cat="landscapefeat">
+				<symbol id="id_rock" src="file:/symbols/rock.svg" symbol-width="16" />
+				<rule e="node" k="natural" v="*" zoom-min="16" >
+					<caption symbol-id="id_rock" k="name" font-style="bold" font-family="sans_serif" font-size="12" fill="#333333" stroke="#ffffff" stroke-width="0.5" />
+				</rule>
+			</rule>
+			<rule e="node" k="natural" v="spring">
+				<symbol src="file:/symbols/spring.svg" symbol-width="16" />
+			</rule>
+		</rule>
+
+		<!-- safety_rope, ladder, rungs -->
+		<rule e="any" k="safety_rope|ladder|rungs" v="*" zoom-min="15">
+			<rule e="any" k="safety_rope" v="sr_yes" >
+				<symbol src="file:/symbols/safety_rope.svg" display="always" symbol-scaling="size" symbol-width="16" />
+			</rule>
+			<rule e="any" k="ladder" v="ld_yes" >
+				<symbol src="file:/symbols/ladder.svg" display="always" symbol-scaling="size" symbol-width="16" />
+			</rule>
+			<rule e="any" k="rungs" v="rn_yes" >
+				<symbol src="file:/symbols/rungs.svg" display="always" symbol-scaling="size" symbol-width="16" />
+			</rule>
+		<rule e="way" k="safety_rope|ladder|rungs" v="sr_yes|ld_yes|rn_yes" zoom-min="16">
+			<line stroke="#BFBFBF" stroke-width="1.4" stroke-dasharray="1,5" stroke-linecap="round" />
+			<line stroke="#000000" stroke-width="0.8" stroke-dasharray="1,5" stroke-linecap="round" />
+		</rule>
+
+		</rule>
+
+		<!-- railway -->
+		<rule e="node" k="railway" v="*" zoom-min="13" cat="pub_transp">
+			<!-- Bahnhof -->
+			<rule e="node" k="railway" v="station" zoom-min="13" zoom-max="14">
+				<circle radius="3.5" fill="#CC0000" stroke="#FFFFFF" stroke-width="0.5" />
+			</rule>
+			<rule e="node" k="railway" v="station" zoom-min="15">
+				<symbol id="id_station" src="file:/symbols/railway_station.svg" symbol-width="14" />
+				<rule e="node" k="*" v="*" zoom-min="16">
+					<caption symbol-id="id_station" k="name" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
+				</rule>
+			</rule>
+			<!-- Straßenbahnhaltestelle -->
+			<rule e="node" k="railway" v="tram_stop" zoom-min="14" zoom-max="16">
+				<circle radius="3.5" fill="#CC0000" stroke="#FFFFFF" stroke-width="0.5" />
+			</rule>
+			<rule e="node" k="railway" v="tram_stop" zoom-min="17">
+				<circle radius="5.0" fill="#CC0000" stroke="#FFFFFF" stroke-width="0.5" />
+				<caption k="name" dy="16" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
+			</rule>
+			<!-- Haltepunkt -->
+			<rule e="node" k="railway" v="halt" zoom-min="14" zoom-max="15">
+				<circle radius="3.5" fill="#CC0000" stroke="#FFFFFF" stroke-width="0.5" />
+			</rule>
+			<rule e="node" k="railway" v="halt" zoom-min="16">
+				<circle radius="5.0" fill="#CC0000" stroke="#FFFFFF" stroke-width="0.5" />
+				<caption k="name" dy="16" font-style="bold" font-family="sans_serif" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
+			</rule>
+		</rule>
+
+		<!-- aerialway -->
+		<rule e="any" k="aerialway" v="station" zoom-min="15">
+			<caption k="name" font-style="bold" font-size="8.0" fill="#797979" stroke="#ffffff" stroke-width="2.0" />
+		</rule>
+
+		<!-- tourism -->
+		<rule e="any" k="tourism" v="*">
+			<rule e="any" k="tourism" v="*" zoom-min="14">
+				<rule e="any" k="tourism" v="camp_site">
+					<symbol id="id_camp_site" src="file:/symbols/campSite.svg" symbol-width="13" />
+					<rule e="any" k="*" v="*" zoom-min="16">
+						<caption symbol-id="id_camp_site" k="name" font-style="bold" font-size="8" fill="#797979" stroke="#ffffff" stroke-width="1.5" />
+					</rule>
+				</rule>
+				<rule e="any" k="tourism" v="alpine_hut">
+					<symbol id="id_alpine_hut" src="file:/symbols/alpine_hut.svg" symbol-width="16" display="always" symbol-scaling="size" />
+					<caption symbol-id="id_alpine_hut" k="name" position="above" font-style="bold" font-size="10" fill="#797979" stroke="#ffffff" stroke-width="2.0" />
+					<caption symbol-id="id_alpine_hut" k="ele" position="below" font-style="bold" font-size="8" fill="#797979" stroke="#ffffff" stroke-width="2.0" />
+				</rule>
+				<rule e="any" k="tourism" v="museum">
+					<symbol id="id_museum" src="file:/symbols/museum.svg" symbol-width="13" />
+					<rule e="any" k="tourism" v="*" zoom-min="17">
+						<caption symbol-id="id_museum" k="name" font-style="bold" font-size="10" fill="#333333" stroke="#ffffff" stroke-width="0.5" />
+					</rule>
+				</rule>
+			</rule>
+
+			<rule e="any" k="tourism" v="*" zoom-min="15">
+				<rule e="node" k="tourism" v="viewpoint">
+					<symbol id="id_viewpoint" src="file:/symbols/viewpoint.svg" symbol-width="20" />
+					<caption symbol-id="id_viewpoint" k="name" position="below" font-style="bold" font-size="8" fill="#797979" stroke="#ffffff" stroke-width="1.5" />
+				</rule>
+				<rule e="any" k="tourism" v="information" >
+					<rule e="any" k="information" v="office|information_office">
+						<symbol id="id_office" src="file:/symbols/information_office.svg" display="always" symbol-scaling="size" symbol-width="13" />
+						<caption symbol-id="id_office" k="name" font-style="bold" font-size="7" fill="#333333" stroke="#ffffff" stroke-width="1.5" />
+					</rule>
+				</rule>
+			</rule>
+
+			<rule e="any" k="tourism" v="*" zoom-min="16">
+				<rule e="node" k="tourism" v="information" >
+					<rule e="node" k="information" v="guidepost">
+						<symbol id="id_guidepost" src="file:/symbols/guidepost.svg" symbol-width="18" />
+						<rule e="node" k="information" v="*" zoom-min="17">
+							<caption symbol-id="id_guidepost" k="name" font-style="bold_italic" font-size="8" fill="#333333" stroke="#ffffff" stroke-width="2.0" />
+						</rule>
+					</rule>
+				</rule>
+				<rule e="any" k="tourism" v="picnic_site">
+					<symbol src="file:/symbols/picnic_site.svg" symbol-width="18" />
+				</rule>
+				<rule e="any" k="information" v="map|board">
+					<symbol src="file:/symbols/information.svg" symbol-width="10" />
+				</rule>
+			</rule>
+		</rule>
+	</rule>
+</rendertheme>

@@ -15,19 +15,12 @@
 1. CHANGELOG
 -------------------------------------------------------------------------
 Version active_RT3_Locus, 02.01.2019
-	- Darstellungsfehler von water in Zoo's behoben
-	- Richtung für Sättel, Bergpässe hinzugefügt. Neues Symbol in vier Ausrichtungen angelegt (nur bei OpenAndroMaps)
-	- Berggipfel und Vulkane (peak + volcano) wurden nun sortiert und verschiedenen Zoomstufen zugewiesen (nur bei OpenAndroMaps)
-	- Wanderwegefarben (OSMC:COLOR) werden nun auch von OpenAndroMaps unterstützt
-	- Wanderwegesymbole um yellow,green,blue arch ergänzt
-	- Gebäude die im Bau sind (building=construction) werden nun angezeigt, der Rand hat eine andere Farbe (nur bei OpenAndroMaps)
 	- Die Länge von safety_rope, ladder, rungs wird dargestellt
 	- Die Textfarbe der Strassennamen von schwarz in eine dunkles grau geändert
 	- Die Rahmen um Autobahn-Nr., Bundesstr.-Nr., etc. verbreitert
 	- Via Ferrata (Klettersteige) wird nun dargestellt
 	- aerialway=zip_line (einfachst Seilbahnen) wird nun dargestellt
 	- Bei aerialway=station (Seilbahnstationen) wird nun der Name angezeigt
-	- historic=boundary_stone wird nun dargestellt
 	- Leuchttürme (man_made=lighthouse) werden nun dargestellt
 	- Wanderwegfarbe orange ergänzt
 	- Wegemarkierungen können nun wahlweise dargestellt werden, unabhändig von davon ob Wanderwege dargestellt werden
@@ -37,6 +30,16 @@ Version active_RT3_Locus, 02.01.2019
 
 
 HiLo Versionen:
+Version 11, 05.03.2019
+	- Darstellungsfehler von water in Zoo's behoben
+	- Richtung für Sättel, Bergpässe hinzugefügt. Neues Symbol in vier Ausrichtungen angelegt (nur bei OpenAndroMaps)
+	- Berggipfel und Vulkane (peak + volcano) wurden nun sortiert und verschiedenen Zoomstufen zugewiesen (nur bei OpenAndroMaps)
+	- Wanderwegefarben (OSMC:COLOR) werden nun auch von OpenAndroMaps unterstützt
+	- Wanderwegesymbole um yellow,green,blue arch ergänzt
+	- Gebäude die im Bau sind (building=construction) werden nun angezeigt, der Rand hat eine andere Farbe (nur bei OpenAndroMaps)
+	- historic=boundary_stone wird nun dargestellt
+	- Bei waterway=canal wurde der Name nicht angezeigt
+
 Version 10, 06.09.2017
 	- Die Pattern für Wald verändert, um der Darstellung von "Outdooractive" näher zukommen
 	- Texte in den Wanderwegemarkierungen (OSMC:SYMBOL) werden nun etwas zuverlässiger dargestellt.
