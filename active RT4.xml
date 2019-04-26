@@ -183,10 +183,10 @@
 	<rule e="way" k="natural|landuse" v="forest|wood" zoom-min="10">
 		<rule e="way" k="*" v="*" zoom-min="10">
 			<rule e="way" k="*" v="*" zoom-max="12">
-				<area fill="#5098a324" />
+				<area fill="#D4DAA4" />
 			</rule>
 			<rule e="way" k="*" v="*" zoom-min="13">
-				<area fill="#5098a324" />
+				<area fill="#D4DAA4" />
 				<rule e="any" k="wood|leaf_type" v="coniferous|needleleaved">
 					<area src="file:/patterns/wood_coniferous_transparent.svg" symbol-width="40" />
 				</rule>
