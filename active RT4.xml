@@ -183,10 +183,10 @@
 	<rule e="way" k="natural|landuse" v="forest|wood" zoom-min="10">
 		<rule e="way" k="*" v="*" zoom-min="10">
 			<rule e="way" k="*" v="*" zoom-max="12">
-				<area fill="#d2d9a2" />
+				<area fill="#5098a324" />
 			</rule>
 			<rule e="way" k="*" v="*" zoom-min="13">
-				<area fill="#D4DAA4" />
+				<area fill="#5098a324" />
 				<rule e="any" k="wood|leaf_type" v="coniferous|needleleaved">
 					<area src="file:/patterns/wood_coniferous_transparent.svg" symbol-width="40" />
 				</rule>
@@ -820,7 +820,7 @@
 	</rule>
 	
 	<!-- Highways -->
-	<rule e="way" k="tunnel" v="~|no|false">
+	<rule e="way" k="tunnel" v="~|no">
 	
 		<!-- highway -->
 		<rule e="way" k="highway" v="*">
@@ -1177,7 +1177,7 @@
 	</rule>
 	<!-- END ways that are not tunnels -->
 
-	<rule e="way" k="tunnel" v="true|yes">
+	<rule e="way" k="tunnel" v="yes">
 		<!-- highway tunnel casings -->
 		<rule e="way" k="highway" v="*" zoom-min="8" >
 			<rule e="way" k="highway" v="motorway_link">
@@ -1199,8 +1199,8 @@
 			</rule>
 			<rule e="way" k="highway" v="track|byway">
 				<line stroke="#50FFFFFF" stroke-width="0.6" stroke-linecap="butt" />
-				<line stroke="#707070" dy="0.3" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
-				<line stroke="#707070" dy="-0.3" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
+				<line stroke="#3f3f3f" dy="0.3" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
+				<line stroke="#3f3f3f" dy="-0.3" stroke-width="0.1" stroke-dasharray="3,3" stroke-linecap="butt" />
 			</rule>
 			<rule e="way" k="highway" v="cycleway">
 				<line stroke="#50FFFFFF" stroke-width="0.7" stroke-linecap="butt" />
@@ -1228,7 +1228,7 @@
 
 	<!-- railway (no tunnel) -->
 	<rule e="way" k="railway" v="*">
-		<rule e="way" k="tunnel" v="~|false|no">
+		<rule e="way" k="tunnel" v="~|no">
 			<rule e="way" k="railway" v="station" zoom-min="13">
 				<area fill="#9b9b79" stroke="#707070" stroke-width="0.2" />
 			</rule>
@@ -1303,7 +1303,7 @@
 
 
 		<!-- railway tunnel -->
-		<rule e="way" k="tunnel" v="true|yes">
+		<rule e="way" k="tunnel" v="yes">
 			<rule e="way" k="railway" v="subway" zoom-min="13" cat="pub_transp">
 				<line stroke="#800000FF" stroke-width="0.5" stroke-dasharray="4,4" stroke-linecap="butt" />
 			</rule>

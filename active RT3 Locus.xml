@@ -185,10 +185,10 @@
 	<rule e="way" k="natural|landuse" v="forest|wood" zoom-min="10">
 		<rule e="way" k="*" v="*" zoom-min="10">
 			<rule e="way" k="*" v="*" zoom-max="12">
-				<area fill="#d2d9a2" />
+				<area fill="#5098a324" />
 			</rule>
 			<rule e="way" k="*" v="*" zoom-min="13">
-				<area fill="#D4DAA4" />
+				<area fill="#5098a324" />
 				<rule e="any" k="wood|leaf_type" v="coniferous|needleleaved">
 					<area src="file:/patterns/wood_coniferous_transparent.svg" symbol-width="24dp" scale-icon-size="14,1.4" />
 				</rule>
@@ -1559,9 +1559,9 @@
 				<line stroke="#707070" dy="-4.0" scale-dy-size="16,1.4" stroke-width="0.1dp" stroke-dasharray="3,3" stroke-linecap="butt" />
 			</rule>
 			<rule e="way" k="highway" v="track">
-				<line stroke="#50FFFFFF" stroke-width="1.4dp" stroke-linecap="butt" />
-				<line stroke="#707070" dy="2.8" scale-dy-size="16,1.4" stroke-width="0.1dp" stroke-dasharray="3,3" stroke-linecap="butt" />
-				<line stroke="#707070" dy="-2.8" scale-dy-size="16,1.4" stroke-width="0.1dp" stroke-dasharray="3,3" stroke-linecap="butt" />
+				<line stroke="#50FFFFFF" stroke-width="0.7dp" stroke-linecap="butt" />
+				<line stroke="#3f3f3f" dy="1.0" scale-dy-size="16,1.4" stroke-width="0.1dp" stroke-dasharray="3,3" stroke-linecap="butt" />
+				<line stroke="#3f3f3f" dy="-1.0" scale-dy-size="16,1.4" stroke-width="0.1dp" stroke-dasharray="3,3" stroke-linecap="butt" />
 			</rule>
 			<rule e="way" k="highway" v="residential|living_street|unclassified">
 				<line stroke="#50FFFFFF" stroke-width="2.0dp" stroke-linecap="butt" />
