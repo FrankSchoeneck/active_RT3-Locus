@@ -2963,39 +2963,37 @@
 		</rule>
 
 		<!-- historic -->
-		<rule e="any" k="historic" v="*" zoom-min="13">
-			<rule e="any" k="historic" v="castle">
-				<symbol src="file:/symbols/castle.svg" symbol-width="12dp" scale-icon-size="14,1.15"/>
-			</rule>
-			<rule e="any" k="historic" v="ruins">
-				<symbol src="file:/symbols/ruins.svg" symbol-width="12dp" scale-icon-size="14,1.15"/>
-			</rule>
-			<rule e="any" k="historic" v="wayside_cross|wayside_shrine" zoom-min="14" >
-				<symbol src="file:/symbols/wayside_cross.svg" symbol-width="8dp" scale-icon-size="15,1.15"/>
-			</rule>
-			<rule e="any" k="historic" v="monument" zoom-min="14" >
-				<symbol src="file:/symbols/monument.svg" symbol-width="10dp" scale-icon-size="15,1.15"/>
-			</rule>
-			<rule e="any" k="historic" v="memorial" zoom-min="15" >
-				<symbol src="file:/symbols/memorial.svg" symbol-width="12dp" scale-icon-size="16,1.15"/>
-			</rule>
-			<rule e="any" k="historic" v="mine" zoom-min="14">
-				<symbol src="file:/symbols/mineshaft.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
-			</rule>
-			<rule e="any" k="historic" v="archaeological_site" zoom-min="16" >
-				<symbol src="file:/symbols/archaeological_site.svg" symbol-width="12dp" scale-icon-size="17,1.15"/>
-			</rule>
-			<rule e="any" k="historic" v="boundary_stone" zoom-min="16" > <!-- only for OpenAndroMaps -->
-				<symbol src="file:/symbols/boundary_stone.svg" symbol-width="4dp" scale-icon-size="17,1.15"/>
-			</rule>
+		<rule e="any" k="historic" v="castle">
+			<symbol src="file:/symbols/castle.svg" symbol-width="12dp" scale-icon-size="14,1.15"/>
+		</rule>
+		<rule e="any" k="historic" v="ruins">
+			<symbol src="file:/symbols/ruins.svg" symbol-width="12dp" scale-icon-size="14,1.15"/>
+		</rule>
+		<rule e="any" k="historic" v="wayside_cross|wayside_shrine" zoom-min="14" >
+			<symbol src="file:/symbols/wayside_cross.svg" symbol-width="8dp" scale-icon-size="15,1.15"/>
+		</rule>
+		<rule e="any" k="historic" v="monument" zoom-min="14" >
+			<symbol src="file:/symbols/monument.svg" symbol-width="10dp" scale-icon-size="15,1.15"/>
+		</rule>
+		<rule e="any" k="historic" v="memorial" zoom-min="15" >
+			<symbol src="file:/symbols/memorial.svg" symbol-width="12dp" scale-icon-size="16,1.15"/>
+		</rule>
+		<rule e="any" k="historic" v="mine" zoom-min="14">
+			<symbol src="file:/symbols/mineshaft.svg" symbol-width="12dp" scale-icon-size="15,1.15" />
+		</rule>
+		<rule e="any" k="historic" v="archaeological_site" zoom-min="16" >
+			<symbol src="file:/symbols/archaeological_site.svg" symbol-width="12dp" scale-icon-size="17,1.15"/>
+		</rule>
+		<rule e="any" k="historic" v="boundary_stone" zoom-min="16" > <!-- only for OpenAndroMaps -->
+			<symbol src="file:/symbols/boundary_stone.svg" symbol-width="4dp" scale-icon-size="17,1.15"/>
+		</rule>
 			
-			<!-- show name only for castle or ruins-->
-			<rule e="any" k="historic" v="castle|ruins" zoom-min="16">
-				<caption k="name" dy="9dp" scale-dy-size="17,1.15" font-style="normal" font-family="sans_serif" font-size="8dp" scale-font-size="17,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.5dp" />
-			</rule>
-			<rule e="any" k="historic" v="monument|memorial|mine|archaeological_site" zoom-min="18" >
-				<caption k="name" dy="-8dp" scale-dy-size="19,1.15" font-style="normal" font-family="sans_serif" font-size="8dp" scale-font-size="19,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.5dp" />
-			</rule>
+		<!-- show name only for castle or ruins-->
+		<rule e="any" k="historic" v="castle|ruins" zoom-min="16">
+			<caption k="name" dy="9dp" scale-dy-size="17,1.15" font-style="normal" font-family="sans_serif" font-size="8dp" scale-font-size="17,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.5dp" />
+		</rule>
+		<rule e="any" k="historic" v="monument|memorial|mine|archaeological_site" zoom-min="18" >
+			<caption k="name" dy="-8dp" scale-dy-size="19,1.15" font-style="normal" font-family="sans_serif" font-size="8dp" scale-font-size="19,1.15" fill="#333333" stroke="#ffffff" stroke-width="0.5dp" />
 		</rule>
 
 		<!-- leisure -->
