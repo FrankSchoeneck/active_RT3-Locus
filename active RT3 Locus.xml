@@ -2985,7 +2985,7 @@
 			<symbol src="file:/symbols/archaeological_site.svg" symbol-width="12dp" scale-icon-size="17,1.15"/>
 		</rule>
 		<rule e="any" k="historic" v="boundary_stone" zoom-min="16" > <!-- only for OpenAndroMaps -->
-			<symbol src="file:/symbols/boundary_stone.svg" symbol-width="4dp" scale-icon-size="17,1.15"/>
+			<symbol src="file:/symbols/boundary_stone.svg" symbol-width="5dp" scale-icon-size="17,1.15"/>
 		</rule>
 			
 		<!-- show name only for castle or ruins-->

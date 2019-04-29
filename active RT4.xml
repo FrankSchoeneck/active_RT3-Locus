@@ -2517,7 +2517,7 @@
 			</rule>
 		</rule>
 		<rule e="any" k="historic" v="boundary_stone" zoom-min="16" > <!-- only for OpenAndroMaps -->
-			<symbol src="file:/symbols/boundary_stone.svg" symbol-width="4" />
+			<symbol src="file:/symbols/boundary_stone.svg" symbol-width="6" />
 		</rule>
 
 		<!-- leisure -->
