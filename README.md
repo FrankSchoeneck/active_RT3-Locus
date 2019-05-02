@@ -12,7 +12,7 @@ In LoMaps the trails are displayed with the corresponding way symbols (according
 It automatically scales for devices with displays of different resolutions and symbols enlarge smoothly for higher zoom levels.
 The zoom levels at which various features appear has been adjusted to provide optimal information and reduce unwanted clutter.
 
-Info:
+### Info
 The numbers mean the used render theme version of Mapsforge, not the map version. This is separate from each other, each rendering theme version has changes to the instruction set. Unfortunately, Locus is given by the programming of the app which theme version is used in which map version.
 
 The active RT3 Locus version works only with locus and maps of version 3 and earlier.
