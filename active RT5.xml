@@ -323,6 +323,17 @@
 		</rule>
 
 		<!-- Natural captions -->
+		<rule e="any" k="natural" v="valley|canyon|peninsula" zoom-min="13">
+			<rule e="node" k="*" v="*">
+				<caption k="name" font-style="italic" font-family="sans_serif" font-size="10" fill="#888888" stroke="#888888" stroke-width="0.8" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-max="15">
+				<caption k="name" font-style="bold_italic" font-family="sans_serif" font-size="10" fill="#333333" stroke="#FFFFFF" stroke-width="0.8" />
+			</rule>
+			<rule e="way" k="*" v="*" zoom-min="16">
+				<pathText k="name" font-style="bold_italic" font-family="sans_serif" font-size="10" fill="#333333" stroke="#FFFFFF" stroke-width="0.8" />
+			</rule>
+		</rule>
 		<rule e="any" k="natural" v="bay" zoom-min="13">
 			<caption k="name" font-style="normal" font-family="sans_serif" font-size="10" fill="#595959" stroke="#FFFFFF" stroke-width="1.5" />
 		</rule>
