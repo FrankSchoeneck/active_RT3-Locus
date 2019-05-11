@@ -17,8 +17,6 @@ The numbers mean the used render theme version of Mapsforge, not the map version
 
 The active RT3 Locus version works only with locus and maps of version 3 and earlier.
 
-The active RT4 version works with all apps that use the Mapsforge Engine and that with all map versions, here is Locus unfortunately again special, there this version works only with maps of version 4 and higher.
+The active RT5 version works with all apps that use the Mapsforge Engine and that with all map versions, here is Locus unfortunately again special, there this version works only with maps of version 4 and higher.
 
-The active RT5 version is older than the RT4 version and was only for testing which app works with version 5 rendering themes.
-
-As it looks at the moment I will make a current active RT5 version of the current active RT4 version and then only maintain it, the active RT4 will be omitted and the active RT3 locus stay on this stand.
+The active RT theme works in Locus Maps only from version 3.38!
