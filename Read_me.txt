@@ -14,7 +14,8 @@
 -------------------------------------------------------------------------
 1. CHANGELOG
 -------------------------------------------------------------------------
-Version active_RT3_Locus, 09.05.2019
+Version active_RT3_Locus, 21.05.2019
+	- Die Anzeige von place=locality wird nun bei "any" ab Zoom 16 angezeigt
 	- Die Namen von natural=valley|canyon|peninsula werden nun angezeigt
 	- Die Länge von safety_rope, ladder, rungs wird dargestellt
 	- Die Textfarbe der Strassennamen von schwarz in eine dunkles grau geändert

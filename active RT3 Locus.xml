@@ -1809,7 +1809,7 @@
 	</rule>
 
 	<!-- place -->
-	<rule e="way" k="place" v="locality" zoom-min="17">
+	<rule e="any" k="place" v="locality" zoom-min="16">
 		<caption k="name" font-style="normal" font-family="sans_serif" font-size="10dp" scale-font-size="18,1.15" fill="#000000" stroke="#ffffff" stroke-width="2.5dp" />
 	</rule>
 	
