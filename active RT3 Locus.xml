@@ -451,8 +451,10 @@
 
 	<!-- leisure -->
 	<rule e="way" k="leisure" v="*" zoom-min="12">
-
-		<rule e="way" k="leisure" v="stadium|sports_centre">
+		<rule e="way" k="leisure" v="sports_centre">
+			<area fill="#D2DEA9" stroke="#6fc18e" stroke-width="0.1dp" />
+		</rule>
+		<rule e="way" k="leisure" v="stadium">
 			<area fill="#D2DEA9" stroke="#6fc18e" stroke-width="0.1dp" />
 		</rule>
 		<rule e="way" k="leisure" v="pitch">
@@ -1810,7 +1812,9 @@
 
 	<!-- place -->
 	<rule e="any" k="place" v="locality" zoom-min="16">
-		<caption k="name" font-style="normal" font-family="sans_serif" font-size="10dp" scale-font-size="18,1.15" fill="#000000" stroke="#ffffff" stroke-width="2.5dp" />
+		<rule e="any" k="mountain_pass|natural|tourism" v="~">
+			<caption k="name" font-style="normal" font-family="sans_serif" font-size="8dp" scale-font-size="18,1.15" fill="#000000" stroke="#ffffff" stroke-width="2.5dp" />
+		</rule>
 	</rule>
 	
 	<!-- safety_rope, ladder, rungs für OpenAndroMaps only-->
@@ -2092,15 +2096,15 @@
 	<rule e="node" k="hike_node" v="*" cat="hikingnodes">
 		<rule e="any" k="*" v="*" zoom-max="12" zoom-min="12">
 			<circle r="6.4dp" scale-radius="false" fill="#ffffff" stroke="#009900" stroke-width="1.5dp" />
-			<caption k="name" force-draw="1" dy="3dp" font-style="bold" font-size="8dp" fill="#009900" stroke="#E5FFFFFF" stroke-width="2dp" />
+			<caption k="addr:housenumber" force-draw="1" dy="3dp" font-style="bold" font-size="8dp" fill="#009900" stroke="#E5FFFFFF" stroke-width="2dp" />
 		</rule>
 		<rule e="any" k="*" v="*" zoom-max="14" zoom-min="13">
 			<circle r="8.0dp" scale-radius="false" fill="#ffffff" stroke="#009900" stroke-width="2dp" />
-			<caption k="name" force-draw="1" dy="4dp" scale-dy-size="14,1.15" font-style="bold" font-size="10dp" scale-font-size="14,1.15" fill="#009900" stroke="#E5FFFFFF" stroke-width="2dp" />
+			<caption k="addr:housenumber" force-draw="1" dy="4dp" scale-dy-size="14,1.15" font-style="bold" font-size="10dp" scale-font-size="14,1.15" fill="#009900" stroke="#E5FFFFFF" stroke-width="2dp" />
 		</rule>
 		<rule e="any" k="*" v="*" zoom-min="15">
 			<circle r="10.4dp" scale-radius="false" fill="#ffffff" stroke="#009900" stroke-width="2dp" />
-			<caption k="name" force-draw="1" dy="5dp" scale-dy-size="16,1.15" font-style="bold" font-size="12dp" scale-font-size="16,1.15" fill="#009900" stroke="#E5FFFFFF" stroke-width="2dp" />
+			<caption k="addr:housenumber" force-draw="1" dy="5dp" scale-dy-size="16,1.15" font-style="bold" font-size="12dp" scale-font-size="16,1.15" fill="#009900" stroke="#E5FFFFFF" stroke-width="2dp" />
 		</rule>
 	</rule>
 	

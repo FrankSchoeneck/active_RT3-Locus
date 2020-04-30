@@ -14,7 +14,8 @@
 -------------------------------------------------------------------------
 1. CHANGELOG
 -------------------------------------------------------------------------
-Version active_RT3_Locus, 21.05.2019
+Version active_RT3_Locus, 09.07.2019
+	- leisure=stadium wird nun besser angezeigt
 	- Die Anzeige von place=locality wird nun bei "any" ab Zoom 16 angezeigt
 	- Die Namen von natural=valley|canyon|peninsula werden nun angezeigt
 	- Die Länge von safety_rope, ladder, rungs wird dargestellt
@@ -29,6 +30,7 @@ Version active_RT3_Locus, 21.05.2019
 	- Wanderwege Knotenpunkte (hiking nodes) werden nun, wahlweise, dargestellt (nur bei OpenAndroMaps)
 	- Grenzen geschützter Gebiete wurde umbenannt in Grenzen + geschützte Gebiete (Theme Switcher)
 	- Landesgrenzen sind nun über Grenzen + geschützte Gebiete schaltbar gemacht (Umschaltung über den Theme Switcher)
+	- Hiking-Nodes werden nun über das Tag "Addr:housenumber" ausgegeben
 
 
 HiLo Versionen:
